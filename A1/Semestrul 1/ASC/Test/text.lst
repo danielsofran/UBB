@@ -1,0 +1,103 @@
+     1                                  bits 32
+     2                                  
+     3                                  global start
+     4                                  
+     5                                  extern exit, printf, fopen, fclose, fread
+     6                                  import exit msvcrt.dll
+     7                                  import printf msvcrt.dll
+     8                                  import fopen msvcrt.dll
+     9                                  import fclose msvcrt.dll
+    10                                  import fread msvcrt.dll
+    11                                  
+    12                                  
+    13                                  segment data use32 class=data
+    14 00000000 696E7075742E747874-         filename db "input.txt", 0  ; numele fisierului
+    14 00000009 00                 
+    15 0000000A 7200                        mode db "r", 0              ; modul de acces la fisier
+    16 0000000C 00000000                    descriptor dd 0             ; descriptorul fisierului
+    17 00000010 <res 00000065>              cifre resb 101              ; sirul de cifre din fisier, stocat ca sir de caractere
+    18 00000075 00                          cmax db 0                   ; cifra cu valoarea maxima
+    19 00000076 00                          chr db 0                    ; un caracter citit
+    20 00000077 4369667261206D6178-         format db "Cifra maxia impara din fisierul %s este: %c", 10, 0 ; formatul de afisare
+    20 00000080 696120696D70617261-
+    20 00000089 2064696E2066697369-
+    20 00000092 6572756C2025732065-
+    20 0000009B 7374653A2025630A00 
+    21                                  
+    22                                  segment code use32 class=code
+    23                                      start:
+    24                                          ; deschidem fisierul
+    25 00000000 68[0A000000]                    push mode
+    26 00000005 68[00000000]                    push filename
+    27 0000000A FF15[00000000]                  call [fopen]
+    28 00000010 83C408                          add esp, 4*2
+    29                                          
+    30                                          ; verificam daca s-a deschis corect
+    31 00000013 83F800                          cmp eax, 0
+    32 00000016 0F8482000000                    je final
+    33 0000001C A3[0C000000]                    mov [descriptor], eax
+    34                                          
+    35                                          ; stocam cifrele
+    36 00000021 BF[10000000]                    mov edi, cifre 
+    37                                          caractere:
+    38                                              ; citim cate un caracter din fisier
+    39                                              ; fread(chr, 1, 1, descriptor); /* chr e un pointer */
+    40 00000026 FF35[0C000000]                      push dword [descriptor]
+    41 0000002C 6A01                                push 1 ; count
+    42 0000002E 6A01                                push 1 ; size
+    43 00000030 68[76000000]                        push chr
+    44 00000035 FF15[00000000]                      call [fread]
+    45 0000003B 83C410                              add esp, 4*4
+    46                                              
+    47                                              ; verificam daca s-a citit corect 1 caracter
+    48 0000003E 83F801                              cmp eax, 1
+    49 00000041 7510                                jne next
+    50                                              
+    51                                              ; verificam daca este cifra
+    52 00000043 A0[76000000]                        mov al, [chr]
+    53 00000048 3C30                                cmp al, '0'
+    54 0000004A 72DA                                jb caractere
+    55 0000004C 3C39                                cmp al, '9'
+    56 0000004E 77D6                                ja caractere
+    57                                              ; altfel, e cifra
+    58 00000050 AA                                  stosb ; retinem caracterul in sirul de cifre
+    59 00000051 EBD3                            jmp caractere
+    60                                              
+    61                                          next:
+    62                                          ; determinam cifra impara maxima
+    63 00000053 BE[10000000]                    mov esi, cifre
+    64                                          cifrele:
+    65 00000058 AC                                  lodsb
+    66 00000059 3C00                                cmp al, 0
+    67 0000005B 7413                                je afis
+    68                                              ; cifra este para daca codul ascii este par, '0' = 48
+    69 0000005D A801                                test al, 1
+    70 0000005F 74F7                                jz cifrele
+    71                                              ; verificam daca valoarea depaseste maximul curent
+    72 00000061 3A05[75000000]                      cmp al, [cmax]
+    73 00000067 7CEF                                jl cifrele
+    74                                              ; in cazul in care cifra respecta proprietatile, o stocam
+    75 00000069 A2[75000000]                        mov [cmax], al
+    76 0000006E EBE8                            jmp cifrele
+    77                                              
+    78                                          
+    79                                          afis:
+    80                                          ; ebx = codul ascii al cifrei maxime
+    81 00000070 BB00000000                      mov ebx, 0
+    82 00000075 8A1D[75000000]                  mov bl, [cmax]
+    83                                          
+    84                                          ; printf(format, filename, cmax);
+    85 0000007B 53                              push ebx
+    86 0000007C 68[00000000]                    push filename
+    87 00000081 68[77000000]                    push format
+    88 00000086 FF15[00000000]                  call [printf]
+    89 0000008C 83C40C                          add esp, 4*3
+    90                                          
+    91                                          ; fclose(descriptor);
+    92 0000008F FF35[0C000000]                  push dword[descriptor]
+    93 00000095 FF15[00000000]                  call [fclose]
+    94 0000009B 83C404                          add esp, 4
+    95                                          
+    96                                          final: ; exit(0);
+    97 0000009E 6A00                            push    dword 0     
+    98 000000A0 FF15[00000000]                  call    [exit]      

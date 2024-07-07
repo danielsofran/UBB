@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>P3</title>
+	<style>
+		table, td, tr {
+			border: 2px solid black;
+		}
+		td {
+			padding: 30px;
+		}
+	</style>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		const matrix = [[1,2,3,4],
+						[5,6,7,8],
+						[1,2,3,4],
+						[5,6,7,8]];
+		const pairs = matrix.flat().reduce((acc, curr, index, array) => {
+		  if (array.indexOf(curr) !== index) {
+			acc[curr] = acc[curr] ? [...acc[curr], index] : [index];
+		  }
+		  return acc;
+		}, {});
+
+		let firstGuess = null;
+		let secondGuess = null;
+		let guessedPairs = {};
+
+		function handleClick(event) {
+		  const cell = $(event.target);
+		  const value = cell.attr("id");
+		  if (!value){
+        console.log("!value");
+        return;
+		  }
+
+		  if (!firstGuess) {
+        firstGuess = { value: value, cell: cell };
+
+        cell.text(value);
+		  }
+      else if (cell !== firstGuess.cell) {
+			secondGuess = { value: value, cell: cell };
+
+			cell.text(value);
+			if (firstGuess.value === secondGuess.value) {
+			  guessedPairs[firstGuess.value] = true;
+			  firstGuess = null;
+			  secondGuess = null;
+			  if (Object.keys(guessedPairs).length === Object.keys(pairs).length) {
+				  alert('You won!');
+			  }
+			} else {
+			  setTimeout(() => {
+				firstGuess.cell.text(" ");
+				secondGuess.cell.text(" ");
+				firstGuess = null;
+				secondGuess = null;
+			  }, 2000);
+			}
+		  }
+		}
+
+		const table = $('<table></table>');
+		for (let i = 0; i < matrix.length; i++) {
+		  const row = $('<tr></tr>');
+		  for (let j = 0; j < matrix[i].length; j++) {
+			const cell = $('<td></td>');
+			cell.text("");
+			cell.attr("id", matrix[i][j])
+			cell.on("click", handleClick)
+			row.append(cell)
+		  }
+		  table.append(row);
+		}
+		$('body').append(table);
+	</script>
+</body>
+</html>

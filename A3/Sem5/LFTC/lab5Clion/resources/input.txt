@@ -1,0 +1,22 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cin>>n;
+    ~
+    int sumaaa=0x2323;
+    float x = 20.3e-55;
+    int binary=0.1e+555;
+    int y=2.3e4;
+    for (int i=0;i<n;i = i + 1){
+        int x;
+        cin>>x;
+        sum=sum+x;
+    }
+    cattimp x>3 executa
+        x = x + 1
+    sfcattimp
+    cout<<"Sum:"<<sum;
+    return 0;
+}

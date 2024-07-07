@@ -1,0 +1,52 @@
+.formular{
+    padding: 10px 10px 0;
+    font-family: SansSerif, serif;
+}
+
+label{
+    width: 70px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+input:focus {
+    outline: none;
+}
+
+[class^="form-"]{
+    padding-bottom: 10px;
+    display: flex;
+    width: 100%;
+}
+
+.form-nume input, .form-prenume input {
+    border: none;
+    width: 420px;
+    background: transparent;
+    color: dimgrey;
+    font-family: monospace;
+    letter-spacing: 1.75ch;
+    padding-left: 0.8ch;
+}
+
+.form-nume .squares, .form-prenume .squares {
+    border: 1px solid #202020;
+    width: 399px;
+    background: repeating-linear-gradient(90deg, #ffffff 0px, #ffffff 19px, #000000 20px);
+}
+
+.form-cnp input {
+    border: none;
+    width: 280px;
+    background: transparent;
+    color: dimgrey;
+    font-family: monospace;
+    letter-spacing: 1.75ch;
+    padding-left: 0.8ch;
+}
+
+.form-cnp .squares {
+    border: 1px solid #202020;
+    width: 259px;
+    background: repeating-linear-gradient(90deg, #ffffff 0px, #ffffff 19px, #000000 20px);
+}

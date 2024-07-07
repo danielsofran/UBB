@@ -1,0 +1,18 @@
+-register
+-admin
+-fara sistem in actori secundari
+-fara ascocieri intre chestii triviale
+-fara deschidere aplicatie
+-fara puncte de extensie
+
+observer
+-doar in tabel
+sau
+-dependenta costum
+NU E STANDARD, SE POATE ORICUM
+
+pe problema
+-solved sarcina, observer
+-crud sarcina
+-seful vede sarcinine ang, nu rel, doar in descriere
+-ang nu poate da cancel

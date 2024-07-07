@@ -1,0 +1,60 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    height: 100%;
+}
+
+header{
+    display: block;
+    background: red;
+    color: black;
+    height: 15%;
+}
+
+footer{
+    display: block;
+    background: pink;
+    color: black;
+    vertical-align: center;
+    height: 10%;
+}
+
+.main{
+    display: block;
+    height: 75%;
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    background: yellow;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    padding: 10px;
+    width: 20%;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+li:hover{
+    background: blue;
+    color: white;
+}
+
+nav{
+    display: block;
+    float: none;
+    height: 15%;
+}
+
+.mainView{
+    display: block;
+    float: none;
+    height: 85%;
+    background: green;
+}

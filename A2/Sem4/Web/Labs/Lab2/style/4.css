@@ -1,0 +1,38 @@
+/* 84*84 px */
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+}
+
+.icon {
+    width: 84px;
+    height: 84px;
+    filter: grayscale(100%);
+}
+
+.icon:hover {
+    filter: grayscale(0%);
+}
+
+
+.icon:nth-child(1){ --n: 0;}
+.icon:nth-child(2){ --n: 1;}
+.icon:nth-child(3){ --n: 2;}
+.icon:nth-child(4){ --n: 3;}
+.icon:nth-child(5){ --n: 4;}
+.icon:nth-child(6){ --n: 5;}
+.icon:nth-child(7){ --n: 6;}
+.icon:nth-child(8){ --n: 7;}
+.icon:nth-child(9){ --n: 8;}
+.icon:nth-child(10){ --n: 9;}
+.icon:nth-child(11){ --n: 10;}
+
+.icon:nth-child(n){
+    --x: calc(var(--n) * 84px);
+    --y: 0;
+    background: url(../assets/img/sprite.png) var(--x) var(--y);
+}

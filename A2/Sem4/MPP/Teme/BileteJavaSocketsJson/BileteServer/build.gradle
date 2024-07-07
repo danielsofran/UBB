@@ -1,0 +1,20 @@
+plugins {
+    id 'java'
+}
+
+group 'BileteJavaSockets'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation project (':BileteModel')
+    implementation project (':BileteServices')
+    implementation project (':BiletePersistance')
+    implementation project (':BileteNetworking')
+
+    testImplementation group: 'junit', name: 'junit', version: '4.12'
+}
+

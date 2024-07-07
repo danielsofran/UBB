@@ -1,0 +1,10 @@
+S->aSbSc
+S->aSb
+S->bSc
+S->a
+S->b
+S->c
+aabccbbabaabcbc
+aabaabbccbacbaccc
+abacbaabaacbbcc
+aaaabbbbbcccc

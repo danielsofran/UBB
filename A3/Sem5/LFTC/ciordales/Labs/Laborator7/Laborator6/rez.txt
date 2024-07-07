@@ -1,0 +1,38 @@
+#include|int|double|vector<int>|if|else|for|while|cin|cout|main()|using|namespace|std|return|<iostream> {
+	printf("A keyword: %s\n", yytext);
+}
+
+
+{REAL_NUMBER}|{SIGN_REAL_NUMBER}|{INTEGER}|{SIGN_INTEGER}|{BINARY}|{OCTAL}|{HEXAZECIMAL}|{STRING}{
+	printf("A literal: %s\n", yytext)
+}
+
+{Arithmetic_operators} {
+	printf("Arithmetic operaotors: %s\n", yytext);
+}
+
+{Relation_operators}  {
+	printf("Relation operators: %s\n", yytext);
+}
+
+{Delimitators} {
+	printf("Delimitators: %s\n", yytext);
+}
+
+Arithmetic_operators >>|<<|+|-|%|*
+Relation_operators <|>|=|!=|!==
+Delimitators [ ,;{}()""]
+
+SUFIX ((u|U)?(l|L)?(l|L)?)|((l|L)?(l|L)?(u|U)?)
+REAL_NUMBER [1-9][0-9]*"."[0-9]+((e|E)(+|-)?[1-9][0-9]+)?{SUFIX}
+//REAL_NUMBER_SUFFIX {REAL_NUMBER}{SUFIX}
+SIGN_REAL_NUMBER (+|-){REAL_NUMBER}
+//SIGN_REAL_NUMBER_SUFFIX (+|-){REAL_NUMBER_SUFFIX}
+INTEGER [1-9][0-9]*((e|E)(+|-)?[1-9][0-9]+)?{SUFFIX}
+//INTEGER_SUFFIX {INTEGER}{SUFFIX}
+SIGN_INTEGER (+|-){INTEGER} 
+//SIGN_INTEGER_SUFFIX (+|-){INTEGER_SUFFIX}
+OCTAL 0[0-7]*{SUFFIX}
+BINARY (0b)|(0B)(0|1)+{SUFFIX}
+HEXAZECIMAL 0(x|X)[0-9A-Fa-f]+{SUFIX}
+STRING (\"\")|(\"[a-zA-Z0-9:;\.]\")

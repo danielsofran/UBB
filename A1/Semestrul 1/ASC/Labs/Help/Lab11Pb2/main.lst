@@ -1,0 +1,131 @@
+     1                                  bits 32
+     2                                  global start
+     3                                  
+     4                                  ;extern reverse
+     5                                  
+     6                                  extern exit, printf, gets, system
+     7                                  import exit msvcrt.dll
+     8                                  import gets msvcrt.dll
+     9                                  import printf msvcrt.dll
+    10                                  import system msvcrt.dll
+    11                                  
+    12                                  segment data use32 class=data
+    13 00000000 62617A612031363A20-         format_b16 db "baza 16: %x ", 10, 0
+    13 00000009 2578200A00         
+    14 0000000E 62617A6120323A2025-         format_s db "baza 2: %s ", 10, 0
+    14 00000017 73200A00           
+    15 0000001B 25642000                    format_b10 db "%d ", 0
+    16 0000001F 00                          lastissep db 0
+    17 00000020 <res 000001F5>              sir resb 501
+    18 00000215 <res 00000021>              snrb2 resb 33
+    19 00000236 00000000                    numar dd 0
+    20 0000023A 0A000000                    zece dd 10
+    21 0000023E 706175736500                cmd db "pause", 0
+    22                                  
+    23                                  segment code use32 class=code
+    24                                  tob2:
+    25                                      ; return adress - [esp]
+    26                                      ; numar - [esp+4]
+    27                                      ; sir - [esp+8]
+    28 00000000 B920000000                  mov ecx, 32
+    29 00000005 8B7C2408                    mov edi, [esp+8]
+    30 00000009 FC                          cld
+    31                                      biti:
+    32 0000000A D1642404                        shl dword [esp+4], 1 ; mutam primul bit in CF
+    33 0000000E 7205                            jc .bit1
+    34                                          ; altfel bitul e 0
+    35                                          ; stosb '0'
+    36 00000010 B030                            mov al, '0'
+    37 00000012 AA                              stosb
+    38 00000013 EB03                            jmp .continue
+    39                                          .bit1:
+    40 00000015 B031                            mov al, '1'
+    41 00000017 AA                              stosb
+    42                                          .continue:
+    43 00000018 E2F0                        loop biti
+    44 0000001A B000                        mov al, 0
+    45 0000001C AA                          stosb
+    46                                      ; push cmd
+    47                                      ; call [printf]
+    48                                      ; add esp, 4*1
+    49 0000001D C3                          ret
+    50                                      
+    51                                  start:
+    52                                      ; citim sirul
+    53 0000001E 68[20000000]                push sir
+    54 00000023 FF15[00000000]              call [gets]
+    55 00000029 83C404                      add esp, 4
+    56                                      
+    57 0000002C BE[20000000]                mov esi, sir
+    58 00000031 FC                          cld
+    59                                      catactere:
+    60 00000032 B800000000                      mov eax, 0
+    61 00000037 AC                              lodsb
+    62 00000038 3C00                            cmp al, 0
+    63 0000003A 0F8482000000                    je ultimul
+    64 00000040 3C30                            cmp al, '0'
+    65 00000042 7C26                            jl .separator
+    66 00000044 3C39                            cmp al, '9'
+    67 00000046 7F22                            jg .separator
+    68                                          
+    69                                          ; caracterul este cifra
+    70 00000048 C605[1F000000]00                mov byte [lastissep], 0
+    71 0000004F 2C30                            sub al, '0'
+    72 00000051 50                              push eax
+    73                                          ; ogl = 10*ogl + cifra
+    74 00000052 A1[36020000]                    mov eax, [numar]
+    75 00000057 F725[3A020000]                  mul dword[zece] ; edx:eax -> eax
+    76 0000005D 030424                          add eax, [esp]
+    77 00000060 83C404                          add esp, 4 ; aka pop
+    78 00000063 A3[36020000]                    mov [numar], eax
+    79 00000068 EB53                            jmp .continue
+    80                                          
+    81                                          .separator:
+    82 0000006A D025[1F000000]                  shl byte [lastissep], 1 ; ajunge in cf
+    83 00000070 724B                            jc .continue
+    84                                          
+    85 00000072 FF35[36020000]                  push dword [numar]
+    86 00000078 68[00000000]                    push format_b16
+    87 0000007D FF15[00000000]                  call [printf]
+    88 00000083 83C408                          add esp, 4*2
+    89                                          
+    90                                          ; determinam repr in baza 2
+    91 00000086 68[15020000]                    push snrb2
+    92 0000008B FF35[36020000]                  push dword [numar]
+    93 00000091 E86AFFFFFF                      call tob2
+    94 00000096 83C408                          add esp, 4*2
+    95                                          
+    96 00000099 68[15020000]                    push snrb2
+    97 0000009E 68[0E000000]                    push format_s
+    98 000000A3 FF15[00000000]                  call [printf]
+    99 000000A9 83C408                          add esp, 4*2
+   100                                          
+   101 000000AC C705[36020000]0000-             mov dword [numar], 0
+   101 000000B4 0000               
+   102 000000B6 C605[1F000000]01                mov byte [lastissep], 1
+   103                                          .continue:
+   104 000000BD E970FFFFFF                  jmp catactere
+   105                                      
+   106                                      ultimul:
+   107 000000C2 FF35[36020000]                  push dword [numar]
+   108 000000C8 68[00000000]                    push format_b16
+   109 000000CD FF15[00000000]                  call [printf]
+   110 000000D3 83C408                          add esp, 4*2
+   111                                          
+   112                                          ; determinam repr in baza 2
+   113 000000D6 68[15020000]                    push snrb2
+   114 000000DB FF35[36020000]                  push dword [numar]
+   115 000000E1 E81AFFFFFF                      call tob2
+   116 000000E6 83C408                          add esp, 4*2
+   117                                          
+   118 000000E9 68[15020000]                    push snrb2
+   119 000000EE 68[0E000000]                    push format_s
+   120 000000F3 FF15[00000000]                  call [printf]
+   121 000000F9 83C408                          add esp, 4*2
+   122                                      
+   123 000000FC 68[3E020000]                push cmd
+   124 00000101 FF15[00000000]              call [system]
+   125 00000107 83C404                      add esp, 4
+   126                                      
+   127 0000010A 6A00                        push 0
+   128 0000010C FF15[00000000]              call [exit]

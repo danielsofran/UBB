@@ -1,0 +1,29 @@
+CREATE TABLE Tipuri(
+	id INT PRIMARY KEY IDENTITY,
+	descriere NVARCHAR(MAX),
+)
+
+CREATE TABLE Trenuri(
+	id INT PRIMARY KEY IDENTITY,
+	nume NVARCHAR(MAX),
+	id_tip INT FOREIGN KEY REFERENCES Tipuri(id),
+)
+
+CREATE TABLE Statii(
+	id INT PRIMARY KEY IDENTITY,
+	nume NVARCHAR(MAX),
+)
+
+CREATE TABLE Rute(
+	id INT PRIMARY KEY IDENTITY,
+	nume NVARCHAR(MAX),
+	tren_id INT FOREIGN KEY REFERENCES Trenuri(id),
+)
+
+CREATE TABLE StatiiRute(
+	ruta_id INT FOREIGN KEY REFERENCES Rute(id),
+	statie_id INT FOREIGN KEY REFERENCES Statii(id),
+	oraS TIME,
+	oraP TIME,
+	CONSTRAINT PK_StatiiRute PRIMARY KEY(ruta_id, statie_id)
+)

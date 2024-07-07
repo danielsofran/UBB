@@ -1,0 +1,157 @@
+.App {
+  text-align: center;
+}
+
+.App > header {
+    background: #282c34;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(2 * (10px + 2vmin));
+    color: white;
+    font-family:  'Montserrat', sans-serif;
+}
+
+.subtitle{
+    font-size: calc(10px + 2vmin);
+    color: white;
+    font-family:  'Montserrat', sans-serif;
+    background: linear-gradient(#282c34 0%, rgba(133, 119, 119, 0.47) 100%);
+    text-align: left;
+    padding: 5vmin;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.subtitle > button{
+    background: linear-gradient(90deg, rgb(53, 98, 196) 0%, rgba(222, 212, 212, 0.5) 100%);
+    font-size: inherit;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+    color: #252525;
+    border: none;
+    cursor: pointer;
+}
+
+.subtitle > button:hover{
+    background: linear-gradient(90deg, rgb(94, 196, 53) 0%, rgba(222, 212, 212, 0.5) 100%);
+    border-radius: 20px;
+    border: 1px solid #0feed5;
+    cursor: pointer;
+}
+
+.container{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.formular{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+    padding: 0;
+    margin: 10px;
+    min-width: 25%;
+    box-sizing: border-box;
+    font-size: calc(10px + 2vmin);
+    color: white;
+}
+
+.formular-add{
+    background: radial-gradient(circle, rgb(165, 196, 53) 0%, rgba(53, 211, 100, 0.5) 100%);
+}
+
+.formular-update{
+    background: radial-gradient(circle, rgb(191, 196, 53) 0%, rgba(218, 170, 16, 0.72) 100%);
+}
+
+.formular header{
+    background-color: rgba(138, 43, 226, 0.75);
+    border-radius: inherit;
+    padding: 10px;
+    width: 99%;
+}
+
+.formular input[type="submit"] {
+    background: rgba(138, 43, 226, 0.75);
+    font-size: inherit;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    color: white;
+}
+
+.formular input[type="submit"]:hover {
+    background: rgba(138, 43, 226, 0.5);
+    border-radius: 20px;
+    border: 1px solid #0feed5;
+    cursor: pointer;
+}
+
+.formular input[type="text"] {
+    background: rgba(138, 43, 226, 0.75);
+    font-size: inherit;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+    border: none;
+    color: white;
+}
+
+
+.artist{
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #000000;
+    background: linear-gradient(90deg, rgb(53, 98, 196) 0%, rgba(222, 212, 212, 0.5) 100%);
+    border-radius: 20px;
+    padding: 20px;
+    min-width: 25%;
+    margin: 10px;
+}
+
+.artist > header{
+    background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(255,255,255,0) 100%);
+}
+
+.artist footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.artist footer button{
+    font-size: inherit;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 10px;
+    font-weight: bold;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+}
+
+.artist footer .btnEdit{
+    background: rgb(196, 177, 53);
+}
+
+.artist footer .btnDelete{
+    background: rgb(196, 53, 53);
+}
+
+.artist footer button:hover{
+    border: 2px solid #0feed5;
+}

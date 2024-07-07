@@ -1,0 +1,45 @@
+% candidat(A: Integer, B: Integer, E: Integer)
+% A, B - determina un interval inchis
+% E - un element din interval
+% (i, i, o)- nedeterminist
+
+candidat(A, B, A):- A =< B.
+candidat(A, B, R):-
+    A1 is A+1,
+    A1 =< B,
+    candidat(A1, B, R).
+
+% candidat2(L: Lista, E: Element, R: Lista)
+% aleg un element din lista si obtin si celelalte elemente din lista pe
+% langa asta
+% (i, o, o) - nedet
+candidat2([H|T], H, T).
+candidat2([H|T], E, [H|R]):-
+    candidat2(T, E, R).
+
+% calculez diferenta in modul
+absdif(A, B, R):- A >= B, R is A-B.
+absdif(A, B, R):- B > A, R is B-A.
+
+% back(L, M, Col, Rez)?
+back([], _, Col, Col).
+back(L, M, [Col1|T], Rez):-
+    not(L = []),
+    candidat2(L, E, R),
+    absdif(E, Col1, D),
+    D >= M,
+    back(R, M, [E,Col1|T], Rez).
+
+% generez secv
+gen1N(1, [1]):-!.
+gen1N(N, [N|L]):-
+    N > 1,
+    N1 is N-1,
+    gen1N(N1, L).
+
+% principal
+genSecv(N, M, Rez):-
+    N > 1, M > 0,
+    gen1N(N, L),
+    candidat2(L, E, R),
+    back(R, M, [E], Rez).

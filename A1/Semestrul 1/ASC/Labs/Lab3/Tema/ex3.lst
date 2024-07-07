@@ -1,0 +1,52 @@
+     1                                  bits 32
+     2                                  global start
+     3                                  extern exit
+     4                                  import exit msvcrt.dll
+     5                                  
+     6                                  segment data use32 class=data
+     7 00000000 0100                        a dw 1
+     8 00000002 2C                          b db 44
+     9 00000003 1D00                        c dw 29
+    10 00000005 6400000000000000            x dq 100
+    11 0000000D <res 00000004>              i resd 1 ; impartitor
+    12                                  
+    13                                  ;x-(a*100+b)/(b+c-1); FARA SEMN
+    14                                  segment code use32 class=code
+    15                                  start:
+    16 00000000 66A1[00000000]              mov ax, [a]     ; ax = a
+    17 00000006 66BB6400                    mov bx, 100
+    18 0000000A 66F7E3                      mul bx          ; dx:ax = a*100 = 100
+    19 0000000D 8A1D[02000000]              mov bl, [b]
+    20 00000013 B700                        mov bh, 0       ; bx = b
+    21 00000015 6601D8                      add ax, bx
+    22 00000018 6683D200                    adc dx, word 0  ; dx:ax = a*100 + b = 144
+    23 0000001C 6652                        push dx
+    24 0000001E 6650                        push ax
+    25 00000020 58                          pop eax         ; eax = a*100 + b
+    26 00000021 BA00000000                  mov edx, dword 0; edx:eax = a*100 + b
+    27                                      
+    28 00000026 C705[0D000000]0000-         mov dword [i], 0
+    28 0000002E 0000               
+    29 00000030 668B1D[03000000]            mov bx, [c]
+    30 00000037 66011D[0D000000]            add word [i], bx    ; i = c
+    31                                      ;adc word [i+2], word 0 - imposibil
+    32 0000003E 8A1D[02000000]              mov bl, [b]
+    33 00000044 B700                        mov bh, 0
+    34 00000046 66011D[0D000000]            add word [i], bx    
+    35 0000004D 668315[0F000000]00          adc word [i+2], 0   ; i = c + b
+    36 00000055 FF0D[0D000000]              dec dword [i]       ; i = c + b - 1
+    37                                      ; dec byte [b]    ; b - 1
+    38                                      ; mov bl, [b]
+    39                                      ; mov bh, 0       ; bx = b - 1
+    40                                      ; add [c], bx     ; c = c + b - 1
+    41                                      
+    42 0000005B F735[0D000000]              div dword [i]    ; eax = (a*100+b)/(b+c-1) dx = (a*100+b)%(b+c-1)
+    43                                      
+    44 00000061 2905[05000000]              sub [x], eax
+    45 00000067 831D[09000000]00            sbb [x+4], dword 0 ; x = x - (a*100+b)/(b+c-1)
+    46                                      
+    47 0000006E A1[05000000]                mov eax, [x]
+    48 00000073 8B15[09000000]              mov edx, [x+4]      ; edx:eax = x
+    49                                      
+    50 00000079 6A00                        push dword 0
+    51 0000007B FF15[00000000]              call [exit]

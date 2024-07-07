@@ -1,0 +1,43 @@
+     1                                  bits 32
+     2                                  global start
+     3                                  extern exit
+     4                                  import exit msvcrt.dll
+     5                                  
+     6                                  segment data use32 class=data
+     7                                      ; d dq 0FEDCBA9876543210h
+     8                                      ; ; dword [d] = 76543210h
+     9                                      ; ; dword [d+4] = FEDCBA98h
+    10                                      ; ; word [d] = 3210
+    11                                      ; ; word [d+2] = 7654
+    12                                      ; ; ...
+    13                                      ; ; byte [d+4] = 98
+    14                                      
+    15 00000000 1111118111111111            d dq 01111111181111111h
+    16                                      
+    17                                  segment code use32 class=code
+    18                                  start:
+    19                                      ; ; explicatie adc
+    20                                      ; mov ah, 0
+    21                                      ; mov al, 0AFh
+    22                                      ; mov bl, 0A0h
+    23                                      ; add al, bl ; A0 + AF = 14F = BYTE !!! => al = al+bl = -||- = 4F
+    24                                      ; adc ah, 0 ; AX = AH (=0+CF) + AL(byte[al+bl])
+    25                                      ; ; adc a, b ; a = a + b + CF
+    26                                      
+    27                                      ; d + d
+    28                                      ; add var, x-> mem64 -> IMPOSIBIL PE 32 DE BITI!!
+    29                                      ; => add dword[var], reg32_1
+    30                                      ;    add dword[var+4], reg32_2 ?!?!
+    31                                      
+    32                                      ; d -> EDX:EAX
+    33 00000000 A1[00000000]                mov eax, dword[d]
+    34 00000005 8B15[04000000]              mov edx, dword[d+4]
+    35                                      ; V1
+    36 0000000B 0105[00000000]              add [d], eax
+    37 00000011 1115[04000000]              adc [d+4], edx
+    38                                      ; edx:eax = 2*d
+    39 00000017 A1[00000000]                mov eax, dword[d]
+    40 0000001C 8B15[04000000]              mov edx, dword[d+4]
+    41                                      
+    42 00000022 6A00                        push dword 0
+    43 00000024 FF15[00000000]              call [exit]

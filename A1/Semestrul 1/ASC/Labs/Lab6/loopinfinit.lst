@@ -1,0 +1,68 @@
+     1                                  bits 32 ;asamblare și compilare pentru arhitectura de 32 biți
+     2                                  ; definim punctul de intrare in programul principal
+     3                                  global start
+     4                                  
+     5                                  ; declaram functiile externe necesare programului nostru 
+     6                                  extern exit ; indicam asamblorului ca exit exista, chiar daca noi nu o vom defini
+     7                                  import exit msvcrt.dll  ; exit este o functie care incheie procesul, este definita in msvcrt.dll
+     8                                          ; msvcrt.dll contine exit, printf si toate celelalte functii C-runtime importante
+     9                                  
+    10                                  ; segmentul de date in care se vor defini variabilele 
+    11                                  segment data use32 class=data
+    12 00000000 0204020502020404            sir DB 2, 4, 2, 5, 2, 2, 4, 4 ; declaram sirul sir
+    13                                      l equ $-sir ; l retine lungimea sirului si o converteste pentru word 
+    14 00000008 00000000                    lsubsir dd 0
+    15                                  
+    16                                  segment code use32 class=code
+    17                                  start:
+    18 00000000 B908000000                  mov ecx, l ; retinem in ecx lungimea sirului
+    19                                      
+    20                                      ;jecxz Sfarsit ; daca ecx=0 atunci nu vom avea de efectuat calcule (sirul este gol)
+    21 00000005 BE[00000000]                mov esi,sir ; punem in esi offset-ul sirului sursa (,,sir")
+    22                                      ;mov edi,D ; punem in edi offset-ul sirului destinatie (D)
+    23 0000000A FC                          cld ; vom parcurge sirul ,,sir" de ls stanga la drerapta (DF=0)
+    24 0000000B BF00000000                  mov edi, 0
+    25                                      Sortare:
+    26 00000010 AC                              lodsb
+    27 00000011 88C3                            mov bl, al ; BL = esi[l-ecx] elementul curent = elementul minim
+    28                                          
+    29                                          ; iau indexul curent
+    30 00000013 89FA                            mov edx, edi
+    31                                          
+    32 00000015 49                              dec ecx
+    33 00000016 890D[08000000]                  mov [lsubsir], ecx
+    34 0000001C 57                              push edi
+    35 0000001D 56                              push esi
+    36 0000001E E328                            jecxz Sfarsit_sortare
+    37                                          Parcurgere: ; determina minimul secventei ramase
+    38 00000020 AC                                  LODSB 
+    39 00000021 38D8                                cmp AL, BL
+    40 00000023 7D05                                JGE Sfarsit_parcurgere
+    41                                              
+    42 00000025 88C3                                mov Bl, AL ; iau indexul curent
+    43 00000027 89FA                                mov edx, edi
+    44 00000029 42                                  inc edx
+    45                                              
+    46                                              Sfarsit_parcurgere:
+    47 0000002A 47                                  inc edi
+    48 0000002B E2F3                            loop Parcurgere
+    49 0000002D 8B0D[08000000]                  mov ecx, [lsubsir]
+    50 00000033 41                              inc ecx
+    51 00000034 5E                              pop esi
+    52 00000035 5F                              pop edi
+    53                                          
+    54                                          ; interschimbam valoararea curenta cu cea minima
+    55 00000036 8A87[00000000]                  mov al, byte[sir+edi]
+    56 0000003C 889F[00000000]                  mov byte[sir+edi], bl
+    57 00000042 8882[00000000]                  mov byte[sir+edx], al
+    58                                          Sfarsit_sortare:
+    59 00000048 47                                  inc edi
+    60 00000049 49                                  dec ecx
+    61 0000004A 83FF08                              cmp edi, l
+    62 0000004D 7CC1                        jl Sortare
+    63                                      
+    64                                      Sfarsit:
+    65                                      
+    66                                      ; exit(0)
+    67 0000004F 6A00                        push dword 0 ; se pune pe stiva parametrul functiei exit
+    68 00000051 FF15[00000000]              call [exit] ; apelul functiei exit pentru terminarea executiei programului

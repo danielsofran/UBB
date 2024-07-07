@@ -1,0 +1,53 @@
+.formular{
+    padding: 10px 10px 0;
+    font-family: SansSerif, serif;
+    font-size: 36px;
+}
+
+label{
+    width: 170px;
+    text-align: right;
+    padding-right: 10px;
+}
+
+input{
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: inherit;
+    border: none;
+    letter-spacing: 18.5px;
+    width: 1000px;
+    background: transparent;
+    z-index: 100;
+}
+
+input:focus{
+    outline: none;
+}
+
+[class^="form-"]{
+    padding-bottom: 10px;
+    display: flex;
+    width: 100%;
+}
+
+.spaced-input{
+    width: 100%;
+    position: relative;
+}
+
+.squares{
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: inline-flex;
+}
+
+span{
+    --d: 36px;
+    width: var(--d);
+    height: var(--d);
+    border: 1px solid black;
+    margin: 0;
+}

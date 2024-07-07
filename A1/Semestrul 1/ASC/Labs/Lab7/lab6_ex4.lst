@@ -1,0 +1,39 @@
+     1                                  bits 32
+     2                                  global start
+     3                                  
+     4                                  extern exit
+     5                                  import exit msvcrt.dll
+     6                                  
+     7                                  segment data use32 class=data
+     8 00000000 564423116755342278-         s dd 11234456h, 22345567h, 33456678h
+     8 00000009 664533             
+     9                                      l equ ($-s)/4
+    10 0000000C <res 00000006>              d resw l
+    11                                  
+    12                                  ; Se da un sir de dublucuvinte s.
+    13                                  ; Se cere sirul d ale carui elemente sunt cuvinte obtinute in interpretarea cu semn, astfel:
+    14                                  ; - octetul inferior din d[i] este suma octetilor inferiori ai cuvintelor din fiecare dublucuvant al sirului s
+    15                                  ; - octetul superior din d[i] este suma octetilor superiori ai cuvintelor din fiecare dublucuvant al sirului s
+    16                                  segment code use32 class=code
+    17                                      start:
+    18 00000000 B903000000                      mov ecx, l
+    19 00000005 BE[00000000]                    mov esi, s
+    20 0000000A BF[0C000000]                    mov edi, d
+    21 0000000F FC                              cld
+    22 00000010 E31B                            jecxz last
+    23 00000012 66BA0000                        mov dx, 0
+    24                                          e:
+    25 00000016 66AD                                lodsw ; ax = partea high din s
+    26 00000018 00C2                                add dl, al
+    27 0000001A 00E6                                add dh, ah
+    28 0000001C 66AD                                lodsw
+    29 0000001E 00C2                                add dl, al
+    30 00000020 00E6                                add dh, ah
+    31 00000022 E2F2                            loop e
+    32                                          
+    33 00000024 6689D0                          mov ax, dx
+    34 00000027 66AB<rept>                      times l stosw
+    35                                          
+    36                                          last:
+    37 0000002D 6A00                            push dword 0        ; push the parameter for exit onto the stack
+    38 0000002F FF15[00000000]                  call [exit]         ; call exit to terminate the program

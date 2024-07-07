@@ -1,0 +1,84 @@
+     1                                  bits 32
+     2                                  
+     3                                  global start
+     4                                  
+     5                                  ;extern maxbyte
+     6                                  
+     7                                  extern exit, printf, scanf, fopen, fclose, fprintf, fscanf, system
+     8                                  import exit msvcrt.dll
+     9                                  import printf msvcrt.dll
+    10                                  import scanf msvcrt.dll
+    11                                  import fopen msvcrt.dll
+    12                                  import fclose msvcrt.dll
+    13                                  import fprintf msvcrt.dll
+    14                                  import fscanf msvcrt.dll
+    15                                  import system msvcrt.dll
+    16                                  
+    17                                  %macro PRINTF 2
+    18                                  pushad
+    19                                  push %2
+    20                                  push %1
+    21                                  call [printf]
+    22                                  add esp, 4*2
+    23                                  popad
+    24                                  %endmacro
+    25                                  
+    26                                  segment data use32 class=data
+    27 00000000 78A63412785634127D-         sir dd 1234A678h, 12345678h, 1ac3b47dh, 0fedc9876h
+    27 00000009 B4C31A7698DCFE     
+    28                                      len equ ($-sir)/4
+    29 00000010 <res 00000005>              poz resb len+1
+    30 00000015 00000000                    sum dd 0
+    31 00000019 25782000                    formatu db "%x ", 0
+    32 0000001D 256400                      formatd db "%d", 0
+    33 00000020 00000000                    nr dd 0
+    34 00000024 00000000                    i dd 0
+    35                                  
+    36                                  segment code use32 class=code
+    37                                      start:
+    38 00000000 BE[00000000]                    mov esi, sir
+    39 00000005 BF[10000000]                    mov edi, poz
+    40 0000000A B904000000                      mov ecx, len
+    41                                          bucla:
+    42 0000000F 60                                  pushad
+    43 00000010 68[24000000]                        push i
+    44 00000015 68[15000000]                        push sum
+    45 0000001A 56                                  push esi
+    46                                              call maxbyte
+    46          ******************       error: symbol `maxbyte' undefined
+    47 0000001B 83C40C                              add esp, 4*3
+    48 0000001E A3[20000000]                        mov [nr], eax
+    49 00000023 61                                  popad
+    50 00000024 A0[24000000]                        mov al, [i]
+    51 00000029 AA                                  stosb
+    52                                              PRINTF formatu, dword[nr]
+    52 0000002A 60                  <1> pushad
+    52 0000002B FF35[20000000]      <1> push %2
+    52 00000031 68[19000000]        <1> push %1
+    52 00000036 FF15[00000000]      <1> call [printf]
+    52 0000003C 83C408              <1> add esp, 4*2
+    52 0000003F 61                  <1> popad
+    53 00000040 83C604                              add esi, 4
+    54 00000043 E2CA                            loop bucla
+    55                                          
+    56 00000045 B000                            mov al, 0
+    57 00000047 AA                              stosb
+    58                                          PRINTF `%s\n\0`, poz
+    58 00000048 60                  <1> pushad
+    58 00000049 68[10000000]        <1> push %2
+    58 0000004E 6825730A00          <1> push %1
+    58 00000053 FF15[00000000]      <1> call [printf]
+    58 00000059 83C408              <1> add esp, 4*2
+    58 0000005C 61                  <1> popad
+    59                                          PRINTF formatd, dword[sum]
+    59 0000005D 60                  <1> pushad
+    59 0000005E FF35[15000000]      <1> push %2
+    59 00000064 68[1D000000]        <1> push %1
+    59 00000069 FF15[00000000]      <1> call [printf]
+    59 0000006F 83C408              <1> add esp, 4*2
+    59 00000072 61                  <1> popad
+    60 00000073 6870617573                      push `pause\0`
+    60          ******************       warning: dword data exceeds bounds [-w+number-overflow]
+    61 00000078 FF15[00000000]                  call [system]
+    62 0000007E 6A00                            push    dword 0    
+    63 00000080 FF15[00000000]                  call    [exit]      

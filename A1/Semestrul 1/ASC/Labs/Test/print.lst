@@ -1,0 +1,22 @@
+     1                                  bits 32
+     2                                  global start
+     3                                  
+     4                                  extern exit
+     5                                  import exit msvcrt.dll
+     6                                  extern printf
+     7                                  import printf msvcrt.dll
+     8                                  
+     9                                  segment data use32 class=data
+    10 00000000 6400                        r dw 100
+    11 00000002 537574612028646520-         msg db "Suta (de puncte): %d", 10, 0
+    11 0000000B 70756E637465293A20-
+    11 00000014 25640A00           
+    12                                  
+    13                                  segment code use32 class=code
+    14                                  start:
+    15 00000000 6A64                        push 100
+    16 00000002 68[02000000]                push msg
+    17                                      
+    18 00000007 FF15[00000000]              call [printf]
+    19                                  
+    20                                      

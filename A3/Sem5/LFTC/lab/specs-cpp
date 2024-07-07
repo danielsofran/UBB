@@ -1,0 +1,44 @@
+Specificare MLP in BNF
+
+Elemente lexicale
+OP = {+, -, *, /, %, <<, >>, <, >, =, ==, !=} // fara negatie
+ARITM_OP = {+, -, *, /, %}
+RELATION_OP = {<, >, ==, !=
+DELIM = {";", ",", "(", ")", "{", "}", "[", "]", "."}
+KEYWORD = {"#include", "using", "namespace", "std", "main()",
+            "int", "double", "cin", "cout", "return", "if", "else", "while"}
+
+Identificatori
+TIP -> "int" | "double"
+CARACTER -> [ascii]
+STRING -> CARACTER | CARACTER STRING
+ID -> [a-zA-Z_]{[a-zA-Z0-9_]}
+SEMN -> "+" | "-"
+NUM_Z -> [SEMN] [CIFRA_NENULA]{CIFRA} | [SEMN] 0
+NUM_R -> NUM_Z ["." NUM_N]
+NUM -> NUM_Z | NUM_R
+
+Limbajul C++
+<program> -> <includes> <namespace> {<struct>} <main>
+<includes> -> "#include" "<" STRING ">" <includes> | ""
+<struct> -> struct ID "{" <declarations> "};"
+<namespace> -> "using" "namespace" "std" ";"
+
+<main> -> "int" "main" "(" ")" "{" <declarations> <statements> "}"
+<declarations> -> <declaration> ";" | <declaration> ";" <declarations> | ""
+<declaration> -> TIP ID {, ID} | TIP <assignment> {"," <assignment>}
+
+<statements> -> <statement> | <statement> {NEWLINE}{SPACE} <statements>
+<statement> -> <declarations> | <assignment>
+<statement> -> <if> | <while> | <return> | <cin> | <cout> | <block>
+
+<assignment> -> ID "=" <expression> ';'
+<if> -> "if" "(" <expression> ")" <statement>
+<if> -> "if" "(" <expression> ")" <statement> {"else if" "(" <expression> ")" <statement>} ["else" <statement>]
+<while> -> "while" "(" <expression> ")" <statement>
+<return> -> "return" <expression> ";"
+<cin> -> "cin" ">>" ID ";"
+<cout> -> "cout" "<<" <expression> ";"
+<block> -> "{" <statements> "}"
+
+<expression> -> ID | NUM | <expression> {OP <expression>} | "(" <expression> ")"

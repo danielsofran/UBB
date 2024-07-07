@@ -1,0 +1,21 @@
+[2022-03-18 07:54:46] [info] Start Program:
+Path:"C:\Users\pauls\OneDrive\Desktop\labOOP\lab4\x64\Debug\lab4.exe"
+Arguments:
+Working directory: "C:\Users\pauls\OneDrive\Desktop\labOOP\lab4\lab4\"
+Modules: Selected: C:\Users\pauls\OneDrive\Desktop\labOOP\lab4\x64\Debug\lab4.exe Excluded: 
+Sources: Selected: C:\Users\pauls\OneDrive\Desktop\labOOP\lab4\lab4 Excluded: 
+Log Level: Normal
+Cover Children: 0
+Aggregate by file: 1
+Continue after C++ exception: 0
+Optimized build support: 0
+Export: Binary C:\Users\pauls\AppData\Local\Temp\bobpptl2.ftn 
+Input coverage: 
+Unified diff: 
+Excluded line regular expressions: 
+Substitute pdb source paths: 
+
+[2022-03-18 07:54:46] [info] Module: C:\Users\pauls\OneDrive\Desktop\labOOP\lab4\x64\Debug\lab4.exe is selected because it matches selected pattern: C:\Users\pauls\OneDrive\Desktop\labOOP\lab4\x64\Debug\lab4.exe
+[2022-03-18 07:54:46] [info] ----------------------------------------------------
+[2022-03-18 07:54:46] [info] Coverage binary generated in file: C:\Users\pauls\AppData\Local\Temp\bobpptl2.ftn
+[2022-03-18 07:54:46] [info] ----------------------------------------------------

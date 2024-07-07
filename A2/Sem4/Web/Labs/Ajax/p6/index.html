@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        table{
+            font-size: 20px;
+            margin: 20px;
+        }
+        td{
+            padding: 5px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+
+<form id="form" name="form" method="get">
+    <h4>Producator</h4>
+    <ul id="producatori">
+    </ul>
+
+    <h4>Procesor</h4>
+    <ul id="procesoare">
+    </ul>
+
+    <h4>Memorie</h4>
+    <ul id="memorii">
+    </ul>
+
+    <button type="button" onclick="loadContent()">Filter</button>
+</form>
+
+    <table id="table">
+        <thead>
+        <tr>
+            <th>Nume</th>
+            <th>Producator</th>
+            <th>Procesor</th>
+            <th>Memorie</th>
+        </tr>
+        </thead>
+        <tbody id="content">
+        </tbody>
+    </table>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="withjQuery.js"></script>
+<!--    <script src="withoutjQuery.js"></script>-->
+
+</body>
+</html>

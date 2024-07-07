@@ -1,0 +1,373 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="vw-100 vh-100 mb-5">
+
+    {# MODALS #}
+    <div class="modal fade" id="modalCancelCome" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel1" aria-hidden="true">
+      <div class="modal-dialog me-auto">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fs-2" id="staticBackdropLabel1">Atentie!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body fs-4">
+            Timpul si locatia ajungerii va fi stearsa!<br>
+            Sigur doriti sa o anulati?
+          </div>
+          <div class="modal-footer justify-content-around">
+            <button type="button" class="btn btn-danger fs-3" data-bs-dismiss="modal">Anuleaza</button>
+            <button type="button" class="btn btn-warning fs-3" onclick="window.location.href = '{% url 'cancel_come' %}'">Continua</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalCancelLeft" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel2" aria-hidden="true">
+      <div class="modal-dialog me-auto">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fs-2" id="staticBackdropLabel2">Atentie!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body fs-4">
+            Timpul si locatia plecarii va fi stearsa!<br>
+            Sigur doriti sa o anulati?
+          </div>
+          <div class="modal-footer justify-content-around">
+            <button type="button" class="btn btn-danger fs-3" data-bs-dismiss="modal">Anuleaza</button>
+            <button type="button" class="btn btn-warning fs-3" onclick="window.location.href = '{% url 'cancel_left' %}'">Continua</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalInvalidComand" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel3" aria-hidden="true">
+      <div class="modal-dialog me-auto">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fs-2" id="staticBackdropLabel3">Atentie!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body fs-4">
+            Denumirea sau numarul comenzii sunt invalide!
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger fs-3" data-bs-dismiss="modal">Reincearca</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalInvalidLoc" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel4" aria-hidden="true">
+      <div class="modal-dialog me-auto">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fs-2" id="staticBackdropLabel4">Atentie!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body fs-4">
+            Locatie invalida!
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary fs-3" data-bs-dismiss="modal">Ok</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="modal fade" id="modalUnsupportedLoc" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel5" aria-hidden="true">
+      <div class="modal-dialog me-auto">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title fs-2" id="staticBackdropLabel5">Atentie!</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body fs-4">
+            Locatie invalida!<br>
+            Va rugam sa schimbati browser-ul.
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary fs-3" data-bs-dismiss="modal">Ok</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {# BUTOANE #}
+    <div class="d-flex flex-row justify-content-center">
+    <div class="align-self-center mb-3">
+    <div class="d-inline-flex flex-column text-center overflow-hidden align-start pe-0 ">
+        <div class="my-3 ms-5">
+            <div class="d-flex flex-row justify-content-center">
+                <button type="button" class="btn p-3 border fs-1 me-3 flex-fill" style="background-color: aquamarine" onclick="ajuns()">Am ajuns </button>
+                <button id="inputModalCancelCome" type="button" data-bs-toggle="modal" data-bs-target="#modalCancelCome" class="btn btn-danger btn-square-md font-weight-bold fs-1 align-self-center my-0 px-3 py-3 me-5" ><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
+
+        <div class="my-3 ms-5">
+            <div class="d-flex flex-row">
+                <button type="button" class="btn btn-warning mx-auto p-3 border fs-1 me-5 flex-fill" onclick="toogleView('comeObsDiv')">Am ajuns, fac o observatie </button>
+            </div>
+            <div class="d-none form-floating fs-4 mt-3" id="comeObsDiv">
+              <textarea maxlength="200" class="form-control fs-4" placeholder="Scrieti observatia/motivarea aici" id="comeObs" style="height: 100px" required></textarea>
+              <label for="comeObs">Observatie</label>
+              <div class="d-flex flex-row justify-content-around mt-1 fs-5">
+                  <button onclick="toogleView('comeObsDiv')" class="btn btn-danger btn-square-md font-weight-bold fs-2 align-self-center my-0" > Anuleaza </button>
+                  <button onclick="ajuns('cutext')" class="btn btn-primary font-weight-bold fs-2 align-self-center my-0 me-3">Trimite</button>
+              </div>
+
+            </div>
+        </div>
+
+        <div class="my-3 ms-5">
+            <div class="d-flex flex-row justify-content-center">
+                <button type="button" class="btn p-3 border fs-1 me-3 flex-fill" style="background-color:#f06969" onclick="plecat()">Am plecat</button>
+                <button id="inputModalCancelLeft" type="button" data-bs-toggle="modal" data-bs-target="#modalCancelLeft" class="btn btn-danger btn-square-md font-weight-bold fs-1 align-self-center px-3 py-3 me-5"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+        </div>
+
+        <div class="my-3 ms-5">
+            <div class="d-flex flex-row">
+                <button type="button" class="btn btn-warning mx-auto p-3 border fs-1 me-5 flex-fill" onclick="toogleView('leftObsDiv')">Am plecat, fac o observatie </button>
+            </div>
+            <div class="d-none form-floating fs-4 mt-3" id="leftObsDiv">
+              <textarea maxlength="200" class="form-control fs-4" placeholder="Scrieti observatia/motivarea aici" id="leftObs" style="height: 100px" required></textarea>
+              <label for="leftObs">Observatie</label>
+              <div class="d-flex flex-row justify-content-around mt-1 fs-5">
+                  <button onclick="toogleView('leftObsDiv')" class="btn btn-danger btn-square-md font-weight-bold fs-2 align-self-center my-0" > Anuleaza </button>
+                  <button onclick="plecat('cutext')" class="btn btn-primary font-weight-bold fs-2 align-self-center my-0 me-3">Trimite</button>
+              </div>
+
+            </div>
+        </div>
+
+        <div class="my-3 ms-5">
+            <div class="d-flex flex-row">
+                <button type="button" class="btn mx-auto p-3 border fs-1 me-5 flex-fill" style="background-color: aqua" onclick="toogleView('comandDiv')">Am terminat o comanda</button>
+{#                <div class="d-flex flex-row"><button onclick="toogleView('comandDiv')" class="btn btn-danger btn-square-md font-weight-bold fs-1 align-self-center my-0"><i class="fa-solid fa-xmark"></i></button></div>#}
+            </div>
+            <div class="d-none fs-2 pt-3" id="comandDiv">
+                <div class="row mb-3 fs-3">
+                    <label for="comandaDen" class="form-label fs-2" style="text-align: left !important;">Denumire</label>
+                    <input class="form-control fs-3" list="datalistOptions" id="comandaDen" placeholder="Alege/Scrie denumirea produsului" required>
+                    <datalist id="datalistOptions">
+                      {% for cmd in datalist_comanda %}
+                      <option value="{{ cmd }}">
+                      {% endfor %}
+                </datalist>
+                </div>
+                <div class="row mb-3 fs-3">
+                    <label for="inputNrComanda" class="col-form-label fs-3 text-start">Numar comanda</label>
+                    <div class="col-sm-10">
+                      <input type="text" class="form-control fs-3" id="inputNrComanda" required>
+                    </div>
+                </div>
+                <div class="form-floating fs-4 mt-3">
+                  <textarea maxlength="200" class="form-control fs-4" placeholder="Scrieti observatia/motivarea aici" id="comandObs" style="height: 100px"></textarea>
+                  <label for="comandObs">Observatie</label>
+                  <div class="d-flex flex-row justify-content-around mt-1 fs-5">
+                      <button onclick="toogleView('comandDiv')" class="btn btn-danger btn-square-md font-weight-bold fs-2 align-self-center my-0" > Anuleaza </button>
+                      <button onclick="comanda()" class="btn btn-primary font-weight-bold fs-2 align-self-center my-0 me-3">Trimite</button>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="my-3 ms-5">
+            <div class="d-flex flex-row">
+                <button type="button" class="btn mx-auto p-3 border fs-1 me-5 flex-fill" style="background-color: sandybrown" onclick="toogleView('lucruDiv')">Am terminat un lucru</button>
+{#                <div class="d-flex flex-row"><button onclick="toogleView('comandDiv')" class="btn btn-danger btn-square-md font-weight-bold fs-1 align-self-center my-0"><i class="fa-solid fa-xmark"></i></button></div>#}
+            </div>
+            <div class="d-none fs-2 pt-3" id="lucruDiv">
+                <div class="row mb-3 fs-3">
+                    <label for="lucruDen" class="form-label fs-2" style="text-align: left !important;">Denumire</label>
+                    <input class="form-control fs-3" list="datalistOptions2" id="lucruDen" placeholder="Scrie denumirea lucrului" required>
+                    <datalist id="datalistOptions2">
+                      {% for lucru in datalist_lucru %}
+                      <option value="{{ lucru }}">
+                      {% endfor %}
+                    </datalist>
+                </div>
+                <div class="form-floating fs-4 mt-3">
+                  <textarea maxlength="200" class="form-control fs-4" placeholder="Scrieti observatia/motivarea aici" id="lucruObs" style="height: 100px"></textarea>
+                  <label for="lucruObs">Observatie</label>
+                  <div class="d-flex flex-row justify-content-around mt-1 fs-5">
+                      <button onclick="toogleView('lucruDiv')" class="btn btn-danger btn-square-md font-weight-bold fs-2 align-self-center my-0" > Anuleaza </button>
+                      <button onclick="lucru()" class="btn btn-primary font-weight-bold fs-2 align-self-center my-0 me-3">Trimite</button>
+                  </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="my-3 ms-5 d-flex flex-row">
+            <a class="btn btn-primary fs-2 mx-auto me-5 p-3 border flex-fill" href="{% url 'actToday' %}">Vezi activitatea de astazi</a>
+        </div>
+    </div>
+    </div>
+    </div>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script>
+
+window.addEventListener('load', ()=>{
+    idsmodals = ['modalCancelCome', 'modalCancelLeft']
+    idsinputs = ['inputModalCancelCome', 'inputModalCancelLeft']
+
+    for(let i=0;i<idsmodals.length;++i) {
+        myModal = document.getElementById(idsmodals[i])
+        myInput = document.getElementById(idsinputs[i])
+        myModal.addEventListener('shown.bs.modal', function () {
+            myInput.focus()
+        })
+    }
+}, false)
+
+function toogleView(domname){
+    elem = document.getElementById(domname);
+    if(elem.classList.contains("d-none"))
+        elem.classList.remove("d-none");
+    else elem.classList.add("d-none");
+}
+
+function loadMap(loc){
+    if(loc.trim().length === 0 || loc === "-") {
+        invComModal = new bootstrap.Modal(document.getElementById("modalInvalidLoc"), {});
+        invComModal.show();
+    }
+    else {
+        //let adress = "https://www.google.com/maps/dir/" + loc + "//@" + loc + "47.1796062,24.1704734,21z";
+        let adress = "{{ harta|safe }}";
+        let pos = loc.trim().split(',')
+        let rlat = new RegExp('\\^\\^lat\\^\\^', 'g')
+        let rlong = new RegExp('\\^\\^long\\^\\^', 'g')
+        adress = adress.replace(rlat, pos[0]).replace(rlong, pos[1])
+        window.open(adress, '_blank');
+    }
+}
+
+function createHttpRequest(adress, method='GET') {
+    httpRequest = new XMLHttpRequest();
+    httpRequest.open(method, adress);
+    httpRequest.send();
+    httpRequest.onreadystatechange = function(){
+        // Process the server response here.
+        if (httpRequest.readyState === XMLHttpRequest.DONE) {
+          if (httpRequest.status === 200) {
+              location.reload();
+          }
+        }
+    }
+}
+
+function displayError(error) {
+  var errors = {
+    1: 'Permisiune refuzata',
+    2: 'Pozitie invalida',
+    3: 'Timpul a expirat',
+    default: "Eroare",
+  };
+  alert("Error: " + errors[error.code]);
+}
+
+times = 3
+function getLocation(callback){
+    if (navigator.geolocation) {
+      let timeoutVal = 10 * 1000 * 1000;
+      navigator.geolocation.getCurrentPosition(
+        callback,
+        (error) => {
+            if(times > 0) {
+                times--;
+                getLocation(callback);
+            }
+            else displayError(error);
+        },
+        { enableHighAccuracy: true, timeout: timeoutVal, maximumAge: 0 }
+      );
+    }
+    else {
+      invComModal = new bootstrap.Modal(document.getElementById("modalUnsupportedLoc"), {});
+      invComModal.show();
+    }
+}
+
+
+function ajuns(text = "") {
+    if(text === "cutext"){
+        text = document.getElementById("comeObs").value
+    }
+    processposition("{% url 'come' %}", text)
+}
+
+function recalc_ajuns(){
+    processposition("{% url 'come_recalc' %}")
+}
+
+function plecat(text = ""){
+    if(text === "cutext"){
+        text = document.getElementById("leftObs").value
+    }
+    processposition("{% url 'left' %}", text)
+}
+
+function recalc_plecat(){
+    processposition("{% url 'left_recalc' %}")
+}
+
+function processposition(url, text=""){
+    getLocation((position) => {
+        text = text.replace(/\n\r?/g, '; ');
+        adress = url + `?lat=${position.coords.latitude}&long=${position.coords.longitude}&obs=${text}`;
+        window.location.href = adress;
+    });
+    //getLocation((position1) => {
+    //    getLocation((position2) => {
+    //        getLocation((position3) => {
+    //            position3.coords.latitude = (position1.coords.latitude + position2.coords.latitude + position3.coords.latitude) / 3.0;
+    //            position3.coords.longitude = (position1.coords.longitude + position2.coords.longitude + position3.coords.longitude) / 3.0;
+    //            text = text.replace(/\n\r?/g, '; ');
+    //            adress = url + `?lat=${position3.coords.latitude}&long=${position3.coords.longitude}&obs=${text}`;
+    //            window.location.href = adress;
+    //        });
+    //    });
+    //});
+}
+
+function comanda(){
+    den = document.getElementById("comandaDen").value;
+    nrcom = document.getElementById("inputNrComanda").value;
+    text = document.getElementById("comandObs").value;
+    text = text.replace(/\n\r?/g, '; ');
+
+    if(den.trim().length === 0) {
+        invComModal = new bootstrap.Modal(document.getElementById("modalInvalidComand"), {});
+        invComModal.show();
+        return;
+    }
+    if(nrcom.trim().length === 0) {
+        invComModal = new bootstrap.Modal(document.getElementById("modalInvalidComand"), {});
+        invComModal.show();
+        return;
+    }
+    getLocation((position) => {
+        adress = "{% url 'comanda_finish' %}" + `?lat=${position.coords.latitude}&long=${position.coords.longitude}&obs=${text}&den=${den}&nrcom=${nrcom}`;
+        window.location.href = adress;
+    });
+}
+
+function lucru(){
+    den = document.getElementById("lucruDen").value;
+    text = document.getElementById("lucruObs").value;
+    text = text.replace(/\n\r?/g, '; ');
+    if(den.trim().length === 0) {
+        invComModal = new bootstrap.Modal(document.getElementById("modalInvalidComand"), {});
+        invComModal.show();
+        return;
+    }
+    getLocation((position) => {
+        adress = "{% url 'lucru_finish' %}" + `?lat=${position.coords.latitude}&long=${position.coords.longitude}&obs=${text}&den=${den}`;
+        window.location.href = adress;
+    });
+}
+
+</script>
+{% endblock %}

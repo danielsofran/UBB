@@ -1,0 +1,44 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  
+     3                                  ; declare the EntryPoint (a label defining the very first instruction of the program)
+     4                                  global start        
+     5                                  
+     6                                  ; declare external functions needed by our program
+     7                                  extern exit               ; tell nasm that exit exists even if we won't be defining it
+     8                                  import exit msvcrt.dll    ; exit is a function that ends the calling process. It is defined in msvcrt.dll
+     9                                                            ; msvcrt.dll contains exit, printf and all the other important C-runtime specific functions
+    10                                  
+    11                                  ; our data is declared here (the variables needed by our program)
+    12                                  segment data use32 class=data
+    13 00000000 010202080201030602          s db 1, 2, 2, 8, 2, 1, 3, 6, 2
+    14                                      l equ $-s
+    15 00000009 <res 00000008>              d resb 8
+    16                                  
+    17                                  ; our code starts here
+    18                                  segment code use32 class=code
+    19                                      pb23:
+    20 00000000 B900000000                      mov ecx, 0 ; index pe s
+    21 00000005 BA00000000                      mov edx, 0 ; lungimea&index pe d
+    22                                          bucla_s: ; parcurgem s, s[ecx] = BYTE[s+ecx]
+    23                                              ; il cautam pe s[ecx] in d
+    24 0000000A BB00000000                          mov ebx, 0 ; index pe d
+    25                                              bucla_d: ; parcurgem d, d[ebx] = [d+ebx]
+    26 0000000F 8A83[09000000]                          mov al, byte [d+ebx] ; d[ebx]
+    27 00000015 3A81[00000000]                          cmp al, [s+ecx]
+    28 0000001B 7412                                    je sfarsit_bucla_s
+    29 0000001D 43                                      inc ebx
+    30 0000001E 39D3                                    cmp ebx, edx
+    31 00000020 72ED                                jb bucla_d
+    32                                              append:
+    33 00000022 8A81[00000000]                          mov al, byte[s+ecx]
+    34 00000028 8882[09000000]                          mov [d+edx], al
+    35 0000002E 42                                      inc edx
+    36                                              sfarsit_bucla_s:
+    37 0000002F 41                                      inc ecx
+    38 00000030 83F909                                  cmp ecx, l
+    39 00000033 72D5                            jb bucla_s
+    40                                      start:
+    41 00000035 B803000000                      mov eax, 3
+    42 0000003A 85C0                            test eax, eax
+    43 0000003C 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    44 0000003E FF15[00000000]                  call    [exit]       ; call exit to terminate the programs

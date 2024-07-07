@@ -1,0 +1,133 @@
+﻿{
+  "Metadata": {
+    "Id": "c9543cba-2238-4802-baad-01ec6dcac0b6",
+    "Kind": "FormIo"
+  },
+  "DesignProperties": {
+    "Title": "GetUserPref",
+    "Theme": "Default",
+    "ShowInTaskbar": true,
+    "ShowMargin": true,
+    "CustomStyle": ""
+  },
+  "Data": {
+    "components": [
+      {
+        "label": "An",
+        "labelPosition": "left-left",
+        "displayMask": "9999",
+        "tableView": false,
+        "delimiter": false,
+        "requireDecimal": false,
+        "truncateMultipleSpaces": false,
+        "key": "an",
+        "type": "number",
+        "input": true,
+        "labelWidth": 10
+      },
+      {
+        "label": "Semestru",
+        "labelPosition": "left-left",
+        "widget": "choicesjs",
+        "tableView": true,
+        "defaultValue": 1,
+        "data": {
+          "values": [
+            {
+              "label": "1",
+              "value": 1
+            },
+            {
+              "label": "2",
+              "value": 2
+            }
+          ]
+        },
+        "key": "semestru",
+        "type": "select",
+        "input": true,
+        "keyModified": true
+      },
+      {
+        "label": "Grupa",
+        "labelPosition": "left-left",
+        "displayMask": "999",
+        "tableView": false,
+        "delimiter": false,
+        "requireDecimal": false,
+        "truncateMultipleSpaces": false,
+        "key": "grupa",
+        "type": "number",
+        "labelWidth": 10,
+        "inputMaskPlaceholderChar": "999",
+        "input": true,
+        "defaultValue": 237
+      },
+      {
+        "label": "Specializare",
+        "labelPosition": "left-left",
+        "widget": "choicesjs",
+        "tableView": true,
+        "data": {
+          "values": [
+            {
+              "label": "Informatica Romana",
+              "value": "I"
+            },
+            {
+              "label": "Matematica Romana",
+              "value": "M"
+            },
+            {
+              "label": "Informatica Engleza",
+              "value": "IE"
+            }
+          ]
+        },
+        "key": "specializare",
+        "type": "select",
+        "input": true,
+        "defaultValue": "I",
+        "labelWidth": 10
+      },
+      {
+        "label": "An de studiu",
+        "labelPosition": "left-left",
+        "widget": "choicesjs",
+        "tableView": true,
+        "data": {
+          "values": [
+            {
+              "label": "1",
+              "value": "1"
+            },
+            {
+              "label": "2",
+              "value": "2"
+            },
+            {
+              "label": "3",
+              "value": "3"
+            }
+          ]
+        },
+        "key": "anDeStudiu",
+        "type": "select",
+        "labelWidth": 10,
+        "input": true,
+        "defaultValue": 3
+      },
+      {
+        "label": "Get Orar",
+        "action": "saveState",
+        "showValidations": false,
+        "block": true,
+        "disableOnInvalid": true,
+        "tableView": false,
+        "key": "submit",
+        "type": "button",
+        "input": true
+      }
+    ]
+  }
+}

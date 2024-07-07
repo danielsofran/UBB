@@ -1,0 +1,42 @@
+     1                                  bits 32
+     2                                  global start
+     3                                  
+     4                                  extern exit
+     5                                  import exit msvcrt.dll
+     6                                  
+     7                                  segment data use32 class=data
+     8 00000000 0703090105                  s1 db 7, 3, 9, 1, 5
+     9 00000005 020406080A                  s2 db 2, 4, 6, 8, 10
+    10                                      l equ $-s2
+    11 0000000A <res 00000005>              d resb l
+    12                                      
+    13                                  ; Se dau 2 siruri de numere intregi s1 si s2 de lungimi egale.
+    14                                  ; Se cere sirul de numere intregi d obtinut astfel:
+    15                                  ; - d[i] = s1[i] - s2[i], daca s1[i] > s2[i]
+    16                                  ; - d[i] = s2[i] - s1[i], altfel.
+    17                                  segment code use32 class=code
+    18                                      start:
+    19 00000000 BE00000000                      mov esi, 0 ; index s1, s2
+    20 00000005 B905000000                      mov ecx, l
+    21                                          
+    22 0000000A E32F                            jecxz final
+    23                                          bucla:
+    24 0000000C 8A86[00000000]                      mov al, [s1 + esi]
+    25 00000012 3A86[05000000]                      cmp al, [s2 + esi]
+    26 00000018 7702                                ja mai_mare
+    27 0000001A 760E                                jbe mai_mic
+    28                                              mai_mare:
+    29 0000001C 2A86[05000000]                          sub al, [s2 + esi]
+    30 00000022 8886[0A000000]                          mov [d + esi], al
+    31 00000028 EB0E                                    jmp continue
+    32                                              mai_mic:
+    33 0000002A F6D8                                    neg al
+    34 0000002C 0286[05000000]                          add al, [s2 + esi]
+    35 00000032 8886[0A000000]                          mov [d + esi], al
+    36                                              continue:
+    37 00000038 46                                      inc esi
+    38 00000039 E2D1                            loop bucla
+    39                                          final:
+    40                                          ; exit(0)
+    41 0000003B 6A00                            push dword 0        ; push the parameter for exit onto the stack
+    42 0000003D FF15[00000000]                  call [exit]         ; call exit to terminate the program

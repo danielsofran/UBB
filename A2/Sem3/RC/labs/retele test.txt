@@ -1,0 +1,7 @@
+- 2 LAN care comunica + wifi (dhcp prin router pe o retea si cu server pe cealalta) 5 + static route
+- NAT pe unul din lan uri 1.5
+- un server web accesibil din TOATE RETELELE 1
+- RIP V2 0.5
+- DNS 1
+
+OFICIU 1p

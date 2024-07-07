@@ -1,0 +1,775 @@
+Terminals unused in grammar
+
+    DELIMITATORS
+    PARENTHESIS_O
+    PARENTHESIS_C
+    ARITHMETIC_OPERATORS
+
+
+State 16 conflicts: 5 shift/reduce
+State 18 conflicts: 1 shift/reduce
+State 19 conflicts: 1 shift/reduce
+State 23 conflicts: 6 shift/reduce
+
+
+Grammar
+
+    0 $accept: program $end
+
+    1 program: headers USING NAMESPACE STD SEMICOLON TYPE_INT MAIN_BEGIN ACOLADA_OPEN block_decl_var instr_comp ACOLADA_CLOSE
+
+    2 headers: header
+    3        | headers header
+
+    4 header: INCLUDE HEADER_FILE_NAME
+
+    5 block_decl_var: TYPE list_decl_var SEMICOLON
+
+    6 list_decl_var: decl_var
+    7              | decl_var COMMA list_decl_var
+
+    8 decl_var: ID
+    9         | ID ASSIGMENT_OPERATOR expr
+
+   10 TYPE: TYPE_INT
+
+   11 instr_comp: base_instr
+   12           | instr_comp base_instr
+
+   13 base_instr: ε
+   14           | instr
+   15           | block_decl_var
+
+   16 instr: assigment SEMICOLON
+   17      | io_stmt SEMICOLON
+   18      | RETURN INT SEMICOLON
+
+   19 assigment: ID ASSIGMENT_OPERATOR expr
+
+   20 io_stmt: read_input
+   21        | write_output
+
+   22 read_input: CIN lista_input
+
+   23 lista_input: ε
+   24            | read_instr
+   25            | lista_input read_instr
+
+   26 read_instr: SHIFT_RIGHT term
+
+   27 write_output: COUT lista_output
+
+   28 lista_output: ε
+   29             | write_instr
+   30             | lista_output write_instr
+
+   31 write_instr: SHIFT_LEFT term
+
+   32 expr: term
+   33     | expr DIV term
+   34     | expr MULT term
+   35     | expr PLUS term
+   36     | expr MINUS term
+
+   37 term: INT
+   38     | ID
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    error (256)
+    INCLUDE (258) 4
+    CIN (259) 22
+    COUT (260) 27
+    MAIN_BEGIN (261) 1
+    USING (262) 1
+    NAMESPACE (263) 1
+    STD (264) 1
+    RETURN (265) 18
+    SEMICOLON (266) 1 5 16 17 18
+    DELIMITATORS (267)
+    ACOLADA_OPEN (268) 1
+    ACOLADA_CLOSE (269) 1
+    PARENTHESIS_O (270)
+    PARENTHESIS_C (271)
+    HEADER_FILE_NAME (272) 4
+    SHIFT_LEFT (273) 31
+    SHIFT_RIGHT (274) 26
+    ASSIGMENT_OPERATOR (275) 9 19
+    ARITHMETIC_OPERATORS (276)
+    MULT (277) 34
+    DIV (278) 33
+    PLUS (279) 35
+    MINUS (280) 36
+    COMMA (281) 7
+    TYPE_INT (282) 1 10
+    INT <val> (283) 18 37
+    ID <val> (284) 8 9 19 38
+
+
+Nonterminals, with rules where they appear
+
+    $accept (30)
+        on left: 0
+    program (31)
+        on left: 1
+        on right: 0
+    headers (32)
+        on left: 2 3
+        on right: 1 3
+    header (33)
+        on left: 4
+        on right: 2 3
+    block_decl_var (34)
+        on left: 5
+        on right: 1 15
+    list_decl_var (35)
+        on left: 6 7
+        on right: 5 7
+    decl_var (36)
+        on left: 8 9
+        on right: 6 7
+    TYPE (37)
+        on left: 10
+        on right: 5
+    instr_comp (38)
+        on left: 11 12
+        on right: 1 12
+    base_instr (39)
+        on left: 13 14 15
+        on right: 11 12
+    instr (40)
+        on left: 16 17 18
+        on right: 14
+    assigment (41)
+        on left: 19
+        on right: 16
+    io_stmt (42)
+        on left: 20 21
+        on right: 17
+    read_input (43)
+        on left: 22
+        on right: 20
+    lista_input (44)
+        on left: 23 24 25
+        on right: 22 25
+    read_instr <attr> (45)
+        on left: 26
+        on right: 24 25
+    write_output (46)
+        on left: 27
+        on right: 21
+    lista_output (47)
+        on left: 28 29 30
+        on right: 27 30
+    write_instr <attr> (48)
+        on left: 31
+        on right: 29 30
+    expr <attr> (49)
+        on left: 32 33 34 35 36
+        on right: 9 19 33 34 35 36
+    term <attr> (50)
+        on left: 37 38
+        on right: 26 31 32 33 34 35 36
+
+
+State 0
+
+    0 $accept: • program $end
+
+    INCLUDE  shift, and go to state 1
+
+    program  go to state 2
+    headers  go to state 3
+    header   go to state 4
+
+
+State 1
+
+    4 header: INCLUDE • HEADER_FILE_NAME
+
+    HEADER_FILE_NAME  shift, and go to state 5
+
+
+State 2
+
+    0 $accept: program • $end
+
+    $end  shift, and go to state 6
+
+
+State 3
+
+    1 program: headers • USING NAMESPACE STD SEMICOLON TYPE_INT MAIN_BEGIN ACOLADA_OPEN block_decl_var instr_comp ACOLADA_CLOSE
+    3 headers: headers • header
+
+    INCLUDE  shift, and go to state 1
+    USING    shift, and go to state 7
+
+    header  go to state 8
+
+
+State 4
+
+    2 headers: header •
+
+    $default  reduce using rule 2 (headers)
+
+
+State 5
+
+    4 header: INCLUDE HEADER_FILE_NAME •
+
+    $default  reduce using rule 4 (header)
+
+
+State 6
+
+    0 $accept: program $end •
+
+    $default  accept
+
+
+State 7
+
+    1 program: headers USING • NAMESPACE STD SEMICOLON TYPE_INT MAIN_BEGIN ACOLADA_OPEN block_decl_var instr_comp ACOLADA_CLOSE
+
+    NAMESPACE  shift, and go to state 9
+
+
+State 8
+
+    3 headers: headers header •
+
+    $default  reduce using rule 3 (headers)
+
+
+State 9
+
+    1 program: headers USING NAMESPACE • STD SEMICOLON TYPE_INT MAIN_BEGIN ACOLADA_OPEN block_decl_var instr_comp ACOLADA_CLOSE
+
+    STD  shift, and go to state 10
+
+
+State 10
+
+    1 program: headers USING NAMESPACE STD • SEMICOLON TYPE_INT MAIN_BEGIN ACOLADA_OPEN block_decl_var instr_comp ACOLADA_CLOSE
+
+    SEMICOLON  shift, and go to state 11
+
+
+State 11
+
+    1 program: headers USING NAMESPACE STD SEMICOLON • TYPE_INT MAIN_BEGIN ACOLADA_OPEN block_decl_var instr_comp ACOLADA_CLOSE
+
+    TYPE_INT  shift, and go to state 12
+
+
+State 12
+
+    1 program: headers USING NAMESPACE STD SEMICOLON TYPE_INT • MAIN_BEGIN ACOLADA_OPEN block_decl_var instr_comp ACOLADA_CLOSE
+
+    MAIN_BEGIN  shift, and go to state 13
+
+
+State 13
+
+    1 program: headers USING NAMESPACE STD SEMICOLON TYPE_INT MAIN_BEGIN • ACOLADA_OPEN block_decl_var instr_comp ACOLADA_CLOSE
+
+    ACOLADA_OPEN  shift, and go to state 14
+
+
+State 14
+
+    1 program: headers USING NAMESPACE STD SEMICOLON TYPE_INT MAIN_BEGIN ACOLADA_OPEN • block_decl_var instr_comp ACOLADA_CLOSE
+
+    TYPE_INT  shift, and go to state 15
+
+    block_decl_var  go to state 16
+    TYPE            go to state 17
+
+
+State 15
+
+   10 TYPE: TYPE_INT •
+
+    $default  reduce using rule 10 (TYPE)
+
+
+State 16
+
+    1 program: headers USING NAMESPACE STD SEMICOLON TYPE_INT MAIN_BEGIN ACOLADA_OPEN block_decl_var • instr_comp ACOLADA_CLOSE
+
+    CIN       shift, and go to state 18
+    COUT      shift, and go to state 19
+    RETURN    shift, and go to state 20
+    TYPE_INT  shift, and go to state 15
+    ID        shift, and go to state 21
+
+    CIN       [reduce using rule 13 (base_instr)]
+    COUT      [reduce using rule 13 (base_instr)]
+    RETURN    [reduce using rule 13 (base_instr)]
+    TYPE_INT  [reduce using rule 13 (base_instr)]
+    ID        [reduce using rule 13 (base_instr)]
+    $default  reduce using rule 13 (base_instr)
+
+    block_decl_var  go to state 22
+    TYPE            go to state 17
+    instr_comp      go to state 23
+    base_instr      go to state 24
+    instr           go to state 25
+    assigment       go to state 26
+    io_stmt         go to state 27
+    read_input      go to state 28
+    write_output    go to state 29
+
+
+State 17
+
+    5 block_decl_var: TYPE • list_decl_var SEMICOLON
+
+    ID  shift, and go to state 30
+
+    list_decl_var  go to state 31
+    decl_var       go to state 32
+
+
+State 18
+
+   22 read_input: CIN • lista_input
+
+    SHIFT_RIGHT  shift, and go to state 33
+
+    SHIFT_RIGHT  [reduce using rule 23 (lista_input)]
+    $default     reduce using rule 23 (lista_input)
+
+    lista_input  go to state 34
+    read_instr   go to state 35
+
+
+State 19
+
+   27 write_output: COUT • lista_output
+
+    SHIFT_LEFT  shift, and go to state 36
+
+    SHIFT_LEFT  [reduce using rule 28 (lista_output)]
+    $default    reduce using rule 28 (lista_output)
+
+    lista_output  go to state 37
+    write_instr   go to state 38
+
+
+State 20
+
+   18 instr: RETURN • INT SEMICOLON
+
+    INT  shift, and go to state 39
+
+
+State 21
+
+   19 assigment: ID • ASSIGMENT_OPERATOR expr
+
+    ASSIGMENT_OPERATOR  shift, and go to state 40
+
+
+State 22
+
+   15 base_instr: block_decl_var •
+
+    $default  reduce using rule 15 (base_instr)
+
+
+State 23
+
+    1 program: headers USING NAMESPACE STD SEMICOLON TYPE_INT MAIN_BEGIN ACOLADA_OPEN block_decl_var instr_comp • ACOLADA_CLOSE
+   12 instr_comp: instr_comp • base_instr
+
+    CIN            shift, and go to state 18
+    COUT           shift, and go to state 19
+    RETURN         shift, and go to state 20
+    ACOLADA_CLOSE  shift, and go to state 41
+    TYPE_INT       shift, and go to state 15
+    ID             shift, and go to state 21
+
+    CIN            [reduce using rule 13 (base_instr)]
+    COUT           [reduce using rule 13 (base_instr)]
+    RETURN         [reduce using rule 13 (base_instr)]
+    ACOLADA_CLOSE  [reduce using rule 13 (base_instr)]
+    TYPE_INT       [reduce using rule 13 (base_instr)]
+    ID             [reduce using rule 13 (base_instr)]
+
+    block_decl_var  go to state 22
+    TYPE            go to state 17
+    base_instr      go to state 42
+    instr           go to state 25
+    assigment       go to state 26
+    io_stmt         go to state 27
+    read_input      go to state 28
+    write_output    go to state 29
+
+
+State 24
+
+   11 instr_comp: base_instr •
+
+    $default  reduce using rule 11 (instr_comp)
+
+
+State 25
+
+   14 base_instr: instr •
+
+    $default  reduce using rule 14 (base_instr)
+
+
+State 26
+
+   16 instr: assigment • SEMICOLON
+
+    SEMICOLON  shift, and go to state 43
+
+
+State 27
+
+   17 instr: io_stmt • SEMICOLON
+
+    SEMICOLON  shift, and go to state 44
+
+
+State 28
+
+   20 io_stmt: read_input •
+
+    $default  reduce using rule 20 (io_stmt)
+
+
+State 29
+
+   21 io_stmt: write_output •
+
+    $default  reduce using rule 21 (io_stmt)
+
+
+State 30
+
+    8 decl_var: ID •
+    9         | ID • ASSIGMENT_OPERATOR expr
+
+    ASSIGMENT_OPERATOR  shift, and go to state 45
+
+    $default  reduce using rule 8 (decl_var)
+
+
+State 31
+
+    5 block_decl_var: TYPE list_decl_var • SEMICOLON
+
+    SEMICOLON  shift, and go to state 46
+
+
+State 32
+
+    6 list_decl_var: decl_var •
+    7              | decl_var • COMMA list_decl_var
+
+    COMMA  shift, and go to state 47
+
+    $default  reduce using rule 6 (list_decl_var)
+
+
+State 33
+
+   26 read_instr: SHIFT_RIGHT • term
+
+    INT  shift, and go to state 48
+    ID   shift, and go to state 49
+
+    term  go to state 50
+
+
+State 34
+
+   22 read_input: CIN lista_input •
+   25 lista_input: lista_input • read_instr
+
+    SHIFT_RIGHT  shift, and go to state 33
+
+    $default  reduce using rule 22 (read_input)
+
+    read_instr  go to state 51
+
+
+State 35
+
+   24 lista_input: read_instr •
+
+    $default  reduce using rule 24 (lista_input)
+
+
+State 36
+
+   31 write_instr: SHIFT_LEFT • term
+
+    INT  shift, and go to state 48
+    ID   shift, and go to state 49
+
+    term  go to state 52
+
+
+State 37
+
+   27 write_output: COUT lista_output •
+   30 lista_output: lista_output • write_instr
+
+    SHIFT_LEFT  shift, and go to state 36
+
+    $default  reduce using rule 27 (write_output)
+
+    write_instr  go to state 53
+
+
+State 38
+
+   29 lista_output: write_instr •
+
+    $default  reduce using rule 29 (lista_output)
+
+
+State 39
+
+   18 instr: RETURN INT • SEMICOLON
+
+    SEMICOLON  shift, and go to state 54
+
+
+State 40
+
+   19 assigment: ID ASSIGMENT_OPERATOR • expr
+
+    INT  shift, and go to state 48
+    ID   shift, and go to state 49
+
+    expr  go to state 55
+    term  go to state 56
+
+
+State 41
+
+    1 program: headers USING NAMESPACE STD SEMICOLON TYPE_INT MAIN_BEGIN ACOLADA_OPEN block_decl_var instr_comp ACOLADA_CLOSE •
+
+    $default  reduce using rule 1 (program)
+
+
+State 42
+
+   12 instr_comp: instr_comp base_instr •
+
+    $default  reduce using rule 12 (instr_comp)
+
+
+State 43
+
+   16 instr: assigment SEMICOLON •
+
+    $default  reduce using rule 16 (instr)
+
+
+State 44
+
+   17 instr: io_stmt SEMICOLON •
+
+    $default  reduce using rule 17 (instr)
+
+
+State 45
+
+    9 decl_var: ID ASSIGMENT_OPERATOR • expr
+
+    INT  shift, and go to state 48
+    ID   shift, and go to state 49
+
+    expr  go to state 57
+    term  go to state 56
+
+
+State 46
+
+    5 block_decl_var: TYPE list_decl_var SEMICOLON •
+
+    $default  reduce using rule 5 (block_decl_var)
+
+
+State 47
+
+    7 list_decl_var: decl_var COMMA • list_decl_var
+
+    ID  shift, and go to state 30
+
+    list_decl_var  go to state 58
+    decl_var       go to state 32
+
+
+State 48
+
+   37 term: INT •
+
+    $default  reduce using rule 37 (term)
+
+
+State 49
+
+   38 term: ID •
+
+    $default  reduce using rule 38 (term)
+
+
+State 50
+
+   26 read_instr: SHIFT_RIGHT term •
+
+    $default  reduce using rule 26 (read_instr)
+
+
+State 51
+
+   25 lista_input: lista_input read_instr •
+
+    $default  reduce using rule 25 (lista_input)
+
+
+State 52
+
+   31 write_instr: SHIFT_LEFT term •
+
+    $default  reduce using rule 31 (write_instr)
+
+
+State 53
+
+   30 lista_output: lista_output write_instr •
+
+    $default  reduce using rule 30 (lista_output)
+
+
+State 54
+
+   18 instr: RETURN INT SEMICOLON •
+
+    $default  reduce using rule 18 (instr)
+
+
+State 55
+
+   19 assigment: ID ASSIGMENT_OPERATOR expr •
+   33 expr: expr • DIV term
+   34     | expr • MULT term
+   35     | expr • PLUS term
+   36     | expr • MINUS term
+
+    MULT   shift, and go to state 59
+    DIV    shift, and go to state 60
+    PLUS   shift, and go to state 61
+    MINUS  shift, and go to state 62
+
+    $default  reduce using rule 19 (assigment)
+
+
+State 56
+
+   32 expr: term •
+
+    $default  reduce using rule 32 (expr)
+
+
+State 57
+
+    9 decl_var: ID ASSIGMENT_OPERATOR expr •
+   33 expr: expr • DIV term
+   34     | expr • MULT term
+   35     | expr • PLUS term
+   36     | expr • MINUS term
+
+    MULT   shift, and go to state 59
+    DIV    shift, and go to state 60
+    PLUS   shift, and go to state 61
+    MINUS  shift, and go to state 62
+
+    $default  reduce using rule 9 (decl_var)
+
+
+State 58
+
+    7 list_decl_var: decl_var COMMA list_decl_var •
+
+    $default  reduce using rule 7 (list_decl_var)
+
+
+State 59
+
+   34 expr: expr MULT • term
+
+    INT  shift, and go to state 48
+    ID   shift, and go to state 49
+
+    term  go to state 63
+
+
+State 60
+
+   33 expr: expr DIV • term
+
+    INT  shift, and go to state 48
+    ID   shift, and go to state 49
+
+    term  go to state 64
+
+
+State 61
+
+   35 expr: expr PLUS • term
+
+    INT  shift, and go to state 48
+    ID   shift, and go to state 49
+
+    term  go to state 65
+
+
+State 62
+
+   36 expr: expr MINUS • term
+
+    INT  shift, and go to state 48
+    ID   shift, and go to state 49
+
+    term  go to state 66
+
+
+State 63
+
+   34 expr: expr MULT term •
+
+    $default  reduce using rule 34 (expr)
+
+
+State 64
+
+   33 expr: expr DIV term •
+
+    $default  reduce using rule 33 (expr)
+
+
+State 65
+
+   35 expr: expr PLUS term •
+
+    $default  reduce using rule 35 (expr)
+
+
+State 66
+
+   36 expr: expr MINUS term •
+
+    $default  reduce using rule 36 (expr)

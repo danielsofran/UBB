@@ -1,0 +1,249 @@
+<html>
+
+<head>
+    <style>
+        .container {
+            --content_size: 3.5em; /* image size */
+            --center_size: 5.5em;
+            --extra_space: 0.2; /* how much extra space we want between images, 1 = one image size */
+            --radius_content: calc(.5*(1 + var(--extra_space))*var(--content_size)/var(--tan)); /* circle radius */
+            --radius_center: calc(.5*(1 + var(--extra_space))*var(--center_size)/var(--tan)); /* circle radius for center */
+            --size: calc(var(--radius_content) + var(--radius_center) + var(--content_size)); /* container size */
+            --varname: 3;
+            position: relative;
+            width: var(--size); height: var(--size);
+            background: transparent;
+        }
+
+        p {
+            position: absolute;
+            top: 50%; left: 50%;
+            margin: calc(-.5*var(--center_size));
+            width: calc(var(--center_size)); height: calc(var(--center_size));
+            --angle: calc(var(--i)*1turn/var(--m));
+            transform:
+                    rotate(var(--angle))
+                    translate(var(--radius_center))
+                    rotate(calc(-1*var(--angle)));
+            z-index: 100;
+        }
+
+        .container a {
+            --factor: .3; /* size before showing */
+
+            position: absolute;
+            top: 50%; left: 50%;
+            margin: calc(-.5*var(--content_size));
+            /*width: var(--content_size); height: var(--content_size);*/
+            width: calc(var(--factor)*var(--content_size)); height: calc(var(--factor)*var(--content_size));
+            --angle: calc(var(--i)*1turn/var(--m));
+            /*animation: popout 2s ease-out;*/
+            /*animation-fill-mode: forwards;*/
+            border-radius: 50%;
+            transition: width .5s, height .5s;
+        }
+
+        /*.container a:hover{*/
+        /*    border: 1px solid greenyellow;*/
+
+        /*    animation: grow 1s ease-in-out !important;*/
+        /*    animation-fill-mode: forwards !important;*/
+        /*    width: calc((1 + var(--factor))*var(--content_size));*/
+        /*    height: calc((1 + var(--factor))*var(--content_size));*/
+        /*}*/
+
+        @keyframes popout {
+            /*--angle0: calc(var(--inexistant)*1turn/var(--m));*/
+            from {
+                display: none;
+                transform:
+                        rotate(var(--angle0))
+                        translate(calc(var(--radius_content)))
+                        rotate(calc(-1*var(--angle0)));
+            }
+            to {
+                display: block;
+                width: var(--content_size); height: var(--content_size);
+                transform:
+                        rotate(var(--angle))
+                        translate(var(--radius_content))
+                        rotate(calc(-1*var(--angle)));
+                z-index: 300;
+            }
+        }
+        @keyframes popin {
+            /*--angle0: calc(var(--inexistant)*1turn/var(--m));*/
+            /*--xstart: undefined; !* pentru mutarea inapoi*!*/
+            /*--ystart: undefined;*/
+            from {
+                cursor: none;
+                width: calc(1*var(--content_size)); height: calc(1*var(--content_size));
+                transform:
+                        rotate(var(--angle))
+                        translate(var(--radius_content))
+                        rotate(calc(-1*var(--angle)))
+            }
+            to {
+                cursor: default;
+                width: calc(var(--factor)*var(--content_size)); height: calc(var(--factor)*var(--content_size));
+                transform:
+                        rotate(var(--angle0))
+                        translate(calc(var(--radius_content)))
+                        rotate(calc(-1*var(--angle0)));
+            }
+        }
+
+        @keyframes grow {
+            0% {
+                width: calc(1*var(--content_size));
+                height: calc(1*var(--content_size));
+                transform:
+                        rotate(var(--angle))
+                        translate(var(--radius_content))
+                        rotate(calc(-1*var(--angle)));
+                opacity: 1;
+            }
+            20%{
+                opacity: .1;
+            }
+            40%{
+                opacity: 1;
+            }
+            100% {
+                width: calc((1 + var(--factor))*var(--content_size));
+                height: calc((1 + var(--factor))*var(--content_size));
+                transform:
+                        rotate(var(--angle))
+                        translate(var(--radius_center))
+                        rotate(calc(-1*var(--angle)));
+                opacity: 1;
+            }
+        }
+        @keyframes shrink {
+            0% {
+                width: calc((1 + var(--factor))*var(--content_size));
+                height: calc((1 + var(--factor))*var(--content_size));
+                transform:
+                        rotate(var(--angle))
+                        translate(var(--radius_center))
+                        rotate(calc(-1*var(--angle)));
+            }
+            100% {
+                width: calc(1*var(--content_size));
+                height: calc(1*var(--content_size));
+                transform:
+                        rotate(var(--angle))
+                        translate(var(--radius_content))
+                        rotate(calc(-1*var(--angle)));
+            }
+        }
+
+        img { max-width: 100%; border-radius: 50% }
+    </style>
+</head>
+
+<body>
+
+<div class="container" style="--m: 8; --tan: 0.41; padding: 0px">
+    <p onclick="f(this)"> <img src="https://assets.codepen.io/2017/17_05_a_amur_leopard_14.jpg" alt="fluffy, alert Amur leopard"/></p> <!-- undefined i for center, unnamed var -->
+        <a style="--i: 1"><img src="https://assets.codepen.io/2017/17_05_a_amur_leopard_25.jpg" alt="fluffy Amur leopard looking up"/></a>
+    <a style="--i: 2"><img src="https://assets.codepen.io/2017/17_05_a_amur_leopard_16.jpg" alt="fluffy Amur leopard on a tree branch"/></a>
+    <a style="--i: 3"><img src="https://assets.codepen.io/2017/17_05_a_amur_leopard_18.jpg" alt="Amur leopard romance"/></a>
+    <a style="--i: 4"><img src="https://assets.codepen.io/2017/17_05_a_amur_leopard_24.jpg" alt="Amur leopard cub with very blue eyes"/></a>
+    <a style="--i: 5"><img src="https://assets.codepen.io/2017/17_05_a_amur_leopard_30.jpg" alt="fluffy, alert Amur leopard"/></a>
+    <a style="--i: 6"><img src="https://assets.codepen.io/2017/17_05_a_amur_leopard_34.jpg" alt="fluffy Amur leopard looking back"/></a>
+    <a style="--i: 7"><img src="https://assets.codepen.io/2017/17_05_a_amur_leopard_21.jpg" alt="fluffy Amur leopard rolling on its back"/></a>
+    <a style="--i: 8"><img src="https://assets.codepen.io/2017/17_05_a_amur_leopard_2.jpg" alt="fluffy, pensive Amur leopard"/></a>
+</div>
+<div class="container" style="--m: 3; --tan: 0.41">
+    <p onclick="f(this)"> <img src="https://assets.codepen.io/2017/17_05_a_amur_leopard_14.jpg" alt="fluffy, alert Amur leopard"/></p> <!-- undefined i for center, unnamed var -->
+    <a style="--i: 1"><img src="https://assets.codepen.io/2017/17_05_a_amur_leopard_25.jpg" alt="fluffy Amur leopard looking up"/></a>
+    <a style="--i: 2"><img src="https://assets.codepen.io/2017/17_05_a_amur_leopard_16.jpg" alt="fluffy Amur leopard on a tree branch"/></a>
+    <a style="--i: 3"><img src="https://assets.codepen.io/2017/17_05_a_amur_leopard_18.jpg" alt="Amur leopard romance"/></a>
+</div>
+
+<button onclick="functie()">Adauga animatie</button>
+<script>
+    function functie(){
+        var planets = document.querySelectorAll('.container a')
+        console.warn(planets.length)
+        for(let i=0; i<planets.length; ++i)
+        {
+            console.warn(planets[i].style['--i'])
+            planets[i].style['animation'] = "popout 2s ease-out";
+            planets[i].style['animation-fill-mode'] = "forwards";
+        }
+    }
+
+    function getOffset(el) {
+        const rect = el.getBoundingClientRect();
+        scrollLeft = window.pageXOffset || document.documentElement.scrollLeft,
+        scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        return {
+            x: rect.left + scrollLeft,
+            y: rect.top + scrollTop
+        };
+    }
+
+    function rectContains(rect, x, y)
+    {
+        let x1 = rect.x, y1 = rect.y, x2 = rect.x + rect.width, y2 = rect.y + rect.height;
+        if (x > x1 && x < x2 && y > y1 && y < y2)
+            return true;
+
+        return false;
+    }
+
+    var clicks = 0;
+    function f(node) {
+        let nodes = node.parentNode.children;
+        let container = node.parentNode;
+        //let rectParent = getOffset(node.parentNode)
+        for(let i=0;i<nodes.length;++i) {
+            if (nodes[i].tagName.toLowerCase() === "a") {
+                if(clicks%2===0) {
+                    nodes[i].style['animation'] = "popout 2s ease-out";
+                    nodes[i].style['animation-fill-mode'] = "forwards";
+                    //container.style.cursor = "none";
+                    nodes[i].onanimationend = () => {
+                        //container.style.cursor = "default";
+                        nodes[i].onmouseover =  (e) => {
+                            //
+                            // putem cu referinta la menuitem, si stim daca e opened sau closed
+                            // putem face functia in meniu, si o apelam din menuitem,
+                            // oricum avem onclick, ramane de facut referintele alea naspa
+                            nodes[i].style['animation'] = "grow 1s ease-in-out forwards";
+                            setTimeout(()=>{
+                                nodes[i].onmouseleave = () => {
+                                    nodes[i].style['animation'] = "shrink 1s ease-in-out forwards";
+                                    setTimeout(() => {nodes[i].onmouseleave = () => {};}, 750);
+                                }
+                            }, 750)
+                            setTimeout(()=>{
+                                rect = nodes[i].getBoundingClientRect();
+                                if(!rectContains(rect, e.clientX, e.clientY)) {
+                                    nodes[i].style['animation'] = "shrink 1s ease-in-out";
+                                    nodes[i].style['animation-fill-mode'] = "forwards";
+                                    setTimeout(() => { nodes[i].onmouseleave = () => {};}, 750);
+                                }
+                            }, 5000)
+                        }
+                    }
+                }
+                else{
+                    nodes[i].onanimationend = () => { /*container.style.cursor = "default";*/ }
+                    nodes[i].onmouseover =  () => {}
+                    nodes[i].onmouseleave =  () => {}
+                    //container.style.cursor = "none";
+                    nodes[i].style['animation'] = "popin 2s ease-in";
+                    nodes[i].style['animation-fill-mode'] = "forwards";
+                    // nodes[i].style['animation-play-state'] = "running";
+                }
+            }
+        }
+        clicks++;
+    }
+</script>
+</body>
+
+</html>

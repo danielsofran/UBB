@@ -1,0 +1,38 @@
+     1                                  bits 32
+     2                                  global start
+     3                                  extern exit, printf
+     4                                  import exit msvcrt.dll
+     5                                  import printf msvcrt.dll
+     6                                  
+     7                                  segment data use32 class=data
+     8 00000000 61416242322578              s db 'a', 'A', 'b', 'B', '2', '%', 'x'
+     9                                      l equ $-s
+    10 00000007 <res 00000007>              d resb l
+    11                                  
+    12                                  segment code use32 class=cod
+    13                                  start:
+    14 00000000 BE[00000000]                mov esi, s  ; adresa lui s
+    15 00000005 BF00000000                  mov edi, 0  ; lungimea sirului rezultat
+    16                                      
+    17                                      repeta:
+    18 0000000A 803E61                          cmp byte [esi], 'a'
+    19 0000000D 720E                            jb continue         ; sarim peste caracterele dinaintea lui 'a'
+    20                                          
+    21 0000000F 803E7A                          cmp byte [esi], 'z'
+    22 00000012 7709                            ja continue         ; sarim peste caracterele de dupa 'a'
+    23                                          
+    24                                          ; in cazul in care caracterul este o litera mica
+    25 00000014 8A06                            mov al, byte [esi]
+    26 00000016 8887[07000000]                  mov byte [d+edi], al    ; il adaugam in d
+    27 0000001C 47                              inc edi                 ; crestem lungimea sa
+    28                                          
+    29                                          continue:               ; eticheta corespunzatoare trecerii la pasul urmator
+    30 0000001D 46                              inc esi                 ; adresa va indica acum urmatoarea locatie de memorie
+    31 0000001E 81FE[07000000]                  cmp esi, s+l            ; daca aceasta apartine intervalului [s+0, s+l)
+    32 00000024 72E4                        jb repeta                   ; bucla continua
+    33                                      
+    34 00000026 6A00                        push dword 0
+    35 00000028 FF15[00000000]              call [exit]
+    36                                      
+    37                                      
+    38                                      

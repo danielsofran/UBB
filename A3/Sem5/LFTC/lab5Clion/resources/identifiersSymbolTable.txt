@@ -1,0 +1,8 @@
+1 n 8
+2 sumaaa 4
+3 float 7
+4 x 6
+5 binary 3
+6 y -1
+7 i 1
+8 sum 2

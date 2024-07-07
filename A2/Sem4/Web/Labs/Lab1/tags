@@ -1,0 +1,23 @@
+ tag-uri: 
+a +
+table (tr th td) +
+div +
+strong +
+ul +
+ol +
+li +
+form +
+input +
+b +
+textarea +
+h1 (… h6) 1, 2, 3, 5, 4, 6
+img +
+center +
+p +
+br +
+span +
+
+select +
+option +
+fieldset +
+legend +

@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>P3</title>
+	<style>
+		table, td, tr {
+			border: 2px solid black;
+		}
+		td {
+			width: 100px;
+			height: 100px;
+			max-height: 100px;
+			max-width: 100px;
+		}
+		td img {
+			max-height: 100%;
+			max-width: 100%;
+			object-fit: contain; /* To fit the image within the cell without distortion */
+		}
+	</style>
+</head>
+<body>
+	<script>
+		const images = [
+		  "img/green_apple.png",
+		  "img/red_apple.png",
+		  "img/grapes.jpg",
+		  "img/pineapple.jpg",
+		  "img/kiwi.jpg",
+		  "img/avocado.png",
+		  "img/melon.png",
+		  "img/banana.png"
+		];
+
+		const matrix = [
+		  [0,1,2,3],
+		  [4,5,6,7],
+		  [0,1,2,3],
+		  [4,5,6,7]
+		];
+
+		const pairs = matrix.flat().reduce((acc, curr, index, array) => {
+		  if (array.indexOf(curr) !== index) {
+			acc[curr] = acc[curr] ? [...acc[curr], index] : [index];
+		  }
+		  return acc;
+		}, {});
+
+		let firstGuess = null;
+		let secondGuess = null;
+		let guessedPairs = {};
+
+		function handleClick(event) {
+		  const cell = event.target;
+		  const value = cell.getAttribute("id");
+		  if (!value){
+			console.log("!value");
+			return;
+		  }
+
+		  if (!firstGuess) {
+			firstGuess = { value: value, cell: cell };
+
+			cell.innerHTML = `<img src="${images[value]}" alt="">`;
+		  } else if (cell !== firstGuess.cell) {
+			secondGuess = { value: value, cell: cell };
+
+			cell.innerHTML = `<img src="${images[value]}" alt="">`;
+			if (firstGuess.value === secondGuess.value) {
+			  guessedPairs[firstGuess.value] = true;
+			  firstGuess = null;
+			  secondGuess = null;
+			  if (Object.keys(guessedPairs).length === Object.keys(pairs).length) {
+				alert('You won!');
+			  }
+			} else {
+			  setTimeout(() => {
+				firstGuess.cell.innerHTML = "";
+				secondGuess.cell.innerHTML = "";
+				firstGuess = null;
+				secondGuess = null;
+			  }, 2000);
+			}
+		  }
+		}
+
+		const table = document.createElement('table');
+		for (let i = 0; i < matrix.length; i++) {
+		  const row = document.createElement('tr');
+		  for (let j = 0; j < matrix[i].length; j++) {
+			const cell = document.createElement('td');
+			cell.innerHTML = "";
+			cell.setAttribute("id", matrix[i][j]);
+			cell.addEventListener('click', handleClick);
+			row.appendChild(cell);
+		  }
+		  table.appendChild(row);
+		}
+		document.body.appendChild(table);
+	</script>
+</body>
+</html>

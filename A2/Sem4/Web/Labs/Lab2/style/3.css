@@ -1,0 +1,58 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    min-height: 100%;
+}
+
+header{
+    display: block;
+    background: red;
+    color: black;
+    text-align: center;
+    height: 100px;
+}
+
+footer{
+    display: block;
+    background: pink;
+    color: black;
+    vertical-align: center;
+    text-align: center;
+    height: 60px;
+}
+
+nav{
+    display: block;
+    float: none;
+    height: 25px;
+}
+
+.mainView{
+    display: block;
+    float: none;
+    height: 85%;
+    background: green;
+    min-height: calc(100vh - 185px);
+}
+
+ul {
+    display: flex;
+    list-style-type: none;
+    background: yellow;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    padding: 3px;
+    width: 20%;
+    margin-bottom: auto;
+    margin-top: auto;
+}
+
+li:hover{
+    background: blue;
+    color: white;
+}

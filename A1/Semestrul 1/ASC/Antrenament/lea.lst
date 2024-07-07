@@ -1,0 +1,169 @@
+     1                                  bits 32
+     2                                  
+     3                                  global start
+     4                                  
+     5                                  extern exit, printf
+     6                                  import exit msvcrt.dll
+     7                                  import printf msvcrt.dll
+     8                                  
+     9                                  segment data use32 class=data
+    10 00000000 AB12CD34EF56                s1 dw 12abh, 34cdh, 56efh
+    11 00000006 00351100FB7F                s2 dw 3500h, 0011h, 7ffbh
+    12                                      len equ ($-s2)/2
+    13 0000000C <res 0000000C>              s resd len
+    14 00000018 <res 00000004>              baiti resb 4
+    15 0000001C <res 00000004>              nrbiti resb 4
+    16 00000020 <res 0000000C>              rez resd len
+    17 0000002C 256400                      format db "%d", 0
+    18 0000002F 2000                        mesaj db " ", 0
+    19 00000031 00000000                    bit dd 0
+    20                                  
+    21                                  %Macro AFIS 1
+    22                                      pushad
+    23                                      push %1
+    24                                      push format
+    25                                      call [printf]
+    26                                      add esp, 4*2
+    27                                      popad
+    28                                      pushad
+    29                                      push mesaj
+    30                                      call [printf]
+    31                                      add esp, 4
+    32                                      popad
+    33                                  %endmacro
+    34                                  
+    35                                  segment code use32 class=code
+    36                                  start:
+    37 00000000 BE[00000000]                mov esi, s1
+    38 00000005 BF[0C000000]                mov edi, s
+    39 0000000A B903000000                  mov ecx, len
+    40 0000000F BB[06000000]                mov ebx, s2
+    41                                      bucla:
+    42 00000014 66AD                            lodsw ; citim un cuvant din primul sir
+    43 00000016 66AB                            stosw ; il stocam in sirul de dublu cuvinte neordonat
+    44 00000018 56                              push esi ; salvam buffer ul din primul sir
+    45 00000019 89DE                            mov esi, ebx ; citim din al doilea sir
+    46 0000001B 66AD                            lodsw ; citim cuvantul din al doilea sir
+    47 0000001D 66AB                            stosw ; il stocam
+    48 0000001F 89F3                            mov ebx, esi ; retinem buffer ul din al doilea sir
+    49 00000021 5E                              pop esi ; restauram buffer ul din primul sir
+    50 00000022 E2F0                        loop bucla
+    51                                      
+    52 00000024 B903000000                  mov ecx, len
+    53 00000029 BE[0C000000]                mov esi, s
+    54 0000002E BF[20000000]                mov edi, rez
+    55                                      bucla2:
+    56 00000033 AD                              lodsd ; eax = un dublucuvant
+    57 00000034 56                              push esi ; salvam buffer ul
+    58 00000035 A3[18000000]                    mov [baiti], eax ; mutam eax intr-un vector de baiti
+    59                                          
+    60                                          ; initializam vectorul caracteristic nrbiti
+    61 0000003A C705[1C000000]0000-             mov dword[nrbiti], 0 ; initializam cu 0
+    61 00000042 0000               
+    62 00000044 BE[18000000]                    mov esi, baiti ; vom parcurge acest vector
+    63                                          ; nrbiti[i] = numarul de biti ai octetului i
+    64 00000049 BB00000000                      mov ebx, 0 ; index ul curent in sirul de octeti
+    65                                          octeti:
+    66 0000004E AC                                  lodsb ; luam un octet
+    67 0000004F BA08000000                          mov edx, 8 ; vom parcurge bitii
+    68                                              biti:
+    69 00000054 D0C0                                    rol al, 1 ; CF = un bit
+    70 00000056 7306                                    jnc continuebiti
+    71 00000058 FE83[1C000000]                          inc byte[nrbiti+ebx]
+    72                                                  continuebiti:
+    73 0000005E 4A                                      dec edx
+    74 0000005F 83FA00                                  cmp edx, 0
+    75 00000062 7DF0                                jge biti
+    76 00000064 43                                  inc ebx
+    77 00000065 83FB04                              cmp ebx, 4 ; avem 4 octeti intr-un dublu cuvant
+    78 00000068 7CE4                            jl octeti
+    79                                          ; sortam crescator dupa nr de biti
+    80                                          sortare:
+    81 0000006A BA00000000                          mov edx, 0 ; index la vectorii nrbiti si baiti
+    82                                              bucla_sortare:
+    83 0000006F 8A82[1C000000]                          mov al, [nrbiti+edx]   ; comparam nr de biti de 1
+    84 00000075 8AA2[1D000000]                          mov ah, [nrbiti+1+edx]
+    85 0000007B 38E0                                    cmp al, ah
+    86 0000007D 7C5E                                    jl continue_sortare
+    87 0000007F 7426                                    je compar_valori
+    88                                                  ; altfel, daca NU sunt in ordine
+    89 00000081 8882[1D000000]                          mov [nrbiti+1+edx], al ; interschimbam nr de biti
+    90 00000087 88A2[1C000000]                          mov [nrbiti+edx], ah
+    91 0000008D 8A82[18000000]                          mov al, [baiti+edx] ; interschimbam valorile octetilor
+    92 00000093 8AA2[19000000]                          mov ah, [baiti+1+edx]
+    93 00000099 88A2[18000000]                          mov [baiti+edx], ah
+    94 0000009F 8882[19000000]                          mov [baiti+1+edx], al
+    95 000000A5 EBC3                                    jmp sortare ; vectorul nu e sortat, il mai sortam odata(met bulelor) 
+    96                                                  compar_valori:
+    97 000000A7 8A82[18000000]                          mov al, [baiti+edx]
+    98 000000AD 8AA2[19000000]                          mov ah, [baiti+edx+1]
+    99 000000B3 38E0                                    cmp al, ah
+   100 000000B5 7E26                                    jle continue_sortare
+   101                                                  ; altfel, interschimbam
+   102 000000B7 8882[1D000000]                          mov [nrbiti+1+edx], al ; interschimbam nr de biti
+   103 000000BD 88A2[1C000000]                          mov [nrbiti+edx], ah
+   104 000000C3 8A82[18000000]                          mov al, [baiti+edx] ; interschimbam valorile octetilor
+   105 000000C9 8AA2[19000000]                          mov ah, [baiti+1+edx]
+   106 000000CF 88A2[18000000]                          mov [baiti+edx], ah
+   107 000000D5 8882[19000000]                          mov [baiti+1+edx], al
+   108 000000DB EB8D                                    jmp sortare ; vectorul nu e sortat, il mai sortam odata(met bulelor) 
+   109                                                  continue_sortare:
+   110 000000DD 42                                      inc edx
+   111 000000DE 83FA03                                  cmp edx, 3 ; parcurgem cei 3+1 baiti
+   112 000000E1 7C8C                                jl bucla_sortare
+   113                                              
+   114                                          ; avem vectorul baiti sortat
+   115                                          ; il mutam in mem
+   116 000000E3 A1[18000000]                    mov eax, [baiti]
+   117 000000E8 AB                              stosd
+   118                                          ; avem in nrbiti numerul de biti din fiecare octet al dublucuvantului
+   119                                          ; sortam sirul de octeti dupa nr de biti
+   120 000000E9 5E                              pop esi
+   121 000000EA 49                              dec ecx
+   122 000000EB 83F900                          cmp ecx, 0
+   123 000000EE 0F8D3FFFFFFF                jge bucla2
+   124                                      
+   125                                      ;afisare
+   126 000000F4 B903000000                  mov ecx, len
+   127 000000F9 BE[20000000]                mov esi, rez
+   128                                      bucla3:
+   129 000000FE AD                              lodsd
+   130                                          ; eax = dublu cuvant sortat
+   131 000000FF 51                              push ecx
+   132 00000100 B920000000                      mov ecx, 32
+   133                                          bitiafis:
+   134 00000105 BA00000000                          mov edx, 0
+   135                                              AFIS edx
+   135 0000010A 60                  <1>  pushad
+   135 0000010B 52                  <1>  push %1
+   135 0000010C 68[2C000000]        <1>  push format
+   135 00000111 FF15[00000000]      <1>  call [printf]
+   135 00000117 83C408              <1>  add esp, 4*2
+   135 0000011A 61                  <1>  popad
+   135 0000011B 60                  <1>  pushad
+   135 0000011C 68[2F000000]        <1>  push mesaj
+   135 00000121 FF15[00000000]      <1>  call [printf]
+   135 00000127 83C404              <1>  add esp, 4
+   135 0000012A 61                  <1>  popad
+   136 0000012B D1C0                                rol eax, 1 ; CF = bitul din stanga
+   137 0000012D 8315[31000000]00                    adc dword[bit], 0 ; mut bit-ul in edx
+   138                                              ; AFIS dword[bit]
+   139                                              ; pushad ; nu distrugem registrii
+   140                                              ; push dword[bit]
+   141                                              ; push format
+   142                                              ; call [printf] ; afisez val din edx
+   143                                              ; add esp, 4*2
+   144                                              ; popad
+   145 00000134 E2CF                            loop bitiafis
+   146                                  
+   147 00000136 60                              pushad ; nu distrugem registrii
+   148 00000137 68[2F000000]                    push mesaj
+   149 0000013C FF15[00000000]                  call [printf] ; afisez separator
+   150 00000142 83C404                          add esp, 4
+   151 00000145 61                              popad
+   152                                          
+   153 00000146 59                              pop ecx
+   154 00000147 E2B5                        loop bucla3
+   155                                      
+   156 00000149 6A00                        push    dword 0     
+   157 0000014B FF15[00000000]              call    [exit]      

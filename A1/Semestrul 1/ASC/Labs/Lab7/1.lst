@@ -1,0 +1,27 @@
+     1                                  bits 32
+     2                                  global start
+     3                                  
+     4                                  extern printf
+     5                                  import printf msvcrt.dll
+     6                                  
+     7                                  segment data use32 class=data
+     8 00000000 616263646566                s db 'abcdef'
+     9                                      l equ $-s
+    10 00000006 <res 00000006>              d resb l
+    11                                      
+    12                                  ; Se da un sir de caractere s.
+    13                                  ; Se cere sirul de caractere d obtinut prin copierea sirului s, folosind instructiuni pe siruri.
+    14                                  segment code use32 class=code
+    15                                      start:
+    16 00000000 B906000000                      mov ecx, l
+    17 00000005 BE[00000000]                    mov esi, s
+    18 0000000A BF[06000000]                    mov edi, d
+    19 0000000F FC                              cld
+    20                                          ;jecxz pexit
+    21                                          ;bucla:
+    22                                          ;   movsb
+    23                                          ;loop bucla
+    24 00000010 F3A4                            rep movsb
+    25                                          pexit:
+    26 00000012 68[06000000]                    push d        ; push the parameter for exit onto the stack
+    27 00000017 FF15[00000000]                  call [printf]         ; call exit to terminate the program

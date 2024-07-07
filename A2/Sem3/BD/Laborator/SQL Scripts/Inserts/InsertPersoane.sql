@@ -1,0 +1,11 @@
+INSERT INTO DetaliiPersoane(nume, email, data_nast) VALUES('Daniel', 'daniel@yahoo.com', '20030509')
+INSERT INTO DetaliiPersoane(nume, email, data_nast) VALUES('Radu', 'vasi@gmail.com', '20020628')
+INSERT INTO DetaliiPersoane(nume, email, data_nast) VALUES('Cipri', 'cpr@yahoo.com', '19501015')
+INSERT INTO DetaliiPersoane(nume, email, data_nast) VALUES('Raul', 'raul@ubbcj.com', '20021123')
+INSERT INTO DetaliiPersoane(nume, email, data_nast) VALUES('Cata', 'catalin@ubbcj.com', '20020706')
+
+INSERT INTO Persoane(detalii_id, sport_fav_id) VALUES(1, 1)
+INSERT INTO Persoane(detalii_id, sport_fav_id) VALUES(2, 8)
+INSERT INTO Persoane(detalii_id, sport_fav_id) VALUES(3, 10)
+INSERT INTO Persoane(detalii_id, sport_fav_id) VALUES(4, 7)
+INSERT INTO Persoane(detalii_id, sport_fav_id) VALUES(5, 6)

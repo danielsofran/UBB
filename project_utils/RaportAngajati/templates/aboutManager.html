@@ -1,0 +1,632 @@
+{% extends 'base.html' %}
+
+{% block css %}
+<style>
+h1,h2,h3,h4{
+    margin-right: 5rem;
+    margin-top: 3rem;
+}
+h1{
+    font-size: 250%;
+    text-align: center;
+}
+h2{
+    font-size: 200%;
+    padding-left: 3rem;
+}
+h3{
+    font-size: 125%;
+}
+.w-90{
+    width: 90%;
+}
+img{
+    display: block;
+    width: 90vw;
+}
+#btn-back-to-top {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  display: block;
+}
+</style>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+window.addEventListener('load', ()=>{
+    var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+    var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+      return new bootstrap.Tooltip(tooltipTriggerEl)
+    })
+}, false)
+</script>
+{% endblock %}
+
+{# <i class="fa-solid fa-angle-down"></i> #}
+
+{% block content %}
+
+<a
+        href="#cuprins"
+        class="btn btn-outline-primary rounded-circle btn-floating btn-lg"
+        id="btn-back-to-top"
+        title="Sari la cuprins"
+        data-bs-toggle="tooltip" data-bs-placement="right"
+        >
+  <i class="fa-solid fa-arrow-up"></i>
+</a>
+
+<div class="d-block w-100 fs-3 m-5 p-5 pt-0">
+    <h1>Informaţii</h1>
+    <div class="flex-shrink-0 p-5 pb-0 bg-white w-auto">
+    <p class="d-flex align-items-center pb-3 mb-3 text-decoration-none border-bottom">
+      <span class="fs-1 fw-semibold" id="cuprins">Cuprins</span>
+    </p>
+    <ul class="list-unstyled ps-0 fs-2">
+      <li class="mb-2">
+        <a href="#introducere" class="p-3 link-dark text-decoration-none align-items-center rounded collapsed">
+          Introducere
+        </a>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed fs-2" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
+          Instrucţiuni Angajat <i class="fa-solid fa-angle-down"></i>
+        </button>
+        <div class="collapse fs-3" id="dashboard-collapse" style="">
+          <ul class="btn-toggle-nav fw-normal pb-1 fs-2 text-decoration-none">
+            <li><a href="#login" class="link-dark rounded text-decoration-none">Login</a></li>
+            <li><a href="#acasa" class="link-dark rounded text-decoration-none">Acasă</a></li>
+            <li><a href="#activitati" class="link-dark rounded text-decoration-none">Activităţi</a></li>
+            <li><a href="#cont" class="link-dark rounded text-decoration-none">Cont</a></li>
+          </ul>
+        </div>
+      </li>
+      <li class="mb-1">
+        <button class="btn btn-toggle align-items-center rounded collapsed fs-2" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse2" aria-expanded="false">
+          Instrucţiuni Manager <i class="fa-solid fa-angle-down"></i>
+        </button>
+        <div class="collapse fs-3" id="dashboard-collapse2" style="">
+          <ul class="btn-toggle-nav fw-normal pb-1 fs-2 text-decoration-none">
+            <li class="mb-1">
+                <button class="btn btn-toggle align-items-center rounded collapsed fs-2" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse3" aria-expanded="false">
+                  Activități <i class="fa-solid fa-angle-down"></i>
+                </button>
+                <div class="collapse fs-3" id="dashboard-collapse3" style="">
+                  <ul class="btn-toggle-nav fw-normal pb-1 fs-2 text-decoration-none">
+                    <li><a href="#actView" class="link-dark rounded text-decoration-none">Vizualizare</a></li>
+                    <li><a href="#actFilter" class="link-dark rounded text-decoration-none">Filtrare</a></li>
+                    <li><a href="#actModif" class="link-dark rounded text-decoration-none">Modificare/Ștergere</a></li>
+                    <li><a href="#actAdd" class="link-dark rounded text-decoration-none">Adăugare</a></li>
+                    <li><a href="#actCmd" class="link-dark rounded text-decoration-none">Informaţii <span class="text-danger">importante</span> despre comenzi</a></li>
+                  </ul>
+                </div>
+            </li>
+            <li class="mb-1">
+                <button class="btn btn-toggle align-items-center rounded collapsed fs-2" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse4" aria-expanded="false">
+                  Raport <i class="fa-solid fa-angle-down"></i>
+                </button>
+                <div class="collapse fs-3" id="dashboard-collapse4" style="">
+                  <ul class="btn-toggle-nav fw-normal pb-1 fs-2 text-decoration-none">
+                    <li><a href="#rapView" class="link-dark rounded text-decoration-none">Vizualizare</a></li>
+                    <li><a href="#rapFilter" class="link-dark rounded text-decoration-none">Filtrare</a></li>
+                  </ul>
+                </div>
+            </li>
+            <li class="mb-1">
+                <button class="btn btn-toggle align-items-center rounded collapsed fs-2" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse5" aria-expanded="false">
+                  Conturi <i class="fa-solid fa-angle-down"></i>
+                </button>
+                <div class="collapse fs-3" id="dashboard-collapse5" style="">
+                  <ul class="btn-toggle-nav fw-normal pb-1 fs-2 text-decoration-none">
+                    <li><a href="#contDetalii" class="link-dark rounded text-decoration-none">Detalii</a></li>
+                    <li><a href="#contView" class="link-dark rounded text-decoration-none">Vizualizare</a></li>
+{#                    <li><a href="#contModif" class="link-dark rounded text-decoration-none">Modificare/Ștergere</a></li>#}
+{#                    <li><a href="#contAdd" class="link-dark rounded text-decoration-none">Adăugare</a></li>#}
+                  </ul>
+                </div>
+            </li>
+            <li class="mb-1">
+                <button class="btn btn-toggle align-items-center rounded collapsed fs-2" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse6" aria-expanded="false">
+                  Setări <i class="fa-solid fa-angle-down"></i>
+                </button>
+                <div class="collapse fs-3" id="dashboard-collapse6" style="">
+                  <ul class="btn-toggle-nav fw-normal pb-1 fs-2 text-decoration-none">
+                    <li><a href="#setariGeneral" class="link-dark rounded text-decoration-none">Generale</a></li>
+                    <li><a href="#setariHarti" class="link-dark rounded text-decoration-none">Hărţi</a></li>
+                    <li><a href="#setariArii" class="link-dark rounded text-decoration-none">Arii pe hartă</a></li>
+                  </ul>
+                </div>
+            </li>
+            <li><a href="#ftime" class="link-dark rounded text-decoration-none">Format data şi ora</a></li>
+            <li><a href="#help" class="link-dark rounded text-decoration-none">Ajutor</a></li>
+{#            <li><a href="#setari" class="link-dark rounded text-decoration-none">Setări</a></li>#}
+          </ul>
+        </div>
+      </li>
+    </ul>
+</div>
+
+
+    <h2 id="introducere">Introducere</h2>
+    <p>Această aplicaţie web a fost creeată pentru monitorizarea angajaţilor. Monitorizarea constă în salvarea locaţiei, a datei şi orei activităţilor la locul de muncă. </p>
+
+    <h3 id="cerintetehnice">Cerinţe tehnice minime</h3>
+    <ul class="">
+        <li class="fs-3"> Activarea locaţiei</li>
+        <li class="fs-3"> Acceptarea cererii permisiunii de a accesa locaţia <span class="badge rounded-pill bg-danger">!</span></li>
+    </ul>
+    <div class="d-flex flex-column flex-xxl-row justify-content-around">
+        <div class="ms-1 my-3 w-90"><img src="https://i.ibb.co/DzHg8Nz/loc-Mobile.jpg" class="w-100" alt="mobile" crossorigin="anonymous"></div>
+        <div class="ms-1 my-3 w-90"><img src="https://i.ibb.co/0sD0m6s/loc-Desktop.png" class="w-100" alt="desktop" crossorigin="anonymous"></div>
+    </div>
+    <p class="mt-4"><span class="badge bg-danger fs-2 me-3">Atenţie!</span> Dacă permisiunea la locaţie nu este acordată, datele nu vor fi înregistrate, apăsarea butoanelor neavând <strong>nici un efect</strong>! </p>
+    <p><span class="badge bg-danger rounded-pill">!</span> Dacă aţi refuzat Accesarea Locaţiei, va trebui să o activaţi din <a href="https://docs.buddypunch.com/en/articles/919258-how-to-enable-location-services-for-chrome-safari-edge-and-android-ios-devices-gps-setting">setările browser-ului</a>.</p>
+    <p><span class="badge bg-danger rounded-pill">!</span> Dacă primiţi o eroare <strong>Permisiune refuzată</strong> deşi nu aţi primit o solicitare la locaţie, probabil folosiţi <strong>Safari</strong> ca browser. Vă recomandăm să instalaţi <strong>Google Chrome</strong>, altfel nu veţi putea salva activităţi!</p>
+    <p class="mt-4"><span class="badge bg-info fs-2 me-3">Sugestie</span> Vă recomandăm să salvaţi o scurtătură către acest site pe unul din ecranele dumneavoastră, pentru a-l face mai accesibil. Pe Chrome, această opţiune apare în meniul <strong><i class="fa-solid fa-ellipsis-vertical"></i> &nbsp;<i class="fa-solid fa-arrow-right"></i>&nbsp; Adaugă pe ecran pornire</strong>. Pe iPhone sau iPad, această opţiune apare în meniul <strong>Patrajează <i class="fa-solid fa-arrow-right"></i> Adaugă la ecranul de pornire</strong>.</p>
+    <p class="mt-4"><span class="badge bg-info fs-2 me-3">Sugestie</span> Dacă sunteţi pe un calculator şi bara de navigare apare în modul restrâns, vă rugăm daţi Zoom Out.</p>
+
+    <h1>Instrucţiuni Angajat</h1>
+    <h2 id="login"> Login-ul </h2>
+    <p> Login-ul se poate efectua în mai multe moduri. Criteriile sunt: </p>
+    <ul class="fs-3">
+        <li> Numele de utilizator </li>
+        <li> Numele complet:
+            <ul>
+                <li>cu un singur spaţiu</li>
+                <li>fără spaţii la început şi final</li>
+                <li>fără diacritice</li>
+            </ul>
+        </li>
+        <li> Email-ul</li>
+        <li> Numărul de telefon</li>
+    </ul>
+    <p class="mt-4"><span class="badge bg-danger rounded-pill">!</span> Dacă introduceţi spaţii suplimantare, nu vă veţi putea loga. </p>
+    <p><span class="badge bg-primary rounded-pill">!</span> Nu putei să vă logaţi cu numărul de telefon sau cu email-ul dacă nu le-aţi introdus în cont, la <strong>Cont -> Detalii -> Modicicare cont</strong>. </p>
+    <p class="mt-4"><span class="badge bg-danger fs-2 me-3">Atenţie!</span> Recomandăm <span class="text-danger fw-bold"> SCHIMBAREA PAROLEI INIŢIALE</span> cu un grad de <span class="text-danger fw-bold"> URGENŢĂ</span> ridicat! Puteţi schimba şi numele de utilizator pentru a face logarea mai uşoară.</p>
+    <div class="carsLogin border rounded w-90 w-xxl-50 mb-2"> {% include 'carousel.html' with carousel=carousellogin %}</div>
+
+    <h2 id="acasa"> Pagina Acasă</h2>
+    <h3>Butonul <span class="badge bg-success">Am ajuns </span></h3>
+    <ul class="mt-4">
+        <li>Înregistrează ora şi locaţia curentă şi o salvează ca ajungere.</li>
+        <li>Nu poate fi apăsat de mai multe ori consecutiv</li>
+        <li>Anularea înregistrarea unei ajungeri se face apăsând butonul <span class="badge bg-danger"><i class="fa-solid fa-xmark"></i></span> din dreapta sa.
+        <li><span class="badge bg-primary rounded-pill">!</span> Dacă aveţi ceva de comunicat, apăsaţi butonul <span class="badge bg-warning">Am ajuns, fac o observaie</span>, în loc de butonul <span class="badge bg-success">Am ajuns </span>. </li>
+    </ul>
+    <hr class="dropdown-divider mt-4 mb-4">
+    <h3>Butonul <span class="badge bg-danger" style="opacity: 85%">Am plecat </span></h3>
+    <ul class="mt-4">
+        <li>Înregistrează ora şi locaţia curentă şi o salvează ca plecare.</li>
+        <li>Nu poate fi apăsat de mai multe ori consecutiv</li>
+        <li>Anularea înregistrarea unei ajungeri se face apăsând butonul <span class="badge bg-danger"><i class="fa-solid fa-xmark"></i></span> din dreapta sa.
+        <li><span class="badge bg-primary rounded-pill">!</span> Dacă aveţi ceva de comunicat, apăsaţi butonul <span class="badge bg-warning">Am plecat, fac o observaie</span>, în loc de butonul <span class="badge bg-danger" style="opacity: 85%">Am plecat </span>. </li>
+    </ul>
+    <hr class="dropdown-divider mt-4 mb-4">
+    <h3>Butonul <span class="badge bg-primary" style="opacity: 85%">Vezi activitatea de astăzi</span></h3>
+    <ul class="mt-4">
+        <li>Vă va trimite pe pagina activităţilor din ziua curentă.</li>
+        <li>Vă puteţi întoarce pe pagina <strong>Acasă</strong> apăsând butonul <i class="fa-solid fa-angle-left"></i> al browser-ului sau butonul <strong>Undo</strong> al telefonului, sau butonul <strong><i class="fa-solid fa-house"></i> Acasă</strong> din meniul de opțiuni.</li>
+    </ul>
+    <hr class="dropdown-divider mt-4 mb-4">
+    <h3>Butonul <span class="badge bg-info">Am terminat o comandă</span></h3>
+    <ul class="mt-4">
+        <li>Deschide un formular sub acest buton.</li>
+        <li>Câmpurile obligarorii din formular sunt:
+            <ul>
+                <li> Denumirea</li>
+                <li> Numărul comenzii</li>
+            </ul>
+        </li>
+    </ul>
+    <p><span class="badge bg-primary rounded-pill">!</span> Dacă nu completaţi aceste câmpuri, va apărea un mesaj de eroare.</p>
+    <p><span class="badge bg-primary rounded-pill">!</span> Dacă nu vedeţi formularul, vă rugăm să derulaţi pagina mai jos.</p>
+    <p><span class="badge bg-primary rounded-pill">!</span> Dacă apăsaţi a doua oară pe butonul <span class="badge bg-info">Am terminat o comandă</span>, formularul de va închide.</p>
+    <p>Câmpul <strong>Observaţie</strong> este opţional. Acesta se va folosi în cazul în care apar defecţiuni, sau apare o situaţie neprevazută.</p>
+    <p><span class="badge bg-danger rounded-pill">!</span> O observaţie pate avea maxim 200 de caractere. Vă rugăm să <strong>nu scrieţi observaţii de dimensiuni mari</strong>.</p>
+    <hr class="dropdown-divider mt-4 mb-4">
+    <h3>Butonul <span class="badge" style="background-color: sandybrown">Am terminat un lucru</span></h3>
+    <ul class="mt-4">
+        <li>Deschide un formular în partea de jos a paginii</li>
+        <li>Singurul câmp obligaroriu din formular este <strong> Denumirea</strong></li>
+    </ul>
+    <p><span class="badge bg-primary rounded-pill">!</span> Dacă nu completaţi acest câmp, va apărea un mesaj de eroare.</p>
+    <p><span class="badge bg-primary rounded-pill">!</span> Dacă nu vedeţi formularul, vă rugăm să derulaţi pagina mai jos.</p>
+    <p><span class="badge bg-primary rounded-pill">!</span> Dacă apăsaţi a doua oară pe butonul <span class="badge" style="background-color: sandybrown">Am terminat un lucru</span>, formularul de va închide.</p>
+    <p>Câmpul <strong>Observaţie</strong> este opţional, dar acesta ajută la descrierea lucrului dumneavoastră.</p>
+    <p><span class="badge bg-danger rounded-pill">!</span> O observaţie pate avea maxim 200 de caractere. Vă rugăm să <strong>nu scrieţi observaţii de dimensiuni mari</strong>.</p>
+
+    <h2 id="activitati"> Pagina Activităţi</h2>
+    <h3> Activitatea pe o singură zi: Azi, Ieri, Alaltaieri, Alege Perioada</h3>
+    <p> Activitatea pe o zi conţine următoarele informaţii:</p>
+    <ul>
+        <li> Ora ajungerilor </li>
+        <li> Ora venirilor </li>
+        <li> Locaţia ajungerilor</li>
+        <li> Locaţia venirilor</li>
+        <li> *Observaţia la ajungere </li>
+        <li> *Observaţia la venire </li>
+        <li> Comenzile finalizate<br>
+            <ul>
+                <li>Denumirea</li>
+                <li>Numărul</li>
+                <li>Ora</li>
+                <li>Locaţia</li>
+                <li>*Observaţia</li>
+            </ul>
+        </li>
+        <li> Lucrările finalizate<br>
+            <ul>
+                <li>Denumirea</li>
+                <li>Ora</li>
+                <li>Locaţia</li>
+                <li>*Observaţia</li>
+            </ul>
+        </li>
+    </ul><br>
+    <p>Acţiunile posibile pe această pagină:</p>
+    <ul>
+        <li>Vizualizarea locaţiilor înregistrate </li>
+        <li>Relocarea ajungerii sau a venirii</li>
+        <li>Afişarea/ascunderea comenzilor</li>
+        <li>Editarea comenzilor</li>
+        <li>Anularea comenzilor</li>
+        <li>Afişarea/ascunderea lucrărilor</li>
+        <li>Editarea lucrărilor</li>
+        <li>Anularea lucrărilor</li>
+    </ul>
+    <h4 id="relocare" class="fs-2">Relocarea</h4>
+    <p> Dacă consideraţi că localizarea initiala a avut o eroare prea mare, puteti sa folositi butonul <span class="badge bg-light text-dark"> Relocare</span> de pe pagina activităţi, din dreapta butonului de deschidere a hărţilor fără a fi modificată ora.</p>
+    <p><span class="badge bg-danger rounded-pill">!</span> Acest buton este disponibil doar de <strong>{{ setare.nrrecalcpoz }}</strong> ori şi cel mult <strong>{{ setare.secafterrecalc }}</strong> secunde după înregistrarea ajungerii/plecării!</p>
+    <p><span class="badge bg-danger rounded-pill">!</span> Relocarea se poate aplica doar <strong class="text-decoration-underline">ultimei</strong> ajungeri sau plecări! </p>
+    <h4 id="editare" class="fs-2">Editarea comenzilor/lucrărilor</h4>
+    <p>La adăugarea/editarea unei comenzi sau a unui lucru pot fi schimbate:</p>
+    <ul>
+        <li>Denumirea</li>
+        <li>Numărul de comandă</li>
+        <li>*Observaţia</li>
+    </ul>
+    <p><span class="badge bg-danger rounded-pill">!</span> La schimbarea comenzii sau a lucrului, ora și locația se actualizează automat!</p>
+
+    <h3 class="mb-3"> Activitatea pe mai multe zile</h3>
+    <h4 class="fs-2" style="margin-top: 2px !important;"><i class="fa-solid fa-minus fs-5"></i> Ultimele 3 zile</h4>
+    <h4 class="fs-2 mb-4" style="margin-top: 2px !important;"><i class="fa-solid fa-minus fs-5"></i> Ultima săptămână</h4>
+    <p><span class="badge bg-danger rounded-pill">!</span> Recomandăm vizualizarea acestor activităţi folosind orientarea <strong>Landscape</strong>!
+    <p> Aceste date sunt încărcate într-un tabel, care conţine: </p>
+    <ul>
+        <li> Ziua săptămânii </li>
+{#        <li> Ora intrării </li>#}
+{#        <li> Ora ieşirii </li>#}
+{#        <li> Locaţia intrării</li>#}
+{#        <li> Locaţia ieşirii</li>#}
+{#        <li> *Observaţia la ajungere </li>#}
+{#        <li> *Observaţia la plecare </li>#}
+        <li> Numărul ajungerilor</li>
+        <li> Numărul plecărilor</li>
+        <li> Numărul comenzilor finalizate</li>
+        <li> Numărul lucrărilor finalizate</li>
+        <li> Link către activitatea din ziua respectivă</li>
+    </ul>
+    <p>Semnificaţia culorilor din tabel</p>
+    <ul>
+        <li> <div class="rounded bg-warning p-3 float-start mb-0 me-3"></div> Absent </li>
+        <li> <div class="rounded bg-success p-3 float-start mb-0 me-3"></div> Aţi înregistrat atât ajungeri, plecări, comenzi, cât şi lucrări </li>
+        <li> <div class="rounded bg-light p-3 float-start mb-0 me-3 border border-dark"></div> Prezenţă </li>
+    </ul>
+    <p><span class="badge bg-primary rounded-pill">!</span> Datele sunt calculate în funcţie de programul de lucru. De exemplu, dacă acesta se rezumă la <strong>Luni Marţi Miercuri Joi Vineri</strong> şi ziua curentă este <strong>Luni</strong>, <strong>Ieri</strong> va însemna <strong>Vineri</strong>, nu <strong>Duminică</strong>.</p>
+    <h2 id="cont">Pagina Cont</h2>
+    <h3>Secţiunea Detalii </h3>
+    <p> Conţine informaţiile contului, precum şi butonul de <span class="badge bg-primary">Modificare</span></p>
+    <p> Datele care pot fi vizualizate sunt:</p>
+    <ul>
+        <li>Numele de utilizator</li>
+        <li>Numele complet</li>
+        <li>Email-ul</li>
+        <li>Telefonul</li>
+        <li>Statutul</li>
+        <li>Parola</li>
+    </ul>
+    <p> Datele care pot fi modificate sunt:</p>
+    <ul>
+        <li>Numele de utilizator</li>
+        <li>Email-ul</li>
+        <li>Telefonul</li>
+        <li>Parola</li>
+    </ul>
+    <h3>Secţiunea Logout </h3>
+    <p> Deloghează utilizatorul curent de pe site.</p>
+    <p><span class="badge bg-danger rounded-pill">!</span> Recomandăm delogarea, pentru a nu supraîncărca serverul!</p>
+    <p><span class="badge bg-warning rounded-pill">!</span> Se recomandă salvarea parolei, din cauza riscului de a o uita!</p>
+    <p class="mt-5"><span class="badge bg-danger fs-2">Atenţie!</span></p>
+    <p>Acest site nu dispune de o modalitate de resetare a parolei.</p>
+    <p>În cazul în care nu vă mai amintiţi parola, puteţi să o cereţi direct de la manager sau de la administrator.</p>
+
+
+    {# MANAGER #}
+    <h1>Instrucţiuni Manager</h1>
+
+    <h2 id="activitatiManager">Activități</h2>
+    <h3 id="actView">Vizualizarea activităților</h3>
+    <p>Activitățile angajaților pot fi vizualizate din meniul <strong>Activități</strong>, selectând perioada de timp dorită. Aceste date se vor afișa într-un tabel.</p>
+    <p><span class="badge bg-primary rounded-pill">!</span> Dacă observați că tabelul este greu de vizualizat, vă rugăm folosiți opțiunile <i class="fa-solid fa-magnifying-glass-plus text-primary"></i>Zoom in, respectiv <i class="fa-solid fa-magnifying-glass-minus text-primary"></i>Zoom out ale browser-ului.</p>
+    <p><span class="badge bg-primary rounded-pill">!</span> Dacă folosiţi un dispozitiv mobil, vă rugăm folosiți opțiunea <strong>Landscape</strong>.</p>
+    <p><span class="badge bg-danger rounded-pill">!</span> Pentru a vă asigrua că sunteţi la curent cu datele provenite de la utilizatori, vă reconandăm să apăsaţi butonul <strong>Reîncarcă <i class="fa-solid fa-rotate-left"></i></strong> al browser-ului!.</p>
+    <p>Tabelul este alcătuit din următoarele coloane:</p>
+    <ul>
+        <li>
+            Date cont
+            <ul>
+                <li><span class="text-decoration-underline"> Nume</span>: un link către profilul angajat care a efectuat activitatea respectivă</li>
+                <li><span class="text-decoration-underline">Data</span>: data la care a efectuat activitatea respectivă</li>
+            </ul>
+        </li>
+        <li>
+            Ultima ajungere
+            <ul>
+                <li>Ora</li>
+                <li>Locaţia</li>
+                <li>Observaţia</li>
+            </ul>
+        </li>
+        <li>
+            Ultima plecare
+            <ul>
+                <li>Ora</li>
+                <li>Locaţia</li>
+                <li>Observaţia</li>
+            </ul>
+        </li>
+        <li>
+            Linkuri
+            <ul>
+                <li>Ajungeri: link către ajungerile utilizatorului din data afişată</li>
+                <li>Plecări: link către plecările utilizatorului din data afişată</li>
+                <li>Comenzi: link către comenzile finalizate ale utilizatorului din data afişată</li>
+                <li>Lucrări: link către lucrările finalizate ale utilizatorului din data afişată</li>
+            </ul>
+        </li>
+        <li><span class="text-decoration-underline text-primary">Modificare</span>: Editarea/Ștergerea datelor activității respective</li>
+    </ul>
+    <p>Semnificaţia culorilor din tabel</p>
+    <ul>
+        <li> <div class="rounded bg-warning p-3 float-start mb-0 me-3"></div> Absent </li>
+        <li> <div class="rounded bg-success p-3 float-start mb-0 me-3"></div> Utilizatorul a înregistrat atât ajungeri, plecări, comenzi, cât şi lucrări </li>
+        <li> <div class="rounded bg-light p-3 float-start mb-0 me-3 border border-dark"></div> Prezenţă </li>
+    </ul>
+    <p><span class="badge bg-primary rounded-pill">!</span> Datele sunt calculate în funcţie de programul de lucru. De exemplu, dacă acesta se rezumă la <strong>Luni Marţi Miercuri Joi Vineri</strong> şi ziua curentă este <strong>Luni</strong>, <strong>Ieri</strong> va însemna <strong>Vineri</strong>, nu <strong>Duminică</strong>.</p>
+    <h3 id="actFilter">Filtrarea activităților</h3>
+    <p>Activitățile pot fi filtrate după un număr de criterii, care se aplică <strong>simultan</strong>.</p>
+    <ol>
+        <li>Căutare text: după textul introdus în bara de căutare, care respectă unul din criteriile:<br>
+            <ul>
+                <li>Nume Prenume: selectează toți angajații care au textul introdus în numele complet</li>
+                <li>Telefon: selectează toți angajații al căror număr de telefon începe cu cifrele introduse</li>
+                <li>Email: selectează toți angajații care au textul introdus în email</li>
+                <li>Denumire comandă: selectează toți angajații care au textul introdus în numele comenzilor terminate</li>
+                <li>Număr comandă: selectează toți angajații care au un număr de comandă finalizat textul introdus</li>
+            </ul>
+        </li>
+        <li>Prezență: se poate selecta una dintre opțiunile următoare:
+            <ul>
+                <li>Prezenți: angajații care au confirmat plecarea și/sau ajungerea din firmă</li>
+                <li>Absenți: angajații care nu au completat nici ajungerea, nici plecarea</li>
+{#                <li>Intrare/Ieșire completate: angajații care au confirmat atât intrarea cât și ieșirea</li>#}
+{#                <li>Intrare/Ieșire incomplete: angajații care au confirmat doar intrarea</li>#}
+            </ul>
+        </li>
+{#        <li>Observații: se poate bifa căsuța <span class="badge bg-secondary"> Arată doar dacă există observații</span>, iar apoi una dintra opțiunile:#}
+{#            <ul>#}
+{#                <li>La venire: angajații care au făcut o observație la intrare</li>#}
+{#                <li>La plecare: angajații care au făcut o observație la ieșire</li>#}
+{#                <li>La venire și plecare: angajații care au făcut o observație atât la venire, cât și la plecare</li>#}
+{#            </ul>#}
+{#        </li>#}
+    </ol>
+    <p><span class="badge bg-danger rounded-pill">!</span> Aceste filtre se aplică simultan! </p>
+    <p><span class="badge bg-primary rounded-pill">!</span> Filtrarea poate fi ascunsă, pentru o vizualizare mai bună a datelor tabelului, folosind butonul <span class="badge bg-secondary">Atată/Ascunde</span></p>
+    <p><span class="badge bg-primary rounded-pill">!</span> Pentru a şterge filtrul de căutare, ştergeţi textul din bara de căutare iar apoi apăsaţi butonul <span class="badge bg-primary">Filtrează</span></p>
+    <p>În aceeași manieră, se poate stabili o ordine în care să fie afișate liniile tabelului. Opțiunile sunt:</p>
+    <ol>
+        <li> Criteriul de ordonare:
+            <ul>
+                <li>Nume Prenume: sortează în primul rând după nume, iar apoi după dată</li>
+                <li>Număr de ajungeri: sortează după numărul de ajungeri, iar apoi după nume</li>
+                <li>Număr de plecări: sortează după numărul de plecări, iar apoi după nume</li>
+                <li>Număr de comenzi: sortează după numărul de comenzi, iar apoi după nume</li>
+                <li>Număr de lucrări: sortează după numărul de lucrări, iar apoi după nume</li>
+            </ul>
+        </li>
+        <li> Modalitatea de ordonare:
+            <ul>
+                <li>Crescător</li>
+                <li>Descrescător</li>
+            </ul>
+        </li>
+    </ol>
+    <h3 id="actModif">Modificarea/Ștergerea activităților</h3>
+    <p>Înainte ca aceste acţiuni să aibă loc, ele vor trebui confirmate, prin apăsarea butoanelor <span class="badge bg-warning">Continuă</span> sau <span class="badge bg-success">Salvează</span>.</p>
+    <p id="memfree">Pentru a şterge mai multe actvităţi, acţiue recomandată pentru a <strong>elibera memoria folosita de server</strong>, folosiţi opţiunea <span class="text-danger text-decoration-underline">Şterge mai multe activităţi</span>, iar apoi să selectaţi o dată reprezentând cea mai veche activitate pe care doriţi să o pastraţi. De exemplu, pentru selecţia <strong>10.10.2021 10:40</strong>, toate activităţile mai vechi de data respectivă vor fi şterse. O activitate poate însemna: </p>
+    <ul>
+        <li>Ajungere</li>
+        <li>Plecare</li>
+        <li>Comandă</li>
+        <li>Lucrare</li>
+    </ul>
+    <p><span class="badge bg-primary rounded-pill">!</span> Aceste acțiuni sunt permanente, ele nu pot fi anulate!</p>
+    <h4 class="fs-2">Ajungere/Plecare</h4>
+    <p><span class="badge bg-danger rounded-pill">!</span>Activitatea unui angajat dintr-o anumită dată poate fi ștearsă prin ștergea câmpurilor care conţin datele ce trebuie să fie eliminate. </p>
+    <p>Modificarea datelor de ajungere sau de plecare se face prin editarea câmpurilor, urmată de apăsarea butonului <span class="badge bg-primary">Salvează modificările</span>.</p>
+    <p><span class="badge bg-primary rounded-pill">!</span> Sub ajungerile/plecările afişate, se va afişa un formular <strong>fără date</strong>, pentru a putea adăuga o <strong>noua</strong> ajungere/plecare.</p>
+    <p>Butonul <span class="badge bg-danger opacity-75"> <i class="fa-solid fa-arrow-rotate-right"></i> Anulează</span> va recompleta valorile câmpurilor cu datele inițiale, înainte să fie modificate, dacă nu ați confirmat salvarea modificărilor sau a ștergerii.</p>
+    <p><span class="badge bg-warning rounded-pill">!</span> Sugestie pentru modificarea locației: dați click pe Google Maps în locația dorită, iar apoi copiați coordonatele în câmpul dorit.</p>
+    <p>Alte butoane:</p>
+    <ul>
+        <li> Butonul <div class="btn btn-light fs-5"><i class="fa-solid fa-location-crosshairs"></i></div>: Arată <strong>vechea</strong> locație pe hartă</li>
+        <li> Butonul <div class="btn btn-light fs-5"><i class="fa-solid fa-magnifying-glass-location"></i></div>: Setează locația ca fiind locația curentă</li>
+    </ul>
+    <p class="mt-4"><span class="badge bg-danger fs-2 me-3">Atenţie!</span> Diferenţa maximă dintre plecări şi ajungeri trebuie să fie de <strong>1</strong>! În caz contrar, datele vor fi afişate haotic!</p>
+    <p> Vă rugăm să modificaţi aceste date astfel încât <strong>diferenţa de 1 să fie respectată!</strong></p>
+
+    <h4 class="fs-2">Comenzi</h4>
+    <p><span class="badge bg-danger rounded-pill">!</span> Modificarea/ștergerea ajungerii/plecării este total separată de cea a comenzilor!</p>
+    <p>Ștergerea unei comenzi se face prin apăsarea butonului <span class="badge bg-danger"><i class="fa-solid fa-xmark"></i> Şterge</span>, din cadrul unei comenzi, urmată de confirmare prin apăsarea butonului <span class="badge bg-warning">Continuă</span>. </p>
+    <p>Modificarea unei comenzi se face apăsând butonul <span class="badge bg-primary">Editează</span> din cadrul unei comenzi. Astfel, în partea de jos a pagini, după restul comenzilor, va apărea un formular conținând datele comenzii. </p>
+    <p>Adăugarea unei comenzi se face apăsând butonul <span class="badge bg-success">Adaugă</span>, de la începutul listei de comenzi. Acesta va deschide un formular similar celui de editare, dar fără date. </p>
+    <p><span class="badge bg-primary rounded-pill">!</span> În caz că formularul deschis nu poate fi observat, vă rugăm să derulaţi înspre finalul paginii! </p>
+    <p><span class="badge bg-danger rounded-pill">!</span> Dacă schimbați data activității, după salvare pagina va afișa o activitate inexistentă! Vă rugăm să reselectați data activitații de pe o altă pagină! </p>
+    <h4 class="fs-2">Lucrări</h4>
+    <p><span class="badge bg-danger rounded-pill">!</span> Modificarea/ștergerea lucrărilor este total separată de celelalte!</p>
+    <p>Ștergerea unei lucrări se face prin apăsarea butonului <span class="badge bg-danger"><i class="fa-solid fa-xmark"></i> Şterge</span>, din cadrul unei lucrări, urmată de confirmare prin apăsarea butonului <span class="badge bg-warning">Continuă</span>. </p>
+    <p>Modificarea unei lucrări se face apăsând butonul <span class="badge bg-primary">Editează</span> din cadrul unei lucrări. Astfel, în partea de jos a pagini, după restul lucrărilor, va apărea un formular conținând datele lucrării. </p>
+    <p>Adăugarea unei lucrări se face apăsând butonul <span class="badge bg-success">Adaugă</span>, de la începutul listei de lucrări. Acesta va deschide un formular similar celui de editare, dar fără date precompletate. </p>
+    <p><span class="badge bg-primary rounded-pill">!</span> În caz că formularul deschis nu poate fi observat, vă rugăm să derulaţi înspre finalul paginii! </p>
+    <p><span class="badge bg-danger rounded-pill">!</span> Dacă schimbați data activității, după salvare pagina va afișa o activitate inexistentă! Vă rugăm să reselectați data activitații de pe o altă pagină! </p>
+    <h3 id="actAdd">Adăugarea unei activități</h3>
+    <p> Adăugarea unei activități se realizează din meniul <strong>Activități <i class="fa-solid fa-arrow-right"></i> Adaugă o activitate</strong>. Această opțiune din meniul derulant va deschide o pagină în care va trebui să selectați user-ul și data asociate activității respective. Ulterior completării acestor date, se va deschide o pagină similară celei de editare a unei activități, fără date completate.</p>
+    <p> <span class="badge bg-primary rounded-pill">!</span> În acest context, editare-modificare înseamnă salvare. </p>
+    <p> Anularea acestei acțiuni presupune pur și simplu părăsirea paginii, dacă nu ați apăsat butonul <span class="badge bg-primary">Salvează modificările</span>. Astfel datele nu vor fi salvate. </p>
+    <p> Anularea poate fi efectuată apăsând butonul <i class="fa-solid fa-angle-left"></i> al browser-ului sau accesând o altă opțiune din meniul de opțiuni. </p>
+    <h3 id="actCmd">Informaţii importante despre comenzi</h3>
+    <p> Comenzile au un număr <strong>unic</strong> într-un an! Dat fiind acest fapt, un singur angajat poate finaliza un număr de comandă, deoarece dacă ceilalţi vor încerca, li se va afişa mesajul <strong>Număr de comandă duplicat!</strong></p>
+
+    {# RAPORT #}
+    <h2 id="raport">Raport</h2>
+    <h3 id="rapView">Vizualizare</h3>
+    <p> Raporturile reprezintă vizualizarea extinsă a activităților, împărțită pe categorii. Cele patru categorii de raporturi sunt:</p>
+    <ul>
+        <li>Intrări</li>
+        <li>Ieșiri</li>
+        <li>Comenzi</li>
+        <li>Lucrări</li>
+    </ul>
+    <p><span class="badge bg-primary rounded-pill">!</span> Dacă observați că tabelul este greu de vizualizat, vă rugăm folosiți opțiunile <i class="fa-solid fa-magnifying-glass-plus text-primary"></i>Zoom in, respectiv <i class="fa-solid fa-magnifying-glass-minus text-primary"></i>Zoom out ale browser-ului.</p>
+    <h3 id="rapFilter">Filtrare</h3>
+    <p> Datele din tabel pot fi filtrate după: </p>
+    <ol>
+        <li>Căutare textuală, după textul introdus în bara de căutare, care respectă unul din criteriile:
+            <ul>
+                <li>Nume: activitățile al căror nume de utilizator complet conție textul căutat </li>
+                <li>Email: activitățile al căror email conție textul căutat</li>
+                <li>Telefon: activitățile al căror telefon începe cu textul căutat</li>
+                <li>Observație: activitățile ale căror observații conție textul căutat</li>
+                <hr class="dropdown-divider mt-3 mb-3">
+                <li title="Apare doar la comenzi">Nume comandă: comenzile ale căror denumire conțin textul căutat</li>
+                <li title="Apare doar la comenzi">Număr comandă: comenzile ale căror număr de comandă începe cu textul căutat</li>
+                <hr class="dropdown-divider mt-3 mb-3">
+                <li title="Apare doar la lucrări">Denumire lucrare: lucrările ale căror denumire conțin textul căutat</li>
+            </ul>
+        </li>
+        <li>Interval de timp, selectând activitățile care au avut loc în intervalul dată-timp precizat
+             <p><span class="badge bg-primary rounded-pill">!</span> <strong>Primul</strong> moment reprezintă data <strong>iniţială</strong>, iar <strong>al doilea</strong> reprezintă data <strong>finală</strong>!</p>
+        </li>
+        <li>Ordonare, după următoarele criterii:
+            <ul>
+                <li>Nume: numele complet al angajatului, iar apoi după moment</li>
+                <li>Data: data la care a avut loc activitatea, iar apoi după numele angajatului</li>
+                <li>Ora: ora la care a avut loc activitatea, iar apoi după numele angajatului</li>
+                <li>Distanța față de firmă: distanța dintre firmă și locul înregistrat al activității, iar apoi după numele angajatului</li>
+            </ul>
+            în mod:
+            <ul>
+                <li>Crescător</li>
+                <li>Descrescător</li>
+            </ul>
+        </li>
+    </ol>
+    <p>O altă opțiune, nu neapărat de filtrare, dar care se activează/dezactivează de pe butonul <span class="badge bg-primary">Filtrează </span>, este căsuța <span class="badge text-dark border">Arată numele zilei săptămânii </span>, care adaugă o coloană suplimentară în tabel. </p>
+
+    {# CONT #}
+    <h2>Cont</h2>
+    <h3 id="contDetalii">Detalii cont propriu</h3>
+    <p>Această pagină conține un tabel în care sunt incluse:</p>
+    <ul>
+        <li>Numele de utilizator</li>
+        <li>Nume complet</li>
+        <li>Email</li>
+        <li>Telefon</li>
+        <li>Statut</li>
+    </ul>
+    <p>Totodată, această pagină conține un butonul <span class="badge bg-primary">Modificare</span>, folosit pentru schimbarea datelor contului dumneavoastră. Ca Manager/Administrator, puteți să schimbați toate detaliile contului, dar nu puteți deveni Administrator dacă sunteți Manager.</p>
+    <p>Dacă acțiunea este posibilă, este afișat și butonul <span class="badge bg-danger">Șterge cont</span>.
+    <h3 id="contView"> Vizualizare conturi</h3>
+    <p>Toate conturile pot fi vizualizate de pe pagina <strong>Cont <i class="fa-solid fa-arrow-right"></i> Vezi Angajații</strong>. Tot pe această pagină este disponibil butonul <span class="badge bg-success">Adaugă cont</span>. </p>
+    <p>Conturile pot fi filtrate după Nume de utilizator, Nume, Telefon sau Email.</p>
+    <p> Butonul <span class="badge bg-info">Modificare</span>, referior la Activitatea de azi, este o scurtătură către activitatea angajatului, și permite vizualizarea sa.</p>
+    <p> Butonul <span class="badge bg-primary">Link</span>, referitor la Cont, deschide o pagină similară cu detaliile contului propriu, care poate fi <strong>modificat sau șters</strong>.</p>
+
+    {# SETARI #}
+    <h2 id="setari">Setări</h2>
+    <h3 id="setariGeneral">Setări generale</h3>
+    <ul>
+        <li><strong>Numărul de localizări</strong>: reprezintă numărul de ori în care utilizatorul de poate localiza. După prima localizare, utilizatorii pot să folosească funcția de <span class="badge bg-light text-dark">Relocare</span>, fără a actualiza ora, din cauza unor posibile erori de calcul a locației cauzat de numărul variabil de sateliți GPS.</li>
+        <li><strong>Numărul de secunde</strong>: Numărul de secunde după care este disponibilă o relocare. De exemplu, după înregistrarea unei activități, dacă trec mai multe secunde decât cele din setarea curentă, funcția de relocare nu mai este disponibilă.</li>
+        <li><strong>Distanța</strong>: Distanța în metrii acceptată ca eroare a calculului de locație. </li>
+{#        <li><strong>Numărul de minute tolerate</strong>: Numărul de minute tolerate în calculul celor 8 ore dintre intrare și ieșire - este folosit doar la determinarea culorii unei linii din tabel.</li>#}
+        <li><strong>Harta</strong>: Reprezintă numele hărții dintre cele salvate care este folosită la afișarea locației pe hartă de către butoanele de localizare <div class="btn btn-light fs-5"><i class="fa-solid fa-location-crosshairs"></i></div></li>
+        <li><strong>Program</strong>: Zilele de program. Aceste date ajută la afișarea activităților, având în vedere că zilele care nu sunt în program nu sunt luate în considerare. De exemplu, la un program <strong>L Ma Mi J V</strong>, dacă ziua curentă este Luni, atunci <span class="text-decoration-underline"> Ieri</span> va fi Vineri. </li>
+    </ul>
+    <p><span class="badge bg-danger rounded-pill">!</span> Dintre toate numerele de mai sus, doar <span>Distanța</span> poate fi un număr rațional. Restul numerelor <span class="text-danger text-decoration-underline fw-bold">trebuie să fie naturale</span>!</p>
+    <p><span class="badge bg-primary rounded-pill">!</span> Puteţi vizualiza şi activităţile din alte zile din afara programului prin selectarea unei perioade cărei date de început şi de sfârşit corespund. </p>
+
+    <h3 id="setariHarti">Hărţi</h3>
+    <p>Hărţile reprezintă modalitatea de vizualizare a coordonatelor înregistrate. Chiar dacă aveţi înregistrate mai multe hărţi, puteţi folosi doar una singură, iar această setare a fost prezentată în cadrul setărilor generale. Butoanele pentru modificarea setului de hărţi sunt:</p>
+    <ul>
+        <li>Butonul <button class="btn btn-success"><i class="fa-solid fa-check"></i></button>: salvează modificările efectuate asupra hărţii de pe rândul curent, necesită confirmare</li>
+        <li>Butonul <button class="btn btn-primary"><i class="fa-solid fa-arrow-rotate-left"></i></button>: resetează datele completate pe rândul curent, dacă acestea nu au fost salvate</li>
+        <li>Butonul <button class="btn btn-danger"><i class="fa-solid fa-xmark"></i></button>: şterge harta pe rândul curent, necesită confirmare</li>
+        <li>Butonul <button class="btn btn-info"><i class="fa-solid fa-file-circle-question"></i></button>: testează harta, încărcând într-o pagină nouă coordonatele <strong>47.15, 24.5</strong>, sau <strong>Str. Simion Mândrescu 21-19, Bistrița</strong></li>
+        <li>Butonul <button class="btn btn-outline-success fs-4">Adaugă</button>: creează un rând nou, în care puteţi completa datele unei noi hărţi, <strong>salvarea</strong> ei reprezentând apăsarea butonului <button class="btn btn-success"><i class="fa-solid fa-check"></i></button>. Dacă nu observaţi acest rând, vă rugăm să derulaţi pagina în jos! </li>
+    </ul>
+    <p><span class="badge bg-danger rounded-pill">!</span> În cazul în care butonul <button class="btn btn-info"><i class="fa-solid fa-file-circle-question"></i></button> încarcă altă adresă, vă rugăm să apăsaţi butonul Refresh <i class="fa-solid fa-rotate-left"></i> al browser-ului!</p>
+    <p><span class="badge bg-primary rounded-pill">!</span> Salvarea unei noi hărţi trebuie finalizată prin apăsarea butonului <button class="btn btn-success"><i class="fa-solid fa-check"></i></button></p>
+    <p>Câtă vreme Numele hărţii este unul orientativ, <strong>linkul</strong> este foarte important. Logica acestuia este urmatoarea: </p>
+    <ul>
+        <li><strong>Link</strong>: o adresă url <strong>validă</strong>, în care <strong>^^lat^^</strong> şi <strong>^^long^^</strong> vor fi înlocuite</li>
+        <li><strong>^^lat^^</strong>: reprezintă latitudinea care va fi înlocuită cu latitudinea coordonatei care va fi afişate pe hartă</li>
+        <li><strong>^^long^^</strong>: reprezintă longitudinea care va fi înlocuită cu longitudinea coordonatei care va fi afişate pe hartă</li>
+    </ul>
+    <p>De exemplu, dacă link-ul este <a href="#setari">https://www.latlong.net/c/?lat=<span style="color: #6e00b0">^^lat^^</span>&long=<span style="color: #6e00b0">^^long^^</span></a>, iar coordonatele sunt <strong>47.15, 24.5</strong>, atunci linkul va deveni <a href="https://www.latlong.net/c/?lat=47.15&long=24.5" target="_blank" title="Test">https://www.latlong.net/c/?lat=<span style="color: #6e00b0">47.15</span>&long=<span style="color: #6e00b0">24.5</span></a>, iar browser-ul va încărca acest link într-o filă nouă.</p>
+    <p><span class="badge bg-danger rounded-pill">!</span> Este posibil ca din cauza unor actualizări, harta <strong>Google Maps</strong> să nu mai funcţioneze cu linkul actual şi să necesite o <strong>modificare a linkului</strong>! Dacă nu doriţi să descoperiţi noul link folosit de Google Maps, puteţi folosi altă hartă.</p>
+    <h3 id="setariArii">Arii pe hartă</h3>
+    <p>Ariile pe hartă reprezintă cercurile ale căror reuniune reprezintă suprafaţa firmei. Din cauza posibilelor erori de calcul a locaţiei, acestea includ arii puţin mai extinse decât strict suprafaţa firmei.</p>
+    <p>Similar cu secţiunea <strong>Hărţi</strong>, şi această secţiune conţine butoanele
+        <button class="btn btn-success fs-5">Modifică <i class="fa-solid fa-check"></i></button>, <button class="btn btn-primary fs-5"><i class="fa-solid fa-arrow-rotate-left"></i> Reîncarcă</button>, <button class="btn btn-danger fs-5">Şterge <i class="fa-solid fa-xmark"></i></button>, respectiv
+        <button class="btn btn-outline-success fs-5"> Adaugă</button>, cu comportamente similare celor din secţiunea precedentă. </p>
+    <p>Datele stocate de o arie sunt:</p>
+    <ul>
+        <li>Nume: cu valoare orientativă</li>
+        <li>Poziţie centru: coordonatele centrului cercului care descrie o arie</li>
+        <li>Poziţie punct de pe cerc: coordonatele unui punct de pe cercul descris de arie</li>
+    </ul>
+    <p><strong>Observaţie!</strong> Distanţa dintre poziţia centrului şi poziţia punctului de pe cerc reprezintă raza cercului.</p>
+    <p>Poziţiile vor fi introduse în formatul <strong class="text-decoration-underline">latitudine, longitudine</strong> <strong class="text-danger">fără să conţină alte caractere în afară de spaţii!</strong></p>
+    <p><span class="badge bg-danger rounded-pill">!</span> Aria adăugată cu butonul <button class="btn btn-outline-success fs-5"> Adaugă</button> va apărea în partea de jos a paginii, vă rugăm să derulaţi pagina în jos pentru a o completa!</p>
+
+    <h2 id="ftime">Formatul datei şi a orei</h2>
+    <p>Data şi ora din formulare depind direct de setările sistemului de operare, însemnând că au vizualizări diferite pe sisteme diferite. Pentru a schimba acest aspect, este necesar să shimbaţi formatul default al datei(<a target="_blank" href="https://winbuzzer.com/2021/08/20/how-to-change-date-and-time-format-in-windows-10-xcxwbt/">Link pentru Windows</a>). </p>
+    <p>În plus, formatul orei este <strong>AM/PM</strong>, iar timpul afişat în acesta poate produce confuzii. Reamintim că:</p>
+    <ul>
+        <li><strong>12:00 AM</strong> reprezintă ora <strong>00:00</strong>, adică miezul nopţii</li>
+        <li>07:00 AM reprezintă ora 07:00</li>
+        <li>11:59 AM reprezintă ora 11:59, marcând sfârşitul dimineţii</li>
+        <li><strong>12:00 PM</strong> reprezintă ora <strong>12:00</strong>, adică amiaza</li>
+        <li>07:00 PM reprezintă ora 19:00</li>
+        <li>11:59 PM reprezintă ora 23:59, marcând sfârşitul zilei</li>
+    </ul>
+
+    <h2 id="help">Ajutor</h2>
+    <p> Recomandăm ca navigarea pe această pagină să se bazeze pe următoarele componente:</p>
+    <ul>
+        <li><strong>Cuprins</strong>, care conţine legături către fiecare capitol şi subcapitol al cuprinsului</li>
+        <li><strong>Butonul <a href="#cuprins" class="btn btn-outline-primary rounded-circle btn-floating btn-lg" title="Sari la cuprins" data-bs-toggle="tooltip" data-bs-placement="right"><i class="fa-solid fa-arrow-up"></i></a></strong> din partea stânga jos, care permite navigarea directă către cuprins, fără să fie necesară derularea întregii pagini</li>
+    </ul>
+    <p> Dacă serverul nu mai poate stoca alte date, este probabil ca memoria să fie epuizată. În acest caz, vă rugăm să <a href="#memfree">ştergeţi nişte activităţi înregistrate</a>, sau să aciziţionaţi un server cu mai multă memorie.</p>
+</div>
+<footer id="sticky-footer" class="flex-shrink-0 py-4 bg-dark text-white-50">
+    <div class="container text-center">
+        <h5 class="fs-1" style="font-size: 300%">Mulţumim pentru susţinerea dumneavoastră!</h5>
+        <p> Dacă apar erori sau neclarităţi, vă rugăm să ne contactaţi. </p>
+    </div>
+</footer>
+{% endblock %}

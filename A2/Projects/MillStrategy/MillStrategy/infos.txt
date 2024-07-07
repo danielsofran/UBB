@@ -1,0 +1,18 @@
+﻿La codificare2:
+moara = daca nr is circular consecutive 
+si incep cu nr impar 
+sau daca au aceeasi ultima cifra para
+
+vecini = 
+	- daca e pozitie impara: circular st si dr
+	- daca e pozitie para:
+		- daca are prima cifra 1: st, dr, jos
+		- daca are prima cifra 3: st, dr, sus
+		- daca are prima cifra 2: st, dr, sus, jos
+
+pentru bot mutat: prefera pozitiile cu cat mai multe pare
+
+outer: square 1
+middle: square 2
+inner: square 3
+

@@ -1,0 +1,31 @@
+     1                                  bits 32 ; assembling for the 32 bits architecture
+     2                                  global start        
+     3                                  extern exit
+     4                                  import exit msvcrt.dll
+     5                                  
+     6                                  segment data use32 class=data
+     7 00000000 07                          a DB 7
+     8 00000001 CDAB                        b dw 0abcdh     ; 
+     9 00000003 CDAB3412                    c dd 1234abcdh
+    10                                  
+    11                                  segment code use32 class=code
+    12                                      start:
+    13                                          ; incarcarea unui registru cu o valoare imediata
+    14                                          ;-------------------------------------------------
+    15                                          ; mov eax, 0
+    16                                          ; mov al, 7
+    17                                          ; mov al, 7h
+    18                                          ; mov al, 111b
+    19                                          
+    20                                          ; incarcarea valorii unei variabile
+    21 00000000 A1[00000000]                    mov eax, [a]
+    22                                          
+    23                                          ; incarcarea adresei(offset-ului) unei variabile
+    24 00000005 B8[00000000]                    mov eax, a
+    25                                          
+    26                                          ; INCORECT - AL are 8 biti, dar 256 are 9 biti
+    27                                          ; mov al, 256
+    28 0000000A B800010000                      mov eax, 256
+    29                                  
+    30 0000000F 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    31 00000011 FF15[00000000]                  call    [exit]       ; call exit to terminate the program

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+      /*#id1 {*/
+      /*    background-color: red;*/
+      /*    height: 100px;*/
+      /*}*/
+      /*#id1 {*/
+      /*    background-color: blue;*/
+
+      /*}*/
+      /*p:visible{*/
+      /*      background-color: yellow;*/
+      /*}*/
+      /*p:hidden{*/
+      /*    background-color: green;*/
+      /*}*/
+      #id2 {
+          background-color: blue;
+      }
+
+      div #id1 .class2{
+          background-color: green;
+      }
+
+      div .class1 #id2{
+          background-color: yellow;
+      }
+
+      #id1{
+          background-color: red;
+      }
+    </style>
+</head>
+<body>
+<div>
+    <div class="class1" id="id1">
+        <div class="class2" id="id2">
+            Coco canta
+        </div>
+    </div>
+</div>
+</body>
+</html>

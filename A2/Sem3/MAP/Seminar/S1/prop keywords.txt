@@ -1,0 +1,7 @@
+abstract class - este o clasa care nu poate fi instantiata
+interfata - o colectie de constante si metode care urmeaza a fi implementate
+equals - compara doua obiecte prin valoare
+hashcode - codul unic asociat unei instante
+mostenire - procesul prin care o clasa preia definitia altei clase
+singleton - design pattern: o clasa care insapsuleaza o singura instanta a unei alte clase
+factory - design pattern: o clasa care creeaza instante pentru un anume tip de subclasa 

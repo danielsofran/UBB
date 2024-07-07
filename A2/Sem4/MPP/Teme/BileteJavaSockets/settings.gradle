@@ -1,0 +1,9 @@
+rootProject.name = 'BileteJavaSockets'
+include 'BileteModel'
+include 'BiletePersistance'
+include 'BileteClientFX'
+include 'BileteServices'
+include 'BileteNetworking'
+include 'ChatServer'
+include 'BileteServer'
+

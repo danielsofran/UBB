@@ -1,0 +1,5 @@
+
+BEGIN TRAN
+	UPDATE Tari SET nume_tara='SP' WHERE cod_tara=1
+	WAITFOR DELAY '00:00:05'
+ROLLBACK TRAN

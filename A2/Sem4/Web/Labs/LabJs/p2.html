@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>P2</title>
+</head>
+<body>
+	<h2>Formular de contact</h2>
+	<form id="formular" onsubmit="return validateForm()">
+		<label for="nume">Nume:</label>
+		<input type="text" id="nume" name="nume"><br><br>
+
+		<label for="data">Data nasterii:</label>
+		<input type="date" id="data" name="data"><br><br>
+
+		<label for="varsta">Varsta:</label>
+		<input type="number" id="varsta" name="varsta"><br><br>
+
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email"><br><br>
+
+		<input type="submit" value="Trimite">
+	</form>
+
+	<script>
+		function validateForm() {
+			document.getElementById("nume").style.border = "";
+			document.getElementById("data").style.border = "";
+			document.getElementById("varsta").style.border = "";
+			document.getElementById("email").style.border = "";
+		
+			var ok = true;
+			var nume = document.forms["formular"]["nume"].value;
+			var dataNasterii = document.forms["formular"]["data"].value;
+			var varsta = document.forms["formular"]["varsta"].value;
+			var email = document.forms["formular"]["email"].value;
+			
+			const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			var today = new Date();
+			var date = new Date(dataNasterii);
+			var age = today.getFullYear() - date.getFullYear();
+			var month = today.getMonth() - date.getMonth();
+			if (month < 0 || (month === 0 && today.getDate() < date.getDate())) {
+				age--;
+			}
+			
+			var mesaj = "Campurile ";
+			if(nume == "") {
+				mesaj += "nume ";
+				document.getElementById("nume").style.border = "3px solid red";
+			}
+			if (data.value == "" || data.value === null) {
+				mesaj += "data nasterii ";
+				document.getElementById("data").style.border = "3px solid red";
+			}
+			if(varsta == "" || age != varsta) {
+				mesaj += "varsta ";
+				document.getElementById("varsta").style.border = "3px solid red";
+			}
+			if(email == "" || !regex.test(email)) {
+				mesaj += "email ";
+				document.getElementById("email").style.border = "3px solid red";
+			}
+			if (mesaj != "Campurile ") {
+				alert(mesaj + "trebuie completate!");
+				ok = false;
+			}
+			else {
+				alert("Datele sunt completate corect!");
+			}
+			return ok;
+		}
+	</script>
+</body>
+</html>

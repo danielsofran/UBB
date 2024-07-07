@@ -1,0 +1,51 @@
+     1                                  bits 32
+     2                                  global start
+     3                                  
+     4                                  extern printf
+     5                                  import printf msvcrt.dll
+     6                                  
+     7                                  segment data use32 class=data
+     8 00000000 3412AB67CD89                s1 dw 1234h, 67abh, 89cdh
+     9                                      l equ ($-s1)/2
+    10 00000006 452378566745                s2 dw 2345h, 5678h, 4567h
+    11 0000000C 0000<rept>                  d times l dw 0
+    12                                  
+    13                                  ; Se dau doua siruri de cuvinte s1 si s2.
+    14                                  ; Se cere sirul de cuvinte d obtinut in interpretarea cu semn, astfel:
+    15                                  ; - d[i] = s1[i], daca s1[i] > s2[i]
+    16                                  ; - d[i] = s2[i], altfel.
+    17                                  segment code use32 class=code
+    18                                      start:
+    19 00000000 B903000000                      mov ecx, l
+    20 00000005 BB00000000                      mov ebx, 0 ; index pe d
+    21 0000000A BE[00000000]                    mov esi, s1
+    22 0000000F BF[06000000]                    mov edi, s2
+    23 00000014 FC                              cld
+    24 00000015 E323                            jecxz final
+    25                                          
+    26                                          repeta:
+    27 00000017 66A7                                cmpsw
+    28 00000019 7E0B                                jle mai_mic
+    29                                              
+    30 0000001B 66AD                                lodsw
+    31 0000001D 668983[0C000000]                    mov [d+ebx], ax
+    32 00000024 EB0F                                jmp continue
+    33                                              
+    34                                              mai_mic:
+    35 00000026 56                                  push esi
+    36 00000027 57                                  push edi
+    37                                              
+    38 00000028 89FE                                mov esi, edi
+    39 0000002A 66AD                                lodsw
+    40 0000002C 668983[0C000000]                    mov [d+ebx], ax
+    41                                              
+    42 00000033 5F                                  pop edi
+    43 00000034 5E                                  pop esi
+    44                                              
+    45                                              continue:
+    46 00000035 83C302                              add ebx, 2
+    47 00000038 E2DD                            loop repeta
+    48                                          
+    49                                          final:
+    50 0000003A 68[0C000000]                    push d        ; push the parameter for exit onto the stack
+    51 0000003F FF15[00000000]                  call [printf]         ; call exit to terminate the program

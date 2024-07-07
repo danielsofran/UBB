@@ -1,0 +1,108 @@
+15 Mar 2023 14:55:45,514 INFO  CarsDBRepository 19 <init> - Initializing CarsDBRepository with properties: {} 
+15 Mar 2023 14:55:45,519 TRACE CarsDBRepository 73 add - Enter
+15 Mar 2023 14:55:45,519 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 14:55:45,520 TRACE JdbcUtils 23 getNewConnection - Enter
+15 Mar 2023 14:55:45,520 INFO  JdbcUtils 28 getNewConnection - trying to connect to database ... null
+15 Mar 2023 14:55:45,520 INFO  JdbcUtils 29 getNewConnection - user: null
+15 Mar 2023 14:55:45,520 INFO  JdbcUtils 30 getNewConnection - pass: null
+15 Mar 2023 14:55:45,522 ERROR JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+15 Mar 2023 14:55:45,523 TRACE JdbcUtils 55 getConnection - Exit
+15 Mar 2023 14:59:38,405 INFO  CarsDBRepository 19 <init> - Initializing CarsDBRepository with properties: {jdbc.url=jdbc:sqlite:C:UsersaerapDesktopMPPLab1modul_lab3cars.db} 
+15 Mar 2023 14:59:38,410 TRACE CarsDBRepository 73 add - Enter
+15 Mar 2023 14:59:38,410 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 14:59:38,410 TRACE JdbcUtils 23 getNewConnection - Enter
+15 Mar 2023 14:59:38,410 INFO  JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:C:UsersaerapDesktopMPPLab1modul_lab3cars.db
+15 Mar 2023 14:59:38,410 INFO  JdbcUtils 29 getNewConnection - user: null
+15 Mar 2023 14:59:38,411 INFO  JdbcUtils 30 getNewConnection - pass: null
+15 Mar 2023 14:59:38,413 ERROR JdbcUtils 39 getNewConnection - java.sql.SQLException: No suitable driver found for jdbc:sqlite:C:UsersaerapDesktopMPPLab1modul_lab3cars.db
+15 Mar 2023 14:59:38,414 TRACE JdbcUtils 55 getConnection - Exit
+15 Mar 2023 15:02:29,261 INFO  CarsDBRepository 19 <init> - Initializing CarsDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\aerap\Desktop\MPP\Lab1\modul_lab3\cars.db} 
+15 Mar 2023 15:02:29,266 TRACE CarsDBRepository 73 add - Enter
+15 Mar 2023 15:02:29,266 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 15:02:29,266 TRACE JdbcUtils 23 getNewConnection - Enter
+15 Mar 2023 15:02:29,267 INFO  JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\aerap\Desktop\MPP\Lab1\modul_lab3\cars.db
+15 Mar 2023 15:02:29,267 INFO  JdbcUtils 29 getNewConnection - user: null
+15 Mar 2023 15:02:29,267 INFO  JdbcUtils 30 getNewConnection - pass: null
+15 Mar 2023 15:02:29,270 ERROR JdbcUtils 39 getNewConnection - java.sql.SQLException: No suitable driver found for jdbc:sqlite:C:\Users\aerap\Desktop\MPP\Lab1\modul_lab3\cars.db
+15 Mar 2023 15:02:29,271 TRACE JdbcUtils 55 getConnection - Exit
+15 Mar 2023 15:04:47,246 INFO  CarsDBRepository 19 <init> - Initializing CarsDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\aerap\Desktop\MPP\Lab1\modul_lab3\cars.db} 
+15 Mar 2023 15:04:47,251 TRACE CarsDBRepository 73 add - Enter
+15 Mar 2023 15:04:47,251 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 15:04:47,251 TRACE JdbcUtils 23 getNewConnection - Enter
+15 Mar 2023 15:04:47,251 INFO  JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\aerap\Desktop\MPP\Lab1\modul_lab3\cars.db
+15 Mar 2023 15:04:47,252 INFO  JdbcUtils 29 getNewConnection - user: null
+15 Mar 2023 15:04:47,252 INFO  JdbcUtils 30 getNewConnection - pass: null
+15 Mar 2023 15:04:47,397 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@38b27cdc)
+15 Mar 2023 15:04:47,403 TRACE CarsDBRepository 81 add - Saved 1 instances
+15 Mar 2023 15:04:47,403 TRACE CarsDBRepository 86 add - Exit
+15 Mar 2023 15:04:47,404 TRACE CarsDBRepository 109 findAll - Enter
+15 Mar 2023 15:04:47,404 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 15:04:47,404 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@38b27cdc)
+15 Mar 2023 15:04:47,410 TRACE CarsDBRepository 118 findAll - Exit with([Id=0 Tesla Model S 2019, Id=1 Dacia Sandero 2019, Id=2 Skoda Octavia 2020])
+15 Mar 2023 15:04:47,410 TRACE CarsDBRepository 25 findByManufacturer - Enter
+15 Mar 2023 15:04:47,411 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 15:04:47,411 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@38b27cdc)
+15 Mar 2023 15:04:47,411 TRACE CarsDBRepository 35 findByManufacturer - Exit
+15 Mar 2023 15:36:52,835 INFO  CarsDBRepository 19 <init> - Initializing CarsDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\aerap\Desktop\MPP\Lab1\modul_lab3\cars.db} 
+15 Mar 2023 15:36:52,840 TRACE CarsDBRepository 73 add - Enter
+15 Mar 2023 15:36:52,840 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 15:36:52,840 TRACE JdbcUtils 23 getNewConnection - Enter
+15 Mar 2023 15:36:52,841 INFO  JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\aerap\Desktop\MPP\Lab1\modul_lab3\cars.db
+15 Mar 2023 15:36:52,841 INFO  JdbcUtils 29 getNewConnection - user: null
+15 Mar 2023 15:36:52,841 INFO  JdbcUtils 30 getNewConnection - pass: null
+15 Mar 2023 15:36:53,003 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@38b27cdc)
+15 Mar 2023 15:36:53,008 TRACE CarsDBRepository 81 add - Saved 1 instances
+15 Mar 2023 15:36:53,009 TRACE CarsDBRepository 86 add - Exit
+15 Mar 2023 15:36:53,009 TRACE CarsDBRepository 109 findAll - Enter
+15 Mar 2023 15:36:53,009 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 15:36:53,009 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@38b27cdc)
+15 Mar 2023 15:36:53,015 TRACE CarsDBRepository 118 findAll - Exit with([Id=1 Dacia Sandero 2019, Id=2 Skoda Octavia 2020, Id=9 Tesla2 Model S2 2020, Id=10 Tesla Model S 2019])
+15 Mar 2023 15:36:53,016 TRACE CarsDBRepository 25 findByManufacturer - Enter
+15 Mar 2023 15:36:53,016 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 15:36:53,016 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@38b27cdc)
+15 Mar 2023 15:36:53,017 TRACE CarsDBRepository 35 findByManufacturer - Exit
+15 Mar 2023 18:11:50,413 INFO  CarsDBRepository 19 <init> - Initializing CarsDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\aerap\Desktop\MPP\Lab1\modul_lab3\cars.db} 
+15 Mar 2023 18:11:50,418 TRACE CarsDBRepository 73 add - Enter
+15 Mar 2023 18:11:50,418 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 18:11:50,419 TRACE JdbcUtils 23 getNewConnection - Enter
+15 Mar 2023 18:11:50,419 INFO  JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\aerap\Desktop\MPP\Lab1\modul_lab3\cars.db
+15 Mar 2023 18:11:50,419 INFO  JdbcUtils 29 getNewConnection - user: null
+15 Mar 2023 18:11:50,419 INFO  JdbcUtils 30 getNewConnection - pass: null
+15 Mar 2023 18:11:50,578 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@38b27cdc)
+15 Mar 2023 18:11:50,584 TRACE CarsDBRepository 81 add - Saved 1 instances
+15 Mar 2023 18:11:50,584 TRACE CarsDBRepository 86 add - Exit
+15 Mar 2023 18:11:50,584 TRACE CarsDBRepository 109 findAll - Enter
+15 Mar 2023 18:11:50,584 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 18:11:50,584 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@38b27cdc)
+15 Mar 2023 18:11:50,591 TRACE CarsDBRepository 118 findAll - Exit with([Id=1 Dacia Sandero 2019, Id=2 Skoda Octavia 2020, Id=13 Tesla Model S 2019])
+15 Mar 2023 18:11:50,591 TRACE CarsDBRepository 25 findByManufacturer - Enter
+15 Mar 2023 18:11:50,591 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 18:11:50,591 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@38b27cdc)
+15 Mar 2023 18:11:50,592 TRACE CarsDBRepository 35 findByManufacturer - Exit
+15 Mar 2023 18:11:59,101 INFO  CarsDBRepository 19 <init> - Initializing CarsDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\aerap\Desktop\MPP\Lab1\modul_lab3\cars.db} 
+15 Mar 2023 18:11:59,106 TRACE CarsDBRepository 73 add - Enter
+15 Mar 2023 18:11:59,106 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 18:11:59,106 TRACE JdbcUtils 23 getNewConnection - Enter
+15 Mar 2023 18:11:59,106 INFO  JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\aerap\Desktop\MPP\Lab1\modul_lab3\cars.db
+15 Mar 2023 18:11:59,106 INFO  JdbcUtils 29 getNewConnection - user: null
+15 Mar 2023 18:11:59,107 INFO  JdbcUtils 30 getNewConnection - pass: null
+15 Mar 2023 18:11:59,267 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@38b27cdc)
+15 Mar 2023 18:11:59,273 TRACE CarsDBRepository 81 add - Saved 1 instances
+15 Mar 2023 18:11:59,273 TRACE CarsDBRepository 86 add - Exit
+15 Mar 2023 18:11:59,273 TRACE CarsDBRepository 109 findAll - Enter
+15 Mar 2023 18:11:59,273 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 18:11:59,273 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@38b27cdc)
+15 Mar 2023 18:11:59,280 TRACE CarsDBRepository 118 findAll - Exit with([Id=1 Dacia Sandero 2019, Id=2 Skoda Octavia 2020, Id=13 Tesla Model S 2019, Id=14 Tesla Model S 2019])
+15 Mar 2023 18:11:59,280 TRACE CarsDBRepository 25 findByManufacturer - Enter
+15 Mar 2023 18:11:59,281 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 18:11:59,281 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@38b27cdc)
+15 Mar 2023 18:11:59,281 TRACE CarsDBRepository 35 findByManufacturer - Exit
+15 Mar 2023 18:13:12,849 INFO  CarsDBRepository 19 <init> - Initializing CarsDBRepository with properties: {} 
+15 Mar 2023 18:13:12,854 TRACE CarsDBRepository 73 add - Enter
+15 Mar 2023 18:13:12,854 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 18:13:12,854 TRACE JdbcUtils 23 getNewConnection - Enter
+15 Mar 2023 18:13:12,854 INFO  JdbcUtils 28 getNewConnection - trying to connect to database ... null
+15 Mar 2023 18:13:12,855 INFO  JdbcUtils 29 getNewConnection - user: null
+15 Mar 2023 18:13:12,855 INFO  JdbcUtils 30 getNewConnection - pass: null
+15 Mar 2023 18:13:12,856 ERROR JdbcUtils 39 getNewConnection - java.sql.SQLException: The url cannot be null
+15 Mar 2023 18:13:12,857 TRACE JdbcUtils 55 getConnection - Exit

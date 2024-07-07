@@ -1,0 +1,45 @@
+xor eax, eax
+
+and eax, 0
+
+mov eax, 0
+
+sub eax, eax
+
+times 32 shr eax, 1 sau
+shr eax, 31
+shr eax, 1
+
+times 32 shl eax, 1 sau
+shl eax, 31
+shl eax, 1
+
+mov ecx, 33
+        bucla:
+            clc
+            rcl eax, 1
+        loop bucla
+
+mov ecx, 33
+        bucla:
+            clc
+            rcr eax, 1
+        loop bucla
+
+mov ebx, eax
+neg ebx
+add eax, ebx
+
+lea eax, [$-$]
+
+lea eax, [$$-$$]
+
+jmp continue
+db 0
+continue:
+movzx eax, byte[$-1]
+
+[section DATA]
+ d equ $-$$
+ __SECT__
+ mov eax, d

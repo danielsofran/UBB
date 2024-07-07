@@ -1,0 +1,19 @@
+function [lp] = LP2(x,f,x0)
+  x = -5:0.01:5;
+  f = 1./(1.+x.^2);
+  sum = 0;
+  for i = 1:length(x)
+      u = 1;
+      l = 1;
+      for j = 1:length(x)
+          if j == i
+            continue 
+          else 
+             u = u.*(x0.-x(j));
+             l = l.*(x(i).-x(j));
+          endif
+      endfor
+      sum = sum.+(u./l.*f(i));
+  endfor
+  lp = sum;
+endfunction

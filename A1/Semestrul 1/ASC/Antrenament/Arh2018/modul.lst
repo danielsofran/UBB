@@ -1,0 +1,44 @@
+     1                                  bits 32
+     2                                  
+     3                                  global maxbyte
+     4                                  
+     5                                  extern formatd, formats, formatx
+     6                                  extern printf
+     7                                  import printf msvcrt.dll
+     8                                  
+     9                                  %macro PRINTF 2
+    10                                  pushad
+    11                                  push %2
+    12                                  push %1
+    13                                  call [printf]
+    14                                  add esp, 4*2
+    15                                  popad
+    16                                  %endmacro
+    17                                  
+    18                                  segment code use32 class=code
+    19                                  maxbyte:
+    20 00000000 BA00000000                  mov edx, 0
+    21 00000005 8B742404                    mov esi, [esp+4]
+    22 00000009 B904000000                  mov ecx, 4
+    23                                      _loop:
+    24 0000000E AC                              lodsb
+    25 0000000F 38D0                            cmp al, dl
+    26 00000011 7608                            jna continue
+    27 00000013 88C2                            mov dl, al
+    28 00000015 8B7C240C                        mov edi, [esp+12]
+    29 00000019 890F                            mov [edi], ecx
+    30                                          ;PRINTF formatx, edx
+    31                                          continue:
+    32 0000001B E2F1                        loop _loop
+    33                                      
+    34 0000001D 8B442408                    mov eax, [esp+8]
+    35 00000021 0110                        add [eax], edx
+    36                                      PRINTF formatd, dword[eax]
+    36 00000023 60                  <1> pushad
+    36 00000024 FF30                <1> push %2
+    36 00000026 68[00000000]        <1> push %1
+    36 0000002B FF15[00000000]      <1> call [printf]
+    36 00000031 83C408              <1> add esp, 4*2
+    36 00000034 61                  <1> popad
+    37 00000035 C3                          ret
+    38                                      

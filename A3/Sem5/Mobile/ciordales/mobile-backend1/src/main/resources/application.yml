@@ -1,0 +1,20 @@
+spring:
+  jpa:
+    database: mysql
+    show-sql: true
+    hibernate:
+      ddl-auto: update
+  datasource:
+    url: jdbc:mysql://localhost:3306/mobile-backend1
+    username: root
+    password: parola
+
+token:
+  signing:
+    key: 413F4428472B4B6250655368566D5970337336763979244226452948404D6351
+  expiration:
+    minutes: 60
+client:
+  url: http://localhost:8100
+server:
+  address: 192.168.43.50

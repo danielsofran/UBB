@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>P2</title>
+</head>
+<body>
+	<h2>Formular de contact</h2>
+	<form id="formular" onsubmit="return validateForm()">
+		<label for="nume">Nume:</label>
+		<input type="text" id="nume" name="nume"><br><br>
+
+		<label for="data">Data nasterii:</label>
+		<input type="date" id="data" name="data"><br><br>
+
+		<label for="varsta">Varsta:</label>
+		<input type="number" id="varsta" name="varsta"><br><br>
+
+		<label for="email">Email:</label>
+		<input type="email" id="email" name="email"><br><br>
+
+		<input type="submit" value="Trimite">
+	</form>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		function validateForm() {
+      $('#nume').css('border', "");
+      $('#data').css('border',  "");
+      $('#varsta').css('border', "");
+      $('#email').css('border', "");
+
+			var ok = true;
+			var nume = $('#nume').val();
+			var dataNasterii = $('#data').val();
+			var varsta = $('#varsta').val();
+      console.log(varsta);
+			var email = $('#email').val();
+
+			const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+			var today = new Date();
+			var date = new Date(dataNasterii);
+			var age = today.getFullYear() - date.getFullYear();
+			var month = today.getMonth() - date.getMonth();
+			if (month < 0 || (month === 0 && today.getDate() < date.getDate())) {
+				age--;
+			}
+
+			var mesaj = "Campurile ";
+			if(nume === "") {
+				mesaj += "nume ";
+				$('#nume').css('border', "3px solid red");
+			}
+			if (data.value === "" || data.value === null) {
+				mesaj += "data nasterii ";
+        $('#data').css('border',  "3px solid red");
+			}
+			if(varsta === "" || age !== varsta) {
+				mesaj += "varsta ";
+        $('#varsta').css('border', "3px solid red");
+			}
+			if(email === "" || !regex.test(email)) {
+				mesaj += "email ";
+        $('#email').css('border', "3px solid red");
+			}
+			if (mesaj !== "Campurile ") {
+				alert(mesaj + "trebuie completate!");
+				ok = false;
+			}
+			else {
+				alert("Datele sunt completate corect!");
+			}
+      return ok;
+		}
+	</script>
+</body>
+</html>

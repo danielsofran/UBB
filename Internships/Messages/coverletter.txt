@@ -1,0 +1,15 @@
+Dear __FIRMA__ Hiring Manager,
+
+I am thrilled to apply for the open position at __FIRMA__ as a Computer Science intern. As a second-year student at UBB, I have developed a passion for computer science, with a particular focus on software development, algorithms, and data structures. I am confident that my skills and experience would make me an excellent addition to the __FIRMA__ team.
+
+Throughout my studies, I have undertaken several challenging projects that have sharpened my skills in programming, problem-solving, and teamwork. One of my most notable accomplishments was developing an ERP application that used geolocation to check if the employees arrived or not at work. Working on this project taught me the importance of attention to detail and effective communication.
+
+I am a self-motivated individual who thrives on challenges and continually seeks to improve my skills. My willingness to learn, coupled with my strong communication skills, enables me to interact effectively with both technical and non-technical team members. Additionally, my ability to work independently and in a team setting makes me an adaptable and versatile candidate.
+
+I am excited about the opportunity to work with __FIRMA__, a company known for its innovative software development practices and commitment to excellence. I am confident that my technical knowledge, passion for technology, and work ethic would make me an excellent fit for the company.
+
+Thank you for taking the time to review my application. I look forward to the opportunity to discuss my qualifications further and learn more about the internship program at __FIRMA__.
+
+Sincerely,
+Daniel Șofran
+

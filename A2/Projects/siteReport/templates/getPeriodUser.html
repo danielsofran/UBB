@@ -1,0 +1,88 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container m-5 p-5 fs-1">
+    <form method="post">
+        {% csrf_token %}
+        <div class="row mb-5">
+            <label for="inputDate" class="form-label text-nowrap me-3">Data</label>
+            <input type="date" class="form-control fs-1" id="inputDate" required name="date">
+        </div>
+        <div class="row mb-5">
+            <label for="inputUser" class="form-label text-nowrap me-3">Numele angajatului</label>
+            <input class="form-control fs-1" list="datalistOptions" id="exampleDataList" placeholder="Tastati numele utilizatorului" name="user">
+            <datalist id="datalistOptions">
+              {% for user in users %}
+                  <option value="{{ user.nume }}">
+              {% endfor %}
+            </datalist>
+        </div>
+        <div class="row mb-5">
+            <div class="d-flex flex-row justify-content-around">
+                <button type="submit" class="btn btn-outline-success fs-1">Adauga</button>
+            </div>
+        </div>
+    </form>
+    </div>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+
+function createDateTime(datestr){
+    if(datestr == null || datestr.length === 0)
+        return ""
+    const now = new Date();
+    let elems = datestr.split("-");
+    let toktime = elems[1].split(":");
+    let tokdate = elems[0].split(".");
+    now.setHours(parseInt(toktime[0]));
+    now.setMinutes(parseInt(toktime[1]));
+    now.setDate(parseInt(tokdate[0]));
+
+    now.setMonth(parseInt(tokdate[1]));
+    now.setFullYear(parseInt(tokdate[2]));
+    //alert(now.toJSON())
+    //alert(now.toISOString())
+    //2022-08-22T04:40:00.553Z
+    rez = ""
+    rez += pad(now.getFullYear(), 4) + "-" + pad(now.getMonth(), 2) + "-" + pad(now.getDate(), 2);
+    rez += "T" + pad(now.getHours(), 2) + ":" + pad(now.getMinutes(), 2);
+    return rez;
+}
+
+function createDate(datestr){
+    if(datestr == null || datestr.length === 0)
+        return ""
+    const now = new Date();
+    let elems = datestr.split(".");
+    now.setDate(parseInt(elems[0]));
+
+    now.setMonth(parseInt(elems[1]));
+    now.setFullYear(parseInt(elems[2]));
+    //alert(now.toJSON())
+    //alert(now.toISOString())
+    //2022-08-22T04:40:00.553Z
+    return pad(now.getFullYear(), 4) + "-" + pad(now.getMonth(), 2) + "-" + pad(now.getDate(), 2);
+}
+
+function createDateTimeFromDate(now){
+    rez = ""
+    rez += pad(now.getFullYear(), 4) + "-" + pad(now.getMonth(), 2) + "-" + pad(now.getDate(), 2);
+    rez += "T" + pad(now.getHours(), 2) + ":" + pad(now.getMinutes(), 2);
+    return rez;
+}
+
+function pad(num, size) {
+    num = num.toString();
+    while (num.length < size) num = "0" + num;
+    return num;
+}
+
+{% load mytags %}
+window.addEventListener('load', ()=>{
+    document.getElementById('inputDate').value = createDate("{{ now|ftime:"date" }}")
+}, false)
+
+</script>
+{% endblock %}

@@ -1,0 +1,11 @@
+﻿Note: 
+1. Aplicația permite adăugarea diacriticelor, dar devizul va fi generat fără acestea. 
+2. Se recomandă apăsarea butoanelor OK la adaugarea pieselor și a manoperelor pentru a le valida. 
+3. Prețurile adăugate sunt cu TVA inclus, acesta calculându-se la final din suma totală. 
+4. În modul Vizualizare PDF, fișierul va fi deschis cu programul implicit de deschidere a fișierelor PDF din Windows. Pentru a-l schimba, vă rugăm să schimbaţi acest program din exploratorul de fişiere (click dreapta pe fişierul PDF -> deschidere cu -> program implicit -> programul cu care dorifi să se deschidă fişierele PDF). 
+5. Se recomandă curățarea coşului de gunoi după folosirea aplicaţiei timp de aproximativ o săptămână, datorită faptului că aplicaţia creează şi şterge imagini temporare, care se vor stoca în Recycle Bin. 
+6. Se recomandă ștergerea imaginilor/pdf-urilor generate cu butonul Salvează după utilizare/tipărire, deoarece acestea sunt irelevante, putând fi generate din nou din aplicaţie. 
+7. Se recomandă crearea copiilor de rezervă în primele zile folosind butonul Exportă devize, iar ulterior o dată pe lună. 
+8. Pentru a putea trimite devize pe alt dispozitiv, se vor folosi butoanele Exportă devize şi importă devize. 
+9. Pentru a nu pierde date la actualizarea aplicaţiei, se recomandă creerea unei copii şi importarea ei ulterioară în versiunea actualizată. 
+10. În cazul în care apare o eroare neprevăzută la adăugarea/modificarea unui deviz, încercaţi să îl ştergeţi şi să îl readăugaţi. 

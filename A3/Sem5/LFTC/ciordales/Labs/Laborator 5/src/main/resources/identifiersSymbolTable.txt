@@ -1,0 +1,16 @@
+1 n 14
+2 answer 7
+3 kop 1
+4 sumaaa 13
+5 float 12
+6 x 8
+7 binary 5
+8 y -1
+9 repeta 11
+10 panacand 9
+11 sfrepeta 15
+12 i 3
+13 u 6
+14 o 10
+15 sum 4
+

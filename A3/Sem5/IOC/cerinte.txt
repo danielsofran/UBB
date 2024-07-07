@@ -1,0 +1,19 @@
+Cerinte
+
+- creare de cont
+- autentificare (automata)
+- crearea unei cauze
+- actualizare cauza
+- donatie pentru cauza respectiva
+- achizitionare & echipare avatar
+
+analiza:
+- creare de cont: ambii utilizatori s-au descurcat, cele doua pagini fiind extrem de clare
+- autentificare: automata dupa creearea contului
+- crearea unei cauze: 
+dupa ce s-a putut observa ca nu exista nici un alt control pe pagina, meniul a fost accesat, iar dupa cateva incercari, a fost accesata optiunea
+ in formular, campurile au fost putin neclare, fiind necesare cateva tooltip uri in aplicatie, dar intr-un final a fost ok
+desi unele campuri nu corespundeau obiectivului pt care au fost facute (Tesla??)
+- actualizarea a fost putin dificila, ...
+- donatia a fost ok, datorita butonului explicit
+- shop ul a fost gasit in meniu, iar avatarul achizitionat si echipat

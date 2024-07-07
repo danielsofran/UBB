@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block head %}
+    {% load static %}
+    <link rel="stylesheet" href="{% static "magazin/css/slideshow.css" %}">
+{% endblock %}
+
+{% block content %}
+{% include 'slideshow.html' %}
+{% endblock %}

@@ -1,0 +1,556 @@
+22 Mar 2023 16:12:38,682 TRACE com.example.temalab3.repository.ArtistRepoDB 90 save - Enter Saving artist Artist{id=1, name=Andrei}
+22 Mar 2023 16:12:38,685 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 16:12:38,686 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+22 Mar 2023 16:12:38,687 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+22 Mar 2023 16:12:38,688 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+22 Mar 2023 16:12:38,688 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+22 Mar 2023 16:12:39,432 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@5829e4f4)
+22 Mar 2023 16:12:39,475 TRACE com.example.temalab3.repository.ArtistRepoDB 99 save - Exit
+22 Mar 2023 16:13:14,768 TRACE com.example.temalab3.repository.ArtistRepoDB 104 delete - Enter Deleting artist with id 1
+22 Mar 2023 16:13:14,772 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 16:13:14,772 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+22 Mar 2023 16:13:14,773 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+22 Mar 2023 16:13:14,774 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+22 Mar 2023 16:13:14,774 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+22 Mar 2023 16:13:15,272 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@40dff0b7)
+22 Mar 2023 16:13:15,293 TRACE com.example.temalab3.repository.ArtistRepoDB 113 delete - Exit
+22 Mar 2023 16:14:23,386 TRACE com.example.temalab3.repository.ArtistRepoDB 90 save - Enter Saving artist Artist{id=3, name=Andrei}
+22 Mar 2023 16:14:23,390 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 16:14:23,390 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+22 Mar 2023 16:14:23,391 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+22 Mar 2023 16:14:23,392 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+22 Mar 2023 16:14:23,392 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+22 Mar 2023 16:14:23,915 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@5829e4f4)
+22 Mar 2023 16:14:23,934 TRACE com.example.temalab3.repository.ArtistRepoDB 99 save - Exit
+22 Mar 2023 16:19:01,304 TRACE com.example.temalab3.repository.ShowRepoDB 53 save - Enter Saving show Show{id=1, artistId=Artist{id=3, name=Andrei}, date=2023-03-22, beginTime=16:19:01.260854200, location=Africa, availableSeats=50, soldSeats=50}
+22 Mar 2023 16:19:01,309 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 16:19:01,309 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+22 Mar 2023 16:19:01,311 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+22 Mar 2023 16:19:01,312 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+22 Mar 2023 16:19:01,313 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+22 Mar 2023 16:19:01,825 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@5553d0f5)
+22 Mar 2023 16:19:01,857 ERROR com.example.temalab3.repository.ShowRepoDB 64 save - org.postgresql.util.PSQLException: ERROR: insert or update on table "shows" violates foreign key constraint "fk_show_artist"
+  Detail: Key (artist_id)=(3) is not present in table "artists".
+22 Mar 2023 16:19:01,858 TRACE com.example.temalab3.repository.ShowRepoDB 71 delete - Enter Deleting show with id 1
+22 Mar 2023 16:19:01,859 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 16:19:01,859 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@5553d0f5)
+22 Mar 2023 16:19:01,861 TRACE com.example.temalab3.repository.ShowRepoDB 80 delete - Exit
+22 Mar 2023 16:24:53,278 TRACE com.example.temalab3.repository.ArtistRepoDB 90 save - Enter Saving artist Artist{id=2, name=Andrei}
+22 Mar 2023 16:24:53,282 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 16:24:53,282 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+22 Mar 2023 16:24:53,283 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+22 Mar 2023 16:24:53,284 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+22 Mar 2023 16:24:53,284 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+22 Mar 2023 16:24:53,809 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@4c2cc639)
+22 Mar 2023 16:24:53,826 TRACE com.example.temalab3.repository.ArtistRepoDB 99 save - Exit
+22 Mar 2023 16:24:53,860 TRACE com.example.temalab3.repository.ShowRepoDB 53 save - Enter Saving show Show{id=2, artistId=Artist{id=2, name=Andrei}, date=2023-03-22, beginTime=16:24:53.835612100, location=Africa, availableSeats=50, soldSeats=50}
+22 Mar 2023 16:24:53,860 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 16:24:53,861 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+22 Mar 2023 16:24:53,861 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+22 Mar 2023 16:24:53,862 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+22 Mar 2023 16:24:53,863 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+22 Mar 2023 16:24:53,923 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@47c4ecdc)
+22 Mar 2023 16:24:53,936 ERROR com.example.temalab3.repository.ShowRepoDB 64 save - org.postgresql.util.PSQLException: ERROR: insert or update on table "shows" violates foreign key constraint "fk_show_artist"
+  Detail: Key (artist_id)=(2) is not present in table "artists".
+22 Mar 2023 16:24:53,937 TRACE com.example.temalab3.repository.ShowRepoDB 71 delete - Enter Deleting show with id 1
+22 Mar 2023 16:24:53,937 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 16:24:53,938 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@47c4ecdc)
+22 Mar 2023 16:24:53,940 TRACE com.example.temalab3.repository.ShowRepoDB 80 delete - Exit
+22 Mar 2023 16:24:53,953 TRACE com.example.temalab3.repository.TicketRepoDB 124 save - Enter Saving ticket Bilet{id=1, showId=Show{id=2, artistId=Artist{id=2, name=Andrei}, date=2023-03-22, beginTime=16:24:53.835612100, location=Africa, availableSeats=50, soldSeats=50}, clientName=Daniel, seats=1}
+22 Mar 2023 16:24:53,954 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 16:24:53,954 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+22 Mar 2023 16:24:53,954 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+22 Mar 2023 16:24:53,954 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+22 Mar 2023 16:24:53,955 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+22 Mar 2023 16:24:54,008 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@6da00fb9)
+22 Mar 2023 16:24:54,009 ERROR com.example.temalab3.repository.TicketRepoDB 132 save - org.postgresql.util.PSQLException: The column index is out of range: 4, number of columns: 3.
+22 Mar 2023 16:24:54,010 TRACE com.example.temalab3.repository.TicketRepoDB 135 save - Exit
+22 Mar 2023 16:24:54,011 TRACE com.example.temalab3.repository.TicketRepoDB 140 delete - Enter Deleting ticket with id 1
+22 Mar 2023 16:24:54,011 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 16:24:54,011 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@6da00fb9)
+22 Mar 2023 16:24:54,014 TRACE com.example.temalab3.repository.TicketRepoDB 149 delete - Exit
+22 Mar 2023 16:26:02,281 TRACE com.example.temalab3.repository.ArtistRepoDB 90 save - Enter Saving artist Artist{id=4, name=Andrei}
+22 Mar 2023 16:26:02,285 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 16:26:02,285 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+22 Mar 2023 16:26:02,287 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+22 Mar 2023 16:26:02,287 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+22 Mar 2023 16:26:02,288 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+22 Mar 2023 16:26:02,804 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@4c2cc639)
+22 Mar 2023 16:26:02,823 TRACE com.example.temalab3.repository.ArtistRepoDB 99 save - Exit
+22 Mar 2023 16:26:02,852 TRACE com.example.temalab3.repository.ShowRepoDB 53 save - Enter Saving show Show{id=2, artistId=Artist{id=4, name=Andrei}, date=2023-03-22, beginTime=16:26:02.832279900, location=Africa, availableSeats=50, soldSeats=50}
+22 Mar 2023 16:26:02,853 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 16:26:02,853 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+22 Mar 2023 16:26:02,854 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+22 Mar 2023 16:26:02,854 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+22 Mar 2023 16:26:02,855 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+22 Mar 2023 16:26:02,913 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@47c4ecdc)
+22 Mar 2023 16:26:02,921 TRACE com.example.temalab3.repository.ShowRepoDB 71 delete - Enter Deleting show with id 1
+22 Mar 2023 16:26:02,921 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 16:26:02,921 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@47c4ecdc)
+22 Mar 2023 16:26:02,923 TRACE com.example.temalab3.repository.ShowRepoDB 80 delete - Exit
+22 Mar 2023 16:26:02,936 TRACE com.example.temalab3.repository.TicketRepoDB 124 save - Enter Saving ticket Bilet{id=1, showId=Show{id=2, artistId=Artist{id=4, name=Andrei}, date=2023-03-22, beginTime=16:26:02.832279900, location=Africa, availableSeats=50, soldSeats=50}, clientName=Daniel, seats=1}
+22 Mar 2023 16:26:02,937 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 16:26:02,937 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+22 Mar 2023 16:26:02,938 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+22 Mar 2023 16:26:02,938 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+22 Mar 2023 16:26:02,938 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+22 Mar 2023 16:26:02,999 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@55342f40)
+22 Mar 2023 16:26:03,009 ERROR com.example.temalab3.repository.TicketRepoDB 132 save - org.postgresql.util.PSQLException: The column index is out of range: 4, number of columns: 3.
+22 Mar 2023 16:26:03,010 TRACE com.example.temalab3.repository.TicketRepoDB 135 save - Exit
+22 Mar 2023 16:26:03,011 TRACE com.example.temalab3.repository.TicketRepoDB 140 delete - Enter Deleting ticket with id 1
+22 Mar 2023 16:26:03,011 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 16:26:03,011 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@55342f40)
+22 Mar 2023 16:26:03,015 TRACE com.example.temalab3.repository.TicketRepoDB 149 delete - Exit
+22 Mar 2023 16:29:47,043 TRACE com.example.temalab3.repository.TicketRepoDB 124 save - Enter Saving ticket Bilet{id=1, showId=Show{id=3, artistId=Artist{id=4, name=Andrei}, date=2023-03-22, beginTime=16:29:46.972858800, location=Africa, availableSeats=50, soldSeats=50}, clientName=Daniel, seats=1}
+22 Mar 2023 16:29:47,049 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 16:29:47,049 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+22 Mar 2023 16:29:47,051 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+22 Mar 2023 16:29:47,052 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+22 Mar 2023 16:29:47,053 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+22 Mar 2023 16:29:47,565 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@784b990c)
+22 Mar 2023 16:29:47,581 ERROR com.example.temalab3.repository.TicketRepoDB 132 save - org.postgresql.util.PSQLException: The column index is out of range: 4, number of columns: 3.
+22 Mar 2023 16:29:47,582 TRACE com.example.temalab3.repository.TicketRepoDB 135 save - Exit
+22 Mar 2023 16:29:47,582 TRACE com.example.temalab3.repository.TicketRepoDB 140 delete - Enter Deleting ticket with id 1
+22 Mar 2023 16:29:47,583 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 16:29:47,583 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@784b990c)
+22 Mar 2023 16:29:47,586 TRACE com.example.temalab3.repository.TicketRepoDB 149 delete - Exit
+22 Mar 2023 16:31:09,446 TRACE com.example.temalab3.repository.TicketRepoDB 124 save - Enter Saving ticket Bilet{id=1, showId=Show{id=3, artistId=Artist{id=4, name=Andrei}, date=2023-03-22, beginTime=16:31:09.376895300, location=Africa, availableSeats=50, soldSeats=50}, clientName=Daniel, seats=1}
+22 Mar 2023 16:31:09,451 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 16:31:09,451 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+22 Mar 2023 16:31:09,453 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+22 Mar 2023 16:31:09,454 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+22 Mar 2023 16:31:09,454 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+22 Mar 2023 16:31:09,984 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@42f33b5d)
+22 Mar 2023 16:31:10,006 TRACE com.example.temalab3.repository.TicketRepoDB 135 save - Exit
+22 Mar 2023 16:31:10,007 TRACE com.example.temalab3.repository.TicketRepoDB 140 delete - Enter Deleting ticket with id 1
+22 Mar 2023 16:31:10,007 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 16:31:10,008 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@42f33b5d)
+22 Mar 2023 16:31:10,009 TRACE com.example.temalab3.repository.TicketRepoDB 149 delete - Exit
+22 Mar 2023 16:31:29,378 TRACE com.example.temalab3.repository.TicketRepoDB 124 save - Enter Saving ticket Bilet{id=3, showId=Show{id=3, artistId=Artist{id=4, name=Andrei}, date=2023-03-22, beginTime=16:31:29.324179200, location=Africa, availableSeats=50, soldSeats=50}, clientName=Daniel, seats=1}
+22 Mar 2023 16:31:29,383 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 16:31:29,383 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+22 Mar 2023 16:31:29,385 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+22 Mar 2023 16:31:29,385 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+22 Mar 2023 16:31:29,386 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+22 Mar 2023 16:31:29,949 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@5c8504fd)
+22 Mar 2023 16:31:29,970 TRACE com.example.temalab3.repository.TicketRepoDB 135 save - Exit
+22 Mar 2023 19:07:53,435 TRACE com.example.temalab3.repository.ArtistRepoDB 90 save - Enter Saving artist Artist{id=8, name=Andrei2}
+22 Mar 2023 19:07:53,437 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 19:07:53,437 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+22 Mar 2023 19:07:53,438 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+22 Mar 2023 19:07:53,438 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+22 Mar 2023 19:07:53,438 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+22 Mar 2023 19:07:53,686 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@2101b44a)
+22 Mar 2023 19:07:53,693 TRACE com.example.temalab3.repository.ArtistRepoDB 99 save - Exit
+22 Mar 2023 19:07:53,693 TRACE com.example.temalab3.repository.ArtistRepoDB 104 delete - Enter Deleting artist with id 1
+22 Mar 2023 19:07:53,693 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+22 Mar 2023 19:07:53,693 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@2101b44a)
+22 Mar 2023 19:07:53,695 TRACE com.example.temalab3.repository.ArtistRepoDB 113 delete - Exit
+27 Mar 2023 15:21:51,009 TRACE com.example.temalab3.repository.ArtistRepoDB 89 save - Enter Saving artist Artist{id=8, name=Andrei2} 
+27 Mar 2023 15:21:51,011 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+27 Mar 2023 15:21:51,011 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+27 Mar 2023 15:21:51,012 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+27 Mar 2023 15:21:51,012 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+27 Mar 2023 15:21:51,013 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+27 Mar 2023 15:21:51,399 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@3d484181)
+27 Mar 2023 15:21:51,428 TRACE com.example.temalab3.repository.ArtistRepoDB 98 save - Exit
+27 Mar 2023 15:21:51,428 TRACE com.example.temalab3.repository.ArtistRepoDB 103 delete - Enter Deleting artist with id 1 
+27 Mar 2023 15:21:51,429 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+27 Mar 2023 15:21:51,429 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@3d484181)
+27 Mar 2023 15:21:51,443 TRACE com.example.temalab3.repository.ArtistRepoDB 112 delete - Exit
+27 Mar 2023 16:59:27,048 INFO  com.example.temalab3.repository.UserRepoDB 31 <init> - Initializing CarsDBRepository with properties: {jdbc.user=postgres, jdbc.url=jdbc:postgresql://localhost:5432/MPP_TemaAcasa, jdbc.pass=parola} 
+27 Mar 2023 16:59:30,060 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username ede and password ded
+27 Mar 2023 16:59:30,060 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+27 Mar 2023 16:59:30,061 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+27 Mar 2023 16:59:30,061 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+27 Mar 2023 16:59:30,061 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+27 Mar 2023 16:59:30,061 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+27 Mar 2023 16:59:30,315 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@61892f58)
+27 Mar 2023 16:59:30,341 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+27 Mar 2023 17:00:01,005 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username Daniel and password parola
+27 Mar 2023 17:00:01,005 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+27 Mar 2023 17:00:01,005 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@61892f58)
+27 Mar 2023 17:00:01,006 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+27 Mar 2023 17:00:04,729 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username Daniel and password parola
+27 Mar 2023 17:00:04,729 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+27 Mar 2023 17:00:04,729 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@61892f58)
+27 Mar 2023 17:00:04,730 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+27 Mar 2023 17:00:06,587 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username Daniel and password parola
+27 Mar 2023 17:00:06,587 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+27 Mar 2023 17:00:06,587 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@61892f58)
+27 Mar 2023 17:00:06,588 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+27 Mar 2023 17:02:55,594 INFO  com.example.temalab3.repository.UserRepoDB 31 <init> - Initializing CarsDBRepository with properties: {jdbc.user=postgres, jdbc.url=jdbc:postgresql://localhost:5432/MPP_TemaAcasa, jdbc.pass=parola} 
+27 Mar 2023 17:03:25,005 INFO  com.example.temalab3.repository.UserRepoDB 31 <init> - Initializing CarsDBRepository with properties: {jdbc.user=postgres, jdbc.url=jdbc:postgresql://localhost:5432/MPP_TemaAcasa, jdbc.pass=parola} 
+27 Mar 2023 17:03:28,910 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username Daniel and password 
+27 Mar 2023 17:03:28,910 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+27 Mar 2023 17:03:28,910 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+27 Mar 2023 17:03:28,911 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+27 Mar 2023 17:03:28,911 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+27 Mar 2023 17:03:28,911 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+27 Mar 2023 17:03:29,134 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@3c0619bf)
+27 Mar 2023 17:03:29,147 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+27 Mar 2023 17:03:33,909 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username Daniel and password parola
+27 Mar 2023 17:03:33,909 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+27 Mar 2023 17:03:33,910 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@3c0619bf)
+27 Mar 2023 17:03:33,911 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+28 Mar 2023 21:18:25,229 INFO  com.example.temalab3.repository.UserRepoDB 31 <init> - Initializing CarsDBRepository with properties: {jdbc.user=postgres, jdbc.url=jdbc:postgresql://localhost:5432/MPP_TemaAcasa, jdbc.pass=parola} 
+28 Mar 2023 21:18:32,265 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username Daniel and password parola
+28 Mar 2023 21:18:32,265 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:18:32,265 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:18:32,266 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:18:32,266 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:18:32,266 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:18:32,703 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@3b2127f5)
+28 Mar 2023 21:18:32,745 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+28 Mar 2023 21:20:05,988 INFO  com.example.temalab3.repository.UserRepoDB 31 <init> - Initializing CarsDBRepository with properties: {jdbc.user=postgres, jdbc.url=jdbc:postgresql://localhost:5432/MPP_TemaAcasa, jdbc.pass=parola} 
+28 Mar 2023 21:20:11,901 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username Daniel and password parola
+28 Mar 2023 21:20:11,901 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:20:11,901 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:20:11,902 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:20:11,902 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:20:11,902 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:20:12,140 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@7069bb43)
+28 Mar 2023 21:20:12,153 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+28 Mar 2023 21:20:12,201 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+28 Mar 2023 21:20:12,201 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:20:12,201 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:20:12,202 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:20:12,202 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:20:12,202 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:20:12,229 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@2d8da30e)
+28 Mar 2023 21:20:12,245 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+28 Mar 2023 21:21:47,720 INFO  com.example.temalab3.repository.UserRepoDB 31 <init> - Initializing CarsDBRepository with properties: {jdbc.user=postgres, jdbc.url=jdbc:postgresql://localhost:5432/MPP_TemaAcasa, jdbc.pass=parola} 
+28 Mar 2023 21:21:53,106 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username Daniel and password parola
+28 Mar 2023 21:21:53,107 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:21:53,107 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:21:53,107 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:21:53,107 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:21:53,108 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:21:53,336 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@59fa5fe8)
+28 Mar 2023 21:21:53,348 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+28 Mar 2023 21:21:53,393 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+28 Mar 2023 21:21:53,393 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:21:53,393 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:21:53,393 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:21:53,394 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:21:53,394 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:21:53,422 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@2d5395ef)
+28 Mar 2023 21:21:53,427 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+28 Mar 2023 21:40:08,419 INFO  com.example.temalab3.repository.UserRepoDB 31 <init> - Initializing CarsDBRepository with properties: {jdbc.user=postgres, jdbc.url=jdbc:postgresql://localhost:5432/MPP_TemaAcasa, jdbc.pass=parola} 
+28 Mar 2023 21:40:14,629 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username Daniel and password parola
+28 Mar 2023 21:40:14,629 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:40:14,629 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:40:14,629 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:40:14,630 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:40:14,630 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:40:14,866 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@10c7d7d3)
+28 Mar 2023 21:40:14,879 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+28 Mar 2023 21:40:14,923 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+28 Mar 2023 21:40:14,923 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:40:14,923 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:40:14,923 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:40:14,923 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:40:14,924 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:40:14,953 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@3f9230f6)
+28 Mar 2023 21:40:14,957 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+28 Mar 2023 21:40:22,349 TRACE com.example.temalab3.repository.ShowRepoDB 162 findByDay - Enter Finding shows with date 2023-03-22 
+28 Mar 2023 21:40:22,349 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:40:22,349 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@3f9230f6)
+28 Mar 2023 21:40:22,352 TRACE com.example.temalab3.repository.ShowRepoDB 186 findByDay - Exit
+28 Mar 2023 21:40:44,360 TRACE com.example.temalab3.repository.ShowRepoDB 162 findByDay - Enter Finding shows with date 2023-03-22 
+28 Mar 2023 21:40:44,361 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:40:44,361 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@3f9230f6)
+28 Mar 2023 21:40:44,362 TRACE com.example.temalab3.repository.ShowRepoDB 186 findByDay - Exit
+28 Mar 2023 21:40:54,512 TRACE com.example.temalab3.repository.ShowRepoDB 162 findByDay - Enter Finding shows with date 2023-03-08 
+28 Mar 2023 21:40:54,513 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:40:54,513 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@3f9230f6)
+28 Mar 2023 21:40:54,514 TRACE com.example.temalab3.repository.ShowRepoDB 186 findByDay - Exit
+28 Mar 2023 21:41:31,220 INFO  com.example.temalab3.repository.UserRepoDB 31 <init> - Initializing CarsDBRepository with properties: {jdbc.user=postgres, jdbc.url=jdbc:postgresql://localhost:5432/MPP_TemaAcasa, jdbc.pass=parola} 
+28 Mar 2023 21:41:59,695 INFO  com.example.temalab3.repository.UserRepoDB 31 <init> - Initializing CarsDBRepository with properties: {jdbc.user=postgres, jdbc.url=jdbc:postgresql://localhost:5432/MPP_TemaAcasa, jdbc.pass=parola} 
+28 Mar 2023 21:42:00,920 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username Daniel and password parola
+28 Mar 2023 21:42:00,920 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:42:00,921 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:42:00,921 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:42:00,921 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:42:00,921 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:42:01,152 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@126098f1)
+28 Mar 2023 21:42:01,164 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+28 Mar 2023 21:42:01,211 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+28 Mar 2023 21:42:01,211 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:42:01,211 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:42:01,212 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:42:01,212 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:42:01,212 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:42:01,243 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@257efca5)
+28 Mar 2023 21:42:01,247 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+28 Mar 2023 21:43:23,469 INFO  com.example.temalab3.repository.UserRepoDB 31 <init> - Initializing CarsDBRepository with properties: {jdbc.user=postgres, jdbc.url=jdbc:postgresql://localhost:5432/MPP_TemaAcasa, jdbc.pass=parola} 
+28 Mar 2023 21:43:24,665 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username Daniel and password parola
+28 Mar 2023 21:43:24,665 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:43:24,665 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:43:24,665 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:43:24,665 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:43:24,666 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:43:25,001 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@37ea28b9)
+28 Mar 2023 21:43:25,013 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+28 Mar 2023 21:43:25,060 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+28 Mar 2023 21:43:25,061 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:43:25,061 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:43:25,061 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:43:25,061 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:43:25,061 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:43:25,090 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@70fd1466)
+28 Mar 2023 21:43:25,094 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+28 Mar 2023 21:44:10,203 INFO  com.example.temalab3.repository.UserRepoDB 31 <init> - Initializing CarsDBRepository with properties: {jdbc.user=postgres, jdbc.url=jdbc:postgresql://localhost:5432/MPP_TemaAcasa, jdbc.pass=parola} 
+28 Mar 2023 21:44:11,532 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username Daniel and password parola
+28 Mar 2023 21:44:11,532 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:44:11,532 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:44:11,532 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:44:11,532 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:44:11,533 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:44:11,767 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@4bb7df7f)
+28 Mar 2023 21:44:11,779 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+28 Mar 2023 21:44:11,828 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+28 Mar 2023 21:44:11,828 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:44:11,828 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:44:11,828 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:44:11,829 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:44:11,829 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:44:11,972 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@256caa5)
+28 Mar 2023 21:44:11,976 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+28 Mar 2023 21:48:59,028 INFO  com.example.temalab3.repository.UserRepoDB 31 <init> - Initializing CarsDBRepository with properties: {jdbc.user=postgres, jdbc.url=jdbc:postgresql://localhost:5432/MPP_TemaAcasa, jdbc.pass=parola} 
+28 Mar 2023 21:49:00,411 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username Daniel and password parola
+28 Mar 2023 21:49:00,412 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:49:00,412 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:49:00,412 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:49:00,412 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:49:00,412 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:49:00,649 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@4bd671e8)
+28 Mar 2023 21:49:00,662 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+28 Mar 2023 21:49:00,706 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+28 Mar 2023 21:49:00,706 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:49:00,706 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:49:00,706 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:49:00,707 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:49:00,707 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:49:00,735 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@15b647b7)
+28 Mar 2023 21:49:00,739 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+28 Mar 2023 21:49:07,804 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+28 Mar 2023 21:49:07,804 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:49:07,805 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@15b647b7)
+28 Mar 2023 21:49:07,806 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+28 Mar 2023 21:51:31,200 INFO  com.example.temalab3.repository.UserRepoDB 31 <init> - Initializing CarsDBRepository with properties: {jdbc.user=postgres, jdbc.url=jdbc:postgresql://localhost:5432/MPP_TemaAcasa, jdbc.pass=parola} 
+28 Mar 2023 21:51:32,425 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username Daniel and password parola
+28 Mar 2023 21:51:32,426 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:51:32,426 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:51:32,426 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:51:32,426 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:51:32,426 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:51:32,768 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@2989812a)
+28 Mar 2023 21:51:32,780 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+28 Mar 2023 21:51:32,829 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+28 Mar 2023 21:51:32,829 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:51:32,829 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:51:32,829 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:51:32,830 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:51:32,830 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:51:32,861 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@bdd54f5)
+28 Mar 2023 21:51:32,865 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+28 Mar 2023 21:51:37,574 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+28 Mar 2023 21:51:37,574 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:51:37,574 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@bdd54f5)
+28 Mar 2023 21:51:37,575 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+28 Mar 2023 21:57:12,637 INFO  com.example.temalab3.repository.UserRepoDB 31 <init> - Initializing CarsDBRepository with properties: {jdbc.user=postgres, jdbc.url=jdbc:postgresql://localhost:5432/MPP_TemaAcasa, jdbc.pass=parola} 
+28 Mar 2023 21:57:14,764 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username Daniel and password parola
+28 Mar 2023 21:57:14,764 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:57:14,764 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:57:14,765 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:57:14,765 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:57:14,765 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:57:14,992 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@5191e768)
+28 Mar 2023 21:57:15,004 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+28 Mar 2023 21:57:15,049 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+28 Mar 2023 21:57:15,049 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:57:15,049 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:57:15,049 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:57:15,049 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:57:15,049 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:57:15,077 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@2c962fee)
+28 Mar 2023 21:57:15,081 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+28 Mar 2023 21:57:17,092 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+28 Mar 2023 21:57:17,092 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:57:17,093 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@2c962fee)
+28 Mar 2023 21:57:17,094 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+28 Mar 2023 21:57:40,759 TRACE com.example.temalab3.repository.TicketRepoDB 125 save - Enter Saving ticket Bilet{id=null, showId=Show{id=4, artistId=Artist{id=12, name=Ion}, date=2023-03-22, beginTime=12:00, location=Cluj, availableSeats=3, soldSeats=0}, clientName=Sofran, seats=2} 
+28 Mar 2023 21:57:40,760 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:57:40,760 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:57:40,760 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:57:40,760 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:57:40,760 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:57:40,788 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@6dc772bd)
+28 Mar 2023 21:57:40,798 TRACE com.example.temalab3.repository.TicketRepoDB 137 save - Exit
+28 Mar 2023 21:57:40,798 TRACE com.example.temalab3.repository.ShowRepoDB 85 update - Enter Updating show with id 4 
+28 Mar 2023 21:57:40,799 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:57:40,799 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@2c962fee)
+28 Mar 2023 21:57:40,801 TRACE com.example.temalab3.repository.ShowRepoDB 100 update - Exit
+28 Mar 2023 21:57:49,744 INFO  com.example.temalab3.repository.UserRepoDB 31 <init> - Initializing CarsDBRepository with properties: {jdbc.user=postgres, jdbc.url=jdbc:postgresql://localhost:5432/MPP_TemaAcasa, jdbc.pass=parola} 
+28 Mar 2023 21:57:50,720 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username Daniel and password parola
+28 Mar 2023 21:57:50,720 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:57:50,721 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:57:50,721 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:57:50,721 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:57:50,721 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:57:51,071 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@2989812a)
+28 Mar 2023 21:57:51,082 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+28 Mar 2023 21:57:51,126 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+28 Mar 2023 21:57:51,127 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:57:51,127 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 21:57:51,127 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 21:57:51,127 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 21:57:51,127 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 21:57:51,153 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@bdd54f5)
+28 Mar 2023 21:57:51,157 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+28 Mar 2023 21:57:56,407 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+28 Mar 2023 21:57:56,407 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 21:57:56,407 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@bdd54f5)
+28 Mar 2023 21:57:56,408 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+28 Mar 2023 22:00:19,995 INFO  com.example.temalab3.repository.UserRepoDB 31 <init> - Initializing CarsDBRepository with properties: {jdbc.user=postgres, jdbc.url=jdbc:postgresql://localhost:5432/MPP_TemaAcasa, jdbc.pass=parola} 
+28 Mar 2023 22:00:21,266 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username Daniel and password parola
+28 Mar 2023 22:00:21,266 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 22:00:21,267 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 22:00:21,267 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 22:00:21,267 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 22:00:21,267 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 22:00:21,496 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@2ccb31c2)
+28 Mar 2023 22:00:21,507 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+28 Mar 2023 22:00:21,550 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+28 Mar 2023 22:00:21,550 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 22:00:21,550 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 22:00:21,551 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 22:00:21,551 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 22:00:21,551 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 22:00:21,580 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@1037c674)
+28 Mar 2023 22:00:21,584 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+28 Mar 2023 22:00:27,906 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+28 Mar 2023 22:00:27,906 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 22:00:27,907 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@1037c674)
+28 Mar 2023 22:00:27,908 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+28 Mar 2023 22:00:51,318 TRACE com.example.temalab3.repository.TicketRepoDB 125 save - Enter Saving ticket Bilet{id=null, showId=Show{id=5, artistId=Artist{id=12, name=Ion}, date=2023-03-22, beginTime=10:30, location=Cluj, availableSeats=1, soldSeats=3}, clientName=fgrfgredg, seats=1} 
+28 Mar 2023 22:00:51,318 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 22:00:51,318 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 22:00:51,318 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 22:00:51,318 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 22:00:51,318 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 22:00:51,460 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@169e831b)
+28 Mar 2023 22:00:51,468 TRACE com.example.temalab3.repository.TicketRepoDB 137 save - Exit
+28 Mar 2023 22:00:51,468 TRACE com.example.temalab3.repository.ShowRepoDB 85 update - Enter Updating show with id 5 
+28 Mar 2023 22:00:51,468 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 22:00:51,469 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@1037c674)
+28 Mar 2023 22:00:51,470 TRACE com.example.temalab3.repository.ShowRepoDB 100 update - Exit
+28 Mar 2023 22:00:58,422 INFO  com.example.temalab3.repository.UserRepoDB 31 <init> - Initializing CarsDBRepository with properties: {jdbc.user=postgres, jdbc.url=jdbc:postgresql://localhost:5432/MPP_TemaAcasa, jdbc.pass=parola} 
+28 Mar 2023 22:00:59,748 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username Daniel and password parola
+28 Mar 2023 22:00:59,748 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 22:00:59,749 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 22:00:59,749 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 22:00:59,749 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 22:00:59,749 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 22:01:00,086 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@5c376737)
+28 Mar 2023 22:01:00,097 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+28 Mar 2023 22:01:00,141 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+28 Mar 2023 22:01:00,141 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 22:01:00,142 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+28 Mar 2023 22:01:00,142 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+28 Mar 2023 22:01:00,142 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+28 Mar 2023 22:01:00,142 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+28 Mar 2023 22:01:00,168 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@5e00452)
+28 Mar 2023 22:01:00,172 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+28 Mar 2023 22:01:03,455 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+28 Mar 2023 22:01:03,455 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+28 Mar 2023 22:01:03,455 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@5e00452)
+28 Mar 2023 22:01:03,457 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+29 Mar 2023 18:38:36,602 INFO  com.example.temalab3.repository.UserRepoDB 31 <init> - Initializing CarsDBRepository with properties: {jdbc.user=postgres, jdbc.url=jdbc:postgresql://localhost:5432/MPP_TemaAcasa, jdbc.pass=parola} 
+29 Mar 2023 18:38:43,433 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username Daniel and password parola
+29 Mar 2023 18:38:43,433 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+29 Mar 2023 18:38:43,433 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+29 Mar 2023 18:38:43,433 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+29 Mar 2023 18:38:43,433 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+29 Mar 2023 18:38:43,434 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+29 Mar 2023 18:38:43,689 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@16d701ba)
+29 Mar 2023 18:38:43,716 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+29 Mar 2023 18:38:43,766 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+29 Mar 2023 18:38:43,766 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+29 Mar 2023 18:38:43,766 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+29 Mar 2023 18:38:43,767 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+29 Mar 2023 18:38:43,767 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+29 Mar 2023 18:38:43,767 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+29 Mar 2023 18:38:43,912 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@60d3d08b)
+29 Mar 2023 18:38:43,920 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+29 Mar 2023 18:38:56,135 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+29 Mar 2023 18:38:56,135 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+29 Mar 2023 18:38:56,136 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@60d3d08b)
+29 Mar 2023 18:38:56,137 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+29 Mar 2023 18:39:22,949 TRACE com.example.temalab3.repository.ShowRepoDB 162 findByDay - Enter Finding shows with date 2023-03-30 
+29 Mar 2023 18:39:22,949 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+29 Mar 2023 18:39:22,949 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@60d3d08b)
+29 Mar 2023 18:39:22,950 TRACE com.example.temalab3.repository.ShowRepoDB 186 findByDay - Exit
+29 Mar 2023 18:39:25,960 TRACE com.example.temalab3.repository.ShowRepoDB 162 findByDay - Enter Finding shows with date 2023-03-23 
+29 Mar 2023 18:39:25,961 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+29 Mar 2023 18:39:25,961 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@60d3d08b)
+29 Mar 2023 18:39:25,962 TRACE com.example.temalab3.repository.ShowRepoDB 186 findByDay - Exit
+29 Mar 2023 18:39:29,837 TRACE com.example.temalab3.repository.ShowRepoDB 162 findByDay - Enter Finding shows with date 2023-03-22 
+29 Mar 2023 18:39:29,837 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+29 Mar 2023 18:39:29,838 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@60d3d08b)
+29 Mar 2023 18:39:29,839 TRACE com.example.temalab3.repository.ShowRepoDB 186 findByDay - Exit
+29 Mar 2023 18:40:16,202 TRACE com.example.temalab3.repository.TicketRepoDB 125 save - Enter Saving ticket Bilet{id=null, showId=Show{id=4, artistId=Artist{id=12, name=Ion}, date=2023-03-22, beginTime=12:00, location=Cluj, availableSeats=3, soldSeats=0}, clientName=Domn Profesor, seats=2} 
+29 Mar 2023 18:40:16,202 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+29 Mar 2023 18:40:16,202 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+29 Mar 2023 18:40:16,202 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+29 Mar 2023 18:40:16,202 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+29 Mar 2023 18:40:16,202 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+29 Mar 2023 18:40:16,230 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@5e75e095)
+29 Mar 2023 18:40:16,234 TRACE com.example.temalab3.repository.TicketRepoDB 137 save - Exit
+29 Mar 2023 18:40:16,235 TRACE com.example.temalab3.repository.ShowRepoDB 85 update - Enter Updating show with id 4 
+29 Mar 2023 18:40:16,235 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+29 Mar 2023 18:40:16,235 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@60d3d08b)
+29 Mar 2023 18:40:16,237 TRACE com.example.temalab3.repository.ShowRepoDB 100 update - Exit
+29 Mar 2023 18:40:26,272 INFO  com.example.temalab3.repository.UserRepoDB 31 <init> - Initializing CarsDBRepository with properties: {jdbc.user=postgres, jdbc.url=jdbc:postgresql://localhost:5432/MPP_TemaAcasa, jdbc.pass=parola} 
+29 Mar 2023 18:40:27,397 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username Daniel and password parola
+29 Mar 2023 18:40:27,398 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+29 Mar 2023 18:40:27,398 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+29 Mar 2023 18:40:27,398 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+29 Mar 2023 18:40:27,398 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+29 Mar 2023 18:40:27,399 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+29 Mar 2023 18:40:27,627 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@4eb8b304)
+29 Mar 2023 18:40:27,638 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+29 Mar 2023 18:40:27,682 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+29 Mar 2023 18:40:27,683 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+29 Mar 2023 18:40:27,683 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+29 Mar 2023 18:40:27,683 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+29 Mar 2023 18:40:27,683 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+29 Mar 2023 18:40:27,683 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+29 Mar 2023 18:40:27,710 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@7c9b6bdc)
+29 Mar 2023 18:40:27,715 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+19 Apr 2023 22:29:39,482 INFO  com.example.temalab3.repository.UserRepoDB 31 <init> - Initializing CarsDBRepository with properties: {jdbc.user=postgres, jdbc.url=jdbc:postgresql://localhost:5432/MPP_TemaAcasa, jdbc.pass=parola} 
+19 Apr 2023 22:29:42,772 TRACE com.example.temalab3.repository.UserRepoDB 143 login - Enter Finding user with username Daniel and password parola
+19 Apr 2023 22:29:42,772 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+19 Apr 2023 22:29:42,773 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+19 Apr 2023 22:29:42,773 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+19 Apr 2023 22:29:42,773 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+19 Apr 2023 22:29:42,773 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+19 Apr 2023 22:29:43,171 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@3ea17368)
+19 Apr 2023 22:29:43,220 TRACE com.example.temalab3.repository.UserRepoDB 158 login - Exit
+19 Apr 2023 22:29:43,270 TRACE com.example.temalab3.repository.ShowRepoDB 133 findAll - Enter Finding all shows
+19 Apr 2023 22:29:43,270 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+19 Apr 2023 22:29:43,270 TRACE com.example.temalab3.repository.JdbcUtils 24 getNewConnection - Enter
+19 Apr 2023 22:29:43,270 INFO  com.example.temalab3.repository.JdbcUtils 29 getNewConnection - trying to connect to database ... jdbc:postgresql://localhost:5432/MPP_TemaAcasa
+19 Apr 2023 22:29:43,271 INFO  com.example.temalab3.repository.JdbcUtils 30 getNewConnection - user: postgres
+19 Apr 2023 22:29:43,271 INFO  com.example.temalab3.repository.JdbcUtils 31 getNewConnection - pass: parola
+19 Apr 2023 22:29:43,301 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@80d83ef)
+19 Apr 2023 22:29:43,319 TRACE com.example.temalab3.repository.ShowRepoDB 156 findAll - Exit
+19 Apr 2023 22:29:59,017 TRACE com.example.temalab3.repository.ShowRepoDB 162 findByDay - Enter Finding shows with date 2023-03-22 
+19 Apr 2023 22:29:59,017 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+19 Apr 2023 22:29:59,018 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@80d83ef)
+19 Apr 2023 22:29:59,027 TRACE com.example.temalab3.repository.ShowRepoDB 186 findByDay - Exit
+19 Apr 2023 22:29:59,289 TRACE com.example.temalab3.repository.ShowRepoDB 162 findByDay - Enter Finding shows with date 2023-03-22 
+19 Apr 2023 22:29:59,289 TRACE com.example.temalab3.repository.JdbcUtils 47 getConnection - Enter
+19 Apr 2023 22:29:59,289 TRACE com.example.temalab3.repository.JdbcUtils 56 getConnection - Exit with(org.postgresql.jdbc.PgConnection@80d83ef)
+19 Apr 2023 22:29:59,291 TRACE com.example.temalab3.repository.ShowRepoDB 186 findByDay - Exit

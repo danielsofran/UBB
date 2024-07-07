@@ -1,0 +1,5 @@
+Produs
+string nume
+string tip
+double pret
+string producator

@@ -1,0 +1,100 @@
+P1. Se considera ca un nr nat este "norocos" daca este format doar din cifrele 2 si 7. 
+Se cere sa se verifice daca un nr nat dat este sau nu norocos.
+
+Ex: 
+227 - da
+225 - nu
+222 - da
+
+norocos(n) = {
+	A, n = 2 v n = 7;
+	F, n%10 != 2 ^ n%10 != 7
+	norocos([n/10]), altfel
+}
+
+def norocos(n: int):
+	if n == 2 or n == 7: return True
+	if n%10 != 2 and n%10 != 7: return False
+	return norocos(n//10)
+
+
+P2. Sa se calculeze suma divizorilor (proprii si improprii) ai unui numar natural n>1.
+Ex: suma(6) = 1 + 2 + 3 + 6 = 12
+
+sumDiv(n, i) = {
+	0, i > n
+	sumDiv(n, i+1), i<n ^ n%i != 0
+	1 + sumDiv(n, i+1), altfel (...)
+}
+suma(n) = sumDiv(n, 1)
+
+def sumDiv(n, i = 1):
+	if i > n: return 0;
+	s = sumDiv(n, i+1)
+	if n%i!=0: return s
+	return 1 + s
+def suma(n): return sumDiv(n, 1)
+
+
+	Liste
+
+- ne gandim ca la o lista simplu inlantuita, fara artificii(pointer la ultimul, lungimea, ...)
+l: l1l2...ln
+
+DA: n=0?; n=1?; n>1? n=2? (pot compara lg listei cu o constanta); l1, l2, l3, ...; l2l3...ln; 
+	e + l1...ln - adaugare la inceput: simbol reuniune, plus incercuit, appended(fara spatiu)
+NU: n (lungimea listei); ln; lk; lk...ln;
+
+P3. Sa se calculeze produsul elementelor pare dintr-o lista numerica.
+Ex: produs([12, 2, 5, 7, 4, 13]) = 8
+
+produs(l1l2...ln) = {
+	1, n = 0
+	l1*produs(l2l3...ln), n!=0 ^ l1 e par
+	produs(l2l3...ln), n!=0 ^ l1 nu e par / altfel
+}
+
+vida(l)
+prim(l1...ln)=l1
+sublista(l1...ln)=l2...ln
+
+def produs(l):
+	if vida(l): return 1
+	l1 = prim(l)
+	if l1 % 2 == 0: return l1*produs(sublista(l))
+	return produs(sublista(l))
+
+P4. Sa se insereze un element e dat pe o pozitie k intr-o lista.
+Ex: insereaza([1,2,3,4], 0, 2) = [1, 0, 2, 3, 4]
+			  , 5) = [1, 2, 3, 4, 0]
+			  , 100) = [1, 2, 3, 4]
+
+insereaza(l1l2...ln, e, k) = {
+	[e], k=1 ^ n=0
+	[] sau fi de la mate, k!=1 ^ n=0
+	el1l2...ln, k=1 ^ n > 0
+	l1 + insereaza(l2l3...ln, e, k-1)
+}
+
+adaugaInceput(l, e)
+creeaza() => fi
+
+def insereaza(l, e, k):
+	if k==1 and vida(l): return adaugaInceput(creeaza(), e)
+	if k>1 and vida(l): return creeaza()
+	return adaugaInceput(insereaza(sublista(l, e, k-1)), prim(l))
+
+P42. Ex: insereaza([1, 2, 3, 4], 0, 2) = [1, 0, 2, 0, 3, 0, 4, 0]
+P42. Ex: insereaza([1, 2, 3, 4], 0, 4) = [1, 2, 3, 0, 4]
+
+insereaza(l1l2...ln, e, pos, m) = {
+    [e], pos=1 ^ n=0
+    [], pos!=1 ^ n=0
+    e + insereaza(l1...ln, e, m, m), pos=1 ^ n>0
+    l1 + insereaza(l2...ln, e, pos-1, m) pos>1 ^ n>0
+}
+
+insereaza([1, 2, 3], 0, 2, 2) =
+= 1 + insereaza([2, 3], 0, 1, 2) = 1 + 0 + insereaza([2, 3], 0, 2, 2) = [1, 0] + 2 + insereaza([3], 0, 1, 2) = [1, 0, 2] + 0 + insereaza([3], 0, 2, 2) =
+= [1, 0, 2, 0] + 3 + insereaza([], 0, 1, 2) = [1, 0, 2, 0, 3] + 0 = [1, 0, 2, 0, 3, 0]
+

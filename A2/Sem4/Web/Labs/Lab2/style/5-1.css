@@ -1,0 +1,22 @@
+.container{
+    border: 1px solid black;
+    display: grid;
+    gap: 15px;
+    padding: 15px;
+    grid-template-columns: auto auto;
+    width: 360px;
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: aqua;
+    padding: 25px 25px 12px;
+}
+
+img{
+    --factor: 3;
+    width: calc(var(--factor) * 40px);
+    height: calc(var(--factor) * 60px);
+}

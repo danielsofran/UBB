@@ -1,0 +1,1 @@
+La p3: generam vector random si punem suma in stanga

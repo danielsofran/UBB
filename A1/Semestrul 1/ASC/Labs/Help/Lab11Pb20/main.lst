@@ -1,0 +1,86 @@
+     1                                  bits 32
+     2                                  global start
+     3                                  
+     4                                  ;extern translate
+     5                                  
+     6                                  extern exit, printf, fscanf, fopen, fclose
+     7                                  import exit msvcrt.dll
+     8                                  import fscanf msvcrt.dll
+     9                                  import printf msvcrt.dll
+    10                                  import fopen msvcrt.dll
+    11                                  import fclose msvcrt.dll
+    12                                  
+    13                                  segment data use32 class=data
+    14 00000000 6E756D6572652E7478-         filename db "numere.txt", 0
+    14 00000009 7400               
+    15 0000000B 00000000                    descriptor dd 0
+    16 0000000F 7200                        mod db "r", 0
+    17 00000011 256400                      format_input db "%d", 0
+    18 00000014 25642000                    format_output db "%d ", 0
+    19 00000018 00000000                    lungime dd 0
+    20 0000001C <res 00000194>              vector resd 101 ; maximul de numere
+    21 000001B0 00000000                    numar dd 0
+    22                                      
+    23                                  
+    24                                  segment code use32 class=code
+    25                                  start:
+    26 00000000 68[0F000000]                push mod
+    27 00000005 68[00000000]                push filename
+    28 0000000A FF15[00000000]              call [fopen]
+    29 00000010 83C404                      add esp, 4
+    30 00000013 A3[0B000000]                mov [descriptor], eax
+    31 00000018 83F800                      cmp eax, 0
+    32 0000001B 745F                        je final
+    33                                      
+    34                                      ; citire numere
+    35                                      numere:
+    36                                          ; citire numar
+    37 0000001D 68[B0010000]                    push numar
+    38 00000022 68[11000000]                    push format_input
+    39 00000027 FF35[0B000000]                  push dword[descriptor]
+    40 0000002D FF15[00000000]                  call [fscanf]
+    41 00000033 83C40C                          add esp, 4*3
+    42                                          
+    43 00000036 83F801                          cmp eax, 1
+    44 00000039 751C                            jne prelucrare
+    45                                          
+    46                                          ; dublam numarul
+    47 0000003B A1[B0010000]                    mov eax, [numar]
+    48 00000040 D1E0                            sal eax, 1 ; eax = eax * 2^1
+    49                                          
+    50                                          ; adaugam elementul la finalul vectorului
+    51 00000042 8B0D[18000000]                  mov ecx, [lungime]
+    52 00000048 89048D[1C000000]                mov [4*ecx+vector], eax
+    53                                          
+    54 0000004F FF05[18000000]                  inc dword [lungime]
+    55                                          
+    56 00000055 EBC6                            jmp numere ; continuam pt urm nr
+    57                                          
+    58                                      prelucrare:
+    59                                          ; push dword[lungime]
+    60                                          ; push vector
+    61                                          ; call reverse
+    62                                          ; add esp, 4*2
+    63                                      
+    64 00000057 8B0D[18000000]              mov ecx, [lungime]
+    65 0000005D BB00000000                  mov ebx, 0
+    66                                      afisare:
+    67 00000062 51                              push ecx
+    68                                              ; afisam intotdeauna ultimul element
+    69 00000063 FF349D[1C000000]                    push dword[vector+4*ebx]
+    70 0000006A 68[14000000]                        push format_output
+    71 0000006F FF15[00000000]                      call [printf]
+    72 00000075 83C408                              add esp, 4*2
+    73 00000078 59                              pop ecx
+    74 00000079 43                              inc ebx
+    75                                          ; dec ecx
+    76                                          ; cmp ecx, 0
+    77 0000007A E2E6                        loop afisare
+    78                                      
+    79                                      final: ; close the file
+    80 0000007C FF35[0B000000]              push dword[descriptor]
+    81 00000082 FF15[00000000]              call [fclose]
+    82 00000088 83C404                      add esp, 4
+    83                                      
+    84 0000008B 6A00                        push 0
+    85 0000008D FF15[00000000]              call [exit]

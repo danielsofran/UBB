@@ -1,0 +1,5 @@
+Carte
+string titlu
+string autor
+string gen
+int anap

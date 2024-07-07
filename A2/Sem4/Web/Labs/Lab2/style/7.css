@@ -1,0 +1,70 @@
+ul{
+    display: flex;
+    position: fixed;
+    flex-direction: column;
+    padding-right: 30px;
+    margin-left: 120px;
+}
+
+li{
+    position: relative;
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    margin-top: 10px;
+    min-height: 50px;
+    min-width: 100px;
+    border-radius: 10px;
+    padding: 4px;
+    background: transparent;
+}
+
+.alice:before, .bob:before{
+    display: inline-block;
+    background-image: url(../assets/img/persons.png);
+    content: "";
+    width: 50px; height: 50px;
+
+    /*margin-left: -70px;*/
+    /*margin-right: 30px;*/
+    /*flex: 0 0 50px;*/
+    position: absolute;
+    top: 5px;
+    left: -70px;
+}
+
+.alice:after, .bob:after{
+    content: '';
+    position: absolute;
+    top: 5px;
+    left: -43px;
+    border: 22px solid;
+}
+
+.alice:before{
+    background-position: 50px 0;
+}
+
+.alice{
+    background-color: rgba(179, 0, 255, 0.4);
+    border: 3px solid rgba(179, 0, 255, 0.4);
+}
+
+.alice:after {
+    border-color: transparent rgba(179, 0, 255, 0.4) transparent transparent;
+}
+
+
+.bob:before{
+    background-position: 0 0;
+}
+
+.bob{
+    background-color: rgba(227, 28, 28, 0.4);
+    border: 3px solid rgba(227, 28, 28, 0.4);
+}
+
+.bob:after {
+    border-color: transparent rgba(227, 28, 28, 0.4) transparent transparent;
+}

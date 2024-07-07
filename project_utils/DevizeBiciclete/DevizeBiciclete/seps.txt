@@ -1,0 +1,9 @@
+﻿$cli$ - clientdata
+$bic$ - bicicletadata
+$constat$ - constataredata
+$manop$ - manoperadata
+$piesa$ - piesadata
+
+$dev$ - elementele unui deviz
+$manoprepo$ - separare intra manopere
+$pieserepo$ - separare intre piese

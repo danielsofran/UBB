@@ -1,0 +1,50 @@
+/~bufny
+
+    STIVA TCP/IP
+
+- Dirijare (routarea) pachetelor (routere)
+
+<!pachete!>
+
+- Mecanismul de adresare IP
+
+- Sistemul numelor de domeniu (DNS)
+
+-Stiva e protocoale TCP/IP (RFC: http e RFC3x...21)
+
+/etc/services -> are un fisier cu toate protocoalele
+
+┌───────────────────────────┐
+│Aplicatie                  │ -> NTP: Network Time Protocol, DNS: Domain Name System --> protocoale de nivel aplicatie; HTTP, HTTPS (TCP)
+│───────────────────────────│    SMTP, FTP, POP3, MAP
+│Transport                  │ -> TCP: Transmission Control Protocol, UDP: User Datagram Protocol, port; 
+│───────────────────────────│    HTTP - portul 80; HTTPS - portul 443; FTP - portul 21; SSH - portul 22;
+│Retea(internet)            │ -> adresa IP sau IPS
+│───────────────────────────│
+│Datalink(legatura de date) │ -> switch, MAC(adresa MAC sau hardware)
+│───────────────────────────│
+│Fizic                      │ -> cablu, fibra optica, wireless, linie telefonica
+└───────────────────────────┘
+            ^
+            │
+         mesaje
+            │
+            v
+┌───────────────────────────┐
+│Aplicatie                  │ MESAJ UTILIZATOR
+│───────────────────────────│       += ANTET
+│Transport                  │
+│───────────────────────────│       += PROTOCOL, COD SURSA, COD DESTINATIE
+│Retea(internet)            │
+│───────────────────────────│       += IP/IPS sursa si destinatie
+│Datalink(legatura de date) │
+│───────────────────────────│       += MAC sursa, MAC destinatie
+│Fizic                      │   FRAME / CADRU
+└───────────────────────────┘
+
+STIVA/MODELUL OS
+
+VPN: se iau pachete ip care ajung informatie utila si se introduc in stiva TCP
+
+SOCKET-uri: intre Aplicatie si Transport
+

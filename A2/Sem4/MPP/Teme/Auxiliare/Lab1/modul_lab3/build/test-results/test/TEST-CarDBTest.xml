@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="CarDBTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-03-15T16:11:26" hostname="DESKTOP-GAQSC82" time="0.431">
+  <properties/>
+  <testcase name="Test 0" classname="CarDBTest" time="0.431"/>
+  <system-out><![CDATA[15 Mar 2023 18:11:27,101 INFO  CarsDBRepository 19 <init> - Initializing CarsDBRepository with properties: {jdbc.url=jdbc:sqlite:C:\Users\aerap\Desktop\MPP\Lab1\modul_lab3\cars.db} 
+15 Mar 2023 18:11:27,106 TRACE CarsDBRepository 109 findAll - Enter
+15 Mar 2023 18:11:27,106 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 18:11:27,107 TRACE JdbcUtils 23 getNewConnection - Enter
+15 Mar 2023 18:11:27,107 INFO  JdbcUtils 28 getNewConnection - trying to connect to database ... jdbc:sqlite:C:\Users\aerap\Desktop\MPP\Lab1\modul_lab3\cars.db
+15 Mar 2023 18:11:27,107 INFO  JdbcUtils 29 getNewConnection - user: null
+15 Mar 2023 18:11:27,108 INFO  JdbcUtils 30 getNewConnection - pass: null
+15 Mar 2023 18:11:27,166 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@5ba745bc)
+15 Mar 2023 18:11:27,175 TRACE CarsDBRepository 118 findAll - Exit with([Id=1 Dacia Sandero 2019, Id=2 Skoda Octavia 2020, Id=9 Tesla2 Model S2 2020, Id=10 Tesla2 Model S2 2020, Id=11 Tesla Model S 2019])
+15 Mar 2023 18:11:27,175 TRACE CarsDBRepository 25 findByManufacturer - Enter
+15 Mar 2023 18:11:27,176 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 18:11:27,176 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@5ba745bc)
+15 Mar 2023 18:11:27,176 TRACE CarsDBRepository 35 findByManufacturer - Exit
+15 Mar 2023 18:11:27,177 TRACE CarsDBRepository 25 findByManufacturer - Enter
+15 Mar 2023 18:11:27,177 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 18:11:27,177 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@5ba745bc)
+15 Mar 2023 18:11:27,178 TRACE CarsDBRepository 35 findByManufacturer - Exit
+15 Mar 2023 18:11:27,178 TRACE CarsDBRepository 73 add - Enter
+15 Mar 2023 18:11:27,178 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 18:11:27,178 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@5ba745bc)
+15 Mar 2023 18:11:27,183 TRACE CarsDBRepository 81 add - Saved 1 instances
+15 Mar 2023 18:11:27,183 TRACE CarsDBRepository 86 add - Exit
+15 Mar 2023 18:11:27,183 TRACE CarsDBRepository 109 findAll - Enter
+15 Mar 2023 18:11:27,183 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 18:11:27,183 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@5ba745bc)
+15 Mar 2023 18:11:27,184 TRACE CarsDBRepository 118 findAll - Exit with([Id=1 Dacia Sandero 2019, Id=2 Skoda Octavia 2020, Id=9 Tesla2 Model S2 2020, Id=10 Tesla2 Model S2 2020, Id=11 Tesla Model S 2019, Id=12 Tesla Model S 2019])
+15 Mar 2023 18:11:27,187 TRACE CarsDBRepository 25 findByManufacturer - Enter
+15 Mar 2023 18:11:27,187 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 18:11:27,187 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@5ba745bc)
+15 Mar 2023 18:11:27,187 TRACE CarsDBRepository 35 findByManufacturer - Exit
+15 Mar 2023 18:11:27,189 TRACE CarsDBRepository 91 update - Enter
+15 Mar 2023 18:11:27,189 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 18:11:27,189 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@5ba745bc)
+15 Mar 2023 18:11:27,193 TRACE CarsDBRepository 99 update - Updated 1 instances
+15 Mar 2023 18:11:27,193 TRACE CarsDBRepository 104 update - Exit
+15 Mar 2023 18:11:27,194 TRACE CarsDBRepository 25 findByManufacturer - Enter
+15 Mar 2023 18:11:27,194 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 18:11:27,194 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@5ba745bc)
+15 Mar 2023 18:11:27,194 TRACE CarsDBRepository 35 findByManufacturer - Exit
+15 Mar 2023 18:11:27,194 TRACE CarsDBRepository 25 findByManufacturer - Enter
+15 Mar 2023 18:11:27,195 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 18:11:27,195 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@5ba745bc)
+15 Mar 2023 18:11:27,195 TRACE CarsDBRepository 35 findByManufacturer - Exit
+15 Mar 2023 18:11:27,195 TRACE CarsDBRepository 41 findBetweenYears - Enter
+15 Mar 2023 18:11:27,196 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 18:11:27,196 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@5ba745bc)
+15 Mar 2023 18:11:27,196 TRACE CarsDBRepository 52 findBetweenYears - Exit
+Id=1 Dacia Sandero 2019
+Id=2 Skoda Octavia 2020
+Id=9 Tesla2 Model S2 2020
+Id=10 Tesla2 Model S2 2020
+Id=11 Tesla2 Model S2 2020
+Id=12 Tesla Model S 2019
+15 Mar 2023 18:11:27,197 TRACE CarsDBRepository 109 findAll - Enter
+15 Mar 2023 18:11:27,197 TRACE JdbcUtils 46 getConnection - Enter
+15 Mar 2023 18:11:27,197 TRACE JdbcUtils 55 getConnection - Exit with(org.sqlite.jdbc4.JDBC4Connection@5ba745bc)
+15 Mar 2023 18:11:27,197 TRACE CarsDBRepository 118 findAll - Exit with([Id=1 Dacia Sandero 2019, Id=2 Skoda Octavia 2020, Id=9 Tesla2 Model S2 2020, Id=10 Tesla2 Model S2 2020, Id=11 Tesla2 Model S2 2020, Id=12 Tesla Model S 2019])
+]]></system-out>
+  <system-err><![CDATA[C:\Users\aerap\Desktop\MPP\Lab1\modul_lab3
+]]></system-err>
+</testsuite>

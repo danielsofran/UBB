@@ -1,0 +1,100 @@
+xlim([-1,3])
+syms x
+f = exp(x)
+T1 = taylor(f, 'Order', 1)
+T2 = taylor(f, 'Order', 2)
+T3 = taylor(f, 'Order', 3)
+T4 = taylor(f, 'Order', 4)
+T5 = taylor(f, 'Order', 5)
+T6 = taylor(f, 'Order', 6)
+
+
+
+% 4. Considering h = 0.25, xi = 1+ih; i = 0,6, and f(x) = sqrt(5*x^2+1),
+%    construct the finite differences table.
+
+% Solution:
+
+h = 0.25
+function fi
+  h = 0.25;
+  i = 0:1:6;
+  x = 1 + i.*h;
+  f = sqrt(5.*x.^2+1);
+  for i = 1:7
+    diff(i, 1) = f(i);
+  endfor
+  
+  for j = 2:7
+    
+    for i = 1:7-j+1
+      diff(i,j) = diff(i+1, j-1) - diff(i, j-1);
+    endfor
+    
+  endfor
+  
+  fprintf('\n\tx\t        f(x)       D1\t         D2\t         D3\t          D4\t        D5\t         D6\t');
+  for i = 1:7
+    fprintf('\n    %.4f', diff(i,j));
+  endfor
+endfunction
+%function df(k,fi(i))
+%  if(k=1) 
+%    eq = fi(i+1)-fi(i)
+%  else 
+%    eq = df(k-1, fi(i+1)) - df(k-1, fi(i))
+%  endif 
+%endfunction
+
+% 5. For x0 = 2, x1 = 4, x2 = 6, x3 = 8 and f0 = 4, f1 = 8, f2 = 14, f3 = 16 
+%    construct the divided differences table.
+
+% Solution:
+
+
+
+
+
+function fact(n)
+  if n = 0
+    f = 1
+    
+  elseif n = 1
+    f = 1
+    
+  else 
+    f = fact(n-1)*n
+  endif
+endfunction
+
+function T(n)
+  x = -1:0.01:3
+  if n=0
+    P = exp(0)
+  elseif n = 1
+    P = exp(0) .+ exp(0).*x
+  else
+    P = T(n-2) + T(n-1) .+ exp(0).*((x.^n)./fact(n))
+  endif 
+endfunction
+plot(x, exp(x))
+hold on 
+
+plot(x, T(1), 'k')
+hold on
+
+plot(x, T(2), 'r')
+hold on
+
+plot(x, T(3), 'g')
+hold on
+
+plot(x, T(4), 'b')
+hold on
+
+plot(x, T(5), 'c')
+hold on
+
+plot(x, T(6), 'm')
+
+clear()

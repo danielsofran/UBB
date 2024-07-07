@@ -1,0 +1,28 @@
+
+50%
+- get persoana(email)
+- get activitati(persoana)
+- get activitati(club)
+- get sporturi => activitati, cat de preferat e comparativ cu celelalte
+- get postari(club)
+- get comentarii(postare)
+
+30%
+- add persoana (detalii, sport, ...)
+- add activitate(persoana, sport)
+- add postare(club, persoana, mesaj)
+- add comentariu(postare, persoana, mesaj, )
+- add club
+- add sport(categorie, ...)
+
+10%
+- update persoana, postare, comentariu, activitate, club
+
+10%
+- delete persoana, sport, categorie, postare, comentariu, club
+
+
+SOLUTII:
+    - proceduri stocate pt fiecare op
+    - indecsi pe tabelele 
+

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <select multiple id="plecare" onchange="load_sosiri(event)">
+    </select>
+
+    <select multiple id="sosire">
+    </select>
+
+    <script>
+        var WITH_JQUERY = true;
+    </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+    <script>
+        if(WITH_JQUERY) {
+            $(document).ready(function() {
+                $.ajax({
+                    url: "plecari.php",
+                    success: function(data) {
+                        $("#plecare").html(data);
+                    }
+                });
+            });
+
+            function load_sosiri(e) {
+                let value = e.target.value;
+                console.log(value);
+                $.ajax({
+                    url: "sosiri.php?plecare=" + value,
+                    success: function(data) {
+                        $("#sosire").html(data);
+                    }
+                });
+            }
+        }
+        else
+        {
+            fetch("plecari.php").then(response => response.text()).then(data => {
+                console.log(data)
+                document.getElementById("plecare").innerHTML = data;
+            });
+
+            function load_sosiri(e) {
+                let value = e.target.value;
+                console.log(value);
+                fetch("sosiri.php?plecare=" + value).then(response => response.text()).then(data => {
+                    console.log(data)
+                    document.getElementById("sosire").innerHTML = data;
+                });
+            }
+        }
+    </script>
+
+
+</body>
+</html>

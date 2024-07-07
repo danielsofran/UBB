@@ -1,0 +1,34 @@
+{
+	sem1: {
+		1: {
+			"Automatizarea proceselor de business (UiPath) - lejer",
+			
+			"Metode inteligente de rezolvare a problemelor reale - Diosan?",
+			"Principiile implementarii orientate spre performanță - MPP - 3 lab uri concurenta"
+		},
+		2: {
+			"interactiunea om calculator - super lejer: proiectul final e un joc in streatch",
+			"VR - tryhard"
+		},
+		3: {
+			"proiect colectiv - nu recomand (workshop uri sambata)",
+			"cel mai bine iei ceva de altundeva :)"
+		},
+		
+	},
+	sem2: {
+		4: {
+			"gamedev - 2 git clone uri si ai 10",
+			"Fundamentele limbajelor de programare - easy vancea?",
+			"android, - nah",
+		}
+		5: {
+			"gestionarea proiectelor soft - super fain. nu e de scris cod, e de filozofie. merita, mai ales in sem6, cand resursele is limitate",
+			"Invatare interactiva"
+		},
+		6: {
+			"istoria informaticii - top, desi sugerez etica",
+			"tenis de masa"
+		}
+	}
+}

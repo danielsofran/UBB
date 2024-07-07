@@ -1,0 +1,125 @@
+/*
+    TODO: Add vendor prefixes: transform, transition, keyframe, animation
+    TODO: migrate to js, sass, add truncate
+ */
+
+.menuContainer {
+    --content_size: 3.5rem; /* image size */
+    --center_size: 5.5em;
+    --extra_space: 0.2; /* how much extra space we want between images, 1 = one image size */
+    --radius_content: calc(.5*(1 + var(--extra_space))*var(--content_size)/var(--tan)); /* circle radius */
+    --radius_center: calc(.5*(1 + var(--extra_space))*var(--center_size)/var(--tan)); /* circle radius for center */
+    --size: calc(var(--radius_content) + var(--radius_center) + var(--content_size)); /* container size */
+    position: relative;
+    width: var(--size); height: var(--size);
+    background: greenyellow;
+}
+
+.menuCenter {
+    position: absolute;
+    top: 50%; left: 50%;
+    margin: calc(-.5*var(--center_size));
+    width: calc(var(--center_size)); height: calc(var(--center_size));
+    --angle: calc(var(--i)*1turn/var(--m));
+    transform:
+            rotate(var(--angle))
+            translate(var(--radius_center))
+            rotate(calc(-1*var(--angle)));
+    z-index: 100;
+}
+
+.menuItem {
+    --factor: .3; /* size before showing */
+    position: absolute;
+    top: 50%; left: 50%;
+    margin: calc(-.5*var(--content_size));
+    /*width: var(--content_size); height: var(--content_size);*/
+    width: calc(var(--factor)*var(--content_size)); height: calc(var(--factor)*var(--content_size));
+    --angle: calc(var(--i)*calc(1turn/2)/calc(var(--m))); /* 1turn/2 -> reduce arcul de cerc */
+    /*animation: popout 2s ease-out;*/
+    /*animation-fill-mode: forwards;*/
+    border-radius: 50%;
+    transition: width .5s, height .5s;
+}
+
+@keyframes popout {
+    /*--angle0: calc(var(--inexistant)*1turn/var(--m));*/
+    from {
+        display: none;
+        transform:
+                rotate(var(--angle0))
+                translate(calc(var(--radius_content)))
+                rotate(calc(-1*var(--angle0)));
+    }
+    to {
+        display: block;
+        width: var(--content_size); height: var(--content_size);
+        transform:
+                rotate(var(--angle))
+                translate(var(--radius_content))
+                rotate(calc(-1*var(--angle)));
+        z-index: 300;
+    }
+}
+@keyframes popin {
+    from {
+        width: calc(1*var(--content_size)); height: calc(1*var(--content_size));
+        transform:
+                rotate(var(--angle))
+                translate(var(--radius_content))
+                rotate(calc(-1*var(--angle)))
+    }
+    to {
+        width: calc(var(--factor)*var(--content_size)); height: calc(var(--factor)*var(--content_size));
+        transform:
+                rotate(var(--angle0))
+                translate(calc(var(--radius_content)))
+                rotate(calc(-1*var(--angle0)));
+    }
+}
+
+@keyframes grow {
+    0% {
+        width: calc(1*var(--content_size));
+        height: calc(1*var(--content_size));
+        transform:
+                rotate(var(--angle))
+                translate(var(--radius_content))
+                rotate(calc(-1*var(--angle)));
+        opacity: 1;
+    }
+    20%{
+        opacity: .1;
+    }
+    40%{
+        opacity: 1;
+    }
+    100% {
+        width: calc((1 + var(--factor))*var(--content_size));
+        height: calc((1 + var(--factor))*var(--content_size));
+        transform:
+                rotate(var(--angle))
+                translate(var(--radius_center))
+                rotate(calc(-1*var(--angle)));
+        opacity: 1;
+    }
+}
+
+@keyframes shrink {
+    0% {
+        width: calc((1 + var(--factor))*var(--content_size));
+        height: calc((1 + var(--factor))*var(--content_size));
+        transform:
+                rotate(var(--angle))
+                translate(var(--radius_center))
+                rotate(calc(-1*var(--angle)));
+    }
+    100% {
+        width: calc(1*var(--content_size));
+        height: calc(1*var(--content_size));
+        transform:
+                rotate(var(--angle))
+                translate(var(--radius_content))
+                rotate(calc(-1*var(--angle)));
+    }
+}

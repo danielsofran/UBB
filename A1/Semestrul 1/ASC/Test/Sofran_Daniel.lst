@@ -1,0 +1,53 @@
+     1                                  bits 32
+     2                                  
+     3                                  global start
+     4                                  
+     5                                  extern exit, printf, scanf, fclose, fread
+     6                                  import exit msvcrt.dll
+     7                                  import printf msvcrt.dll
+     8                                  import scanf msvcrt.dll
+     9                                  import fclose msvcrt.dll
+    10                                  import fread msvcrt.dll
+    11                                  
+    12                                  %macro CIFRA_IMPARA 1
+    13                                      clc
+    14                                      push bx
+    15                                      mov bl, %1
+    16                                      test bl, 1
+    17                                      jz .next
+    18                                      cmp bl, '0'
+    19                                      jb .next
+    20                                      cmp bl, '9'
+    21                                      ja .next
+    22                                      stc
+    23                                      .next:
+    24                                      pop bx
+    25                                  %endmacro
+    26                                  
+    27                                  
+    28                                  segment data use32 class=data
+    29 00000000 696E7075742E747874-         filename db "input.txt", 0  ; numele fisierului
+    29 00000009 00                 
+    30 0000000A 7200                        mode db "r", 0              ; modul de acces la fisier
+    31 0000000C 00000000                    descriptor dd 0             ; descriptorul fisierului
+    32 00000010 <res 00000065>              cifre resb 101              ; sirul de cifre din fisier, stocat ca sir de caractere
+    33 00000075 00                          cmax db 0                   ; cifra cu valoarea maxima
+    34 00000076 00                          chr db 0                    ; un caracter citit
+    35 00000077 25730A00                    format db "%s", 10, 0 ; formatul de afisare
+    36 0000007B 255B5E5C6E5D00              format2 db "%[^\n]", 0
+    37                                  
+    38                                  segment code use32 class=code
+    39                                      start:
+    40 00000000 68[10000000]                    push cifre
+    41 00000005 68[7B000000]                    push format2
+    42 0000000A FF15[00000000]                  call [scanf]
+    43 00000010 83C408                          add esp, 8
+    44                                          
+    45 00000013 68[10000000]                    push cifre
+    46 00000018 68[77000000]                    push format
+    47 0000001D FF15[00000000]                  call [printf]
+    48 00000023 83C408                          add esp, 8
+    49                                          
+    50                                          final: ; exit(0);
+    51 00000026 6A00                            push    dword 0     
+    52 00000028 FF15[00000000]                  call    [exit]      

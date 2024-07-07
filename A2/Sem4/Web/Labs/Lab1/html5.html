@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<div>
+    <center><h1> Înregistrare <a href="https://www.strava.com" target="_blank"> Strava</a></h1></center>
+    <h2> 100% autentică </h2>
+    <br>
+</div>
+
+<form method="get">
+<table border="0px none" width="100%">
+    <tr>
+        <td colspan="2">
+            <table>
+                <tr>
+                    <td>
+                        <img src="https://pbs.twimg.com/profile_images/900411562250256384/ALkwa0jf_400x400.jpg"
+                             alt="Strava Logo" title="Strava logo" height="200">
+                    </td>
+                    <td>
+                        <img src="https://cdn.mos.cms.futurecdn.net/5apgZ7xK2kUHMQFaAgMEFE.jpg"
+                             alt="Strava Usage" title="Strava Demo" height="200">
+                    </td>
+                    <td>
+                        <h4> <span draggable="true">Informații </span> despre strava: </h4>
+                        <ul type="square">
+                            <li><p><strong>Strava</strong> este o aplicație cross-platform de <b>monitorizare</b> a activităților sportive.</li>
+                            <li> Platformele suportate sunt:
+                                <ol type="I">
+                                    <li>Android</li>
+                                    <li>Apple</li>
+                                    <li>Windows</li>
+                                    <li>Web</li>
+                                </ol>
+                            </li>
+                            <li> În plus, Strava este disponibilă în 35 de limbi și are peste 40 de milioane de utilizatori din întreaga lume. </li>
+                        </ul>
+                    </td>
+                    <td>
+                        <h4> <span draggable="true">Beneficii </span> ale utilizarii strava: </h4>
+                        <ul type="circle">
+                            <li><p><strong>Monitorizarea</strong> <b>progrsului</b></p>
+                                <ol start="0">
+                                    <li>salvarea acestuia, având posibilitatea de a posta</li>
+                                    <li>compararea rezultatelor cu a altor persoane</li>
+                                </ol>
+                            </li>
+                            <li> posibilitatea participarii la compețitii virtuale și câștigării</li>
+                        </ul>
+                    </td>
+                </tr>
+                <tr>
+                    <td><center><h6>Logo</h6></center></td>
+                    <td><center><h6>Usage</h6></center></td>
+                    <td><label><input type="checkbox" checked="checked" disabled="disabled" value="Trusted"></label> Trusted</td>
+                    <td>Garantate</td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr>
+        <td  align="center"><h3> Insert your personal data </h3></td>
+        <td valign="baseline"><h5 align="right"> ©2023 Copyright </h5></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <fieldset>
+            <legend> Personal data </legend>
+            <table bgcolor="white" width="70%">
+                <tr>
+                    <th> <label id="labelNume"> Nume </label> </th>
+                    <td ><input aria-label="labelNume" type="text" maxlength="50" name="nume"></td>
+                </tr>
+                <tr>
+                    <th> <label id="labelPrenume"> Prenume </label></th>
+                    <td ><input aria-label="labelPrenume" type="text" maxlength="50" name="prenume"></td>
+                </tr>
+                <tr>
+                    <th> <label id="labelEmail"> Email </label></th>
+                    <td ><input aria-label="labelEmail" type="email" maxlength="50" size="12" name="email"></td>
+                </tr>
+                <tr>
+                    <th> <label id="labelTelefon"> Telefon </label></th>
+                    <td ><input aria-label="labelTelefon" type="tel" maxlength="15" size="10" name="telefon"></td>
+                </tr>
+                <tr>
+                    <th> <label id="labelParola"> Parola </label></th>
+                    <td ><input aria-label="labelParola" type="password" maxlength="50" name="parola"></td>
+                </tr>
+                <tr>
+                    <th> <label id="labelDataNasterii"> Data nasterii </label></th>
+                    <td ><input aria-label="labelDataNasterii" type="date" name="dataNasterii"></td>
+                </tr>
+                <tr>
+                    <th> <label id="labelDescriere"> Descriere </label></th>
+                    <td ><textarea aria-label="labelDescriere" rows="3" cols="20">Introduceti descrierea</textarea></td>
+                </tr>
+                <tr>
+                    <th> <label id="labelTipSportfavorit"> Tip Sport Favorit </label></th>
+                    <td >
+                        <select multiple="multiple" aria-label="labelTipSportfavorit">
+                            <option value="skill">Skill</option>
+                            <option value="power">Power</option>
+                            <option value="mixed">Mixed</option>
+                            <option value="endurance" selected>Endurance</option>
+                        </select>
+                    </td>
+                </tr>
+            </table>
+            </fieldset>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" align="center"><h3> Insert your favourite sport details </h3></td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <table bgcolor="white" border="1px solid red" width="80%">
+                <tr>
+                    <th> <label id="labelSport"> Sport </label></th>
+                    <td>
+                        <select aria-label="labelSport" name="sport">
+                            <option value="Alergare">Alergare</option>
+                            <option value="Ciclism">Ciclism</option>
+                            <option value="Inot">Inot</option>
+                            <option value="Altele" selected>Altele</option>
+                        </select>
+                    </td>
+                    <td rowspan="2">
+                        <input type="submit" value="Submit">
+                    </td>
+                </tr>
+                <tr>
+                    <th> <label id="labelDistanta"> Distanta </label></th>
+                    <td><input aria-label="labelDistanta" type="number" min="0" max="100" step="5" name="distanta"></td>
+                </tr>
+                <tr>
+                    <th> <label id="labelTimp"> Timp </label></th>
+                    <td><input aria-label="labelTimp" type="time" name="timp"></td>
+                    <td rowspan="2"><input type="button" value="Seteaza momentul curent"></td>
+                </tr>
+                <tr>
+                    <th> <label id="labelData"> Data </label></th>
+                    <td><input aria-label="labelData" type="datetime-local" name="data"></td>
+                </tr>
+                <tr>
+                    <th> <label id="labelLocatie"> Locatie </label></th>
+                    <td><input aria-label="labelLocatie" type="search" maxlength="50" name="locatie"></td>
+                    <td rowspan="2"><input type="reset" value="Reset"></td>
+                </tr>
+                <tr>
+                    <th> <label id="labelNivel"> Nivel </label></th>
+                    <td><input aria-label="labelCalorii" type="range" min="0" max="5" step="1" name="nivel"></td>
+                </tr>
+                <tr>
+                    <th> <label id="labelDificultate"> Dificultate </label></th>
+                    <td><input aria-label="labelDificultate" type="color"></td>
+                    <td>Alege culoarea <br>in functie de dificultate</td>
+                </tr>
+                <tr>
+                    <th> <label id="labelDescriereSport"> Descriere </label></th>
+                    <td> <textarea aria-label="labelDescriereSport" rows="3" cols="20">Introduceti descrierea</textarea></td>
+                    <td> <textarea aria-label="labelDescriereSport" readonly="readonly">Descrierea sportului ales</textarea></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+</form>
+
+
+</body>
+</html>

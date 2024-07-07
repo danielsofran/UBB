@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        td{
+            padding: 10px 20px;
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <td id="11"> </td>
+            <td id="12"> </td>
+            <td id="13"> </td>
+        </tr>
+        <tr>
+            <td id="21"> </td>
+            <td id="22"> </td>
+            <td id="23"> </td>
+        </tr>
+        <tr>
+            <td id="31"> </td>
+            <td id="32"> </td>
+            <td id="33"> </td>
+        </tr>
+    </table>
+
+    <button id="clear" onclick="window.location.reload()">Clear</button>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script>
+        var WITH_JQUERY = false;
+        var player1 = "X";
+        var player2 = "O";
+        var won = false;
+
+        var player = player1;
+
+        const changePlayer = function () {
+            if(player == player1) {
+                player = player2;
+            } else {
+                player = player1;
+            }
+        };
+
+        if(WITH_JQUERY) {
+            $(document).ready(function () {
+
+                $.get("clear.php", function (data) {
+                    data = JSON.parse(data);
+                    if(data.success !== true) {
+                        alert("Error clearing the board!");
+                    }
+                });
+
+                let tds = $("td");
+                tds.text(" ")
+                tds.click(function () {
+                    let id = $(this).attr("id");
+                    if($(this).text() === " " && won === false) {
+                        $(this).text(player);
+                        $.get("play.php", {index: id, player: player}, function (data) {
+                            data = JSON.parse(data);
+                            if(data.win !== false) {
+                                alert("Player " + data.win + " won!");
+                                won = true;
+                            }
+                        });
+                        changePlayer();
+                    }
+                    else {
+                        alert("This cell is already taken!");
+                    }
+                });
+            });
+        } else {
+            fetch("clear.php", {
+                method: "GET"
+            }).then(function (response) {
+                return response.json();
+            }).then(function (data) {
+                if(data.success !== true) {
+                    alert("Error clearing the board!");
+                }
+            });
+            var tds = document.getElementsByTagName("td");
+            for(var i = 0; i < tds.length; i++) {
+                tds[i].innerText = " ";
+                tds[i].addEventListener("click", function () {
+                    let id = this.getAttribute("id");
+                    if(this.innerText !== player1 && this.innerText !== player2 && won === false) {
+                        this.innerText = player;
+                        fetch("play.php?index=" + id + "&player=" + player, {
+                            method: "GET"
+                        }).then(function (response) {
+                            return response.json();
+                        }).then(function (data) {
+                            if(data.win !== false) {
+                                alert("Player " + data.win + " won!");
+                                won = true;
+                            }
+                        });
+                        changePlayer();
+                    }
+                    else {
+                        alert("This cell is already taken!");
+                    }
+                });
+            }
+        }
+    </script>
+</body>
+</html>

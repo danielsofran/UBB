@@ -1,0 +1,52 @@
+     1                                  bits 32
+     2                                  global start
+     3                                  
+     4                                  ;extern translate
+     5                                  
+     6                                  extern exit, scanf, printf, sleep
+     7                                  import exit msvcrt.dll
+     8                                  import scanf msvcrt.dll
+     9                                  import printf msvcrt.dll
+    10                                  import sleep Kernel32.dll
+    11                                  
+    12                                  segment data use32 class=data
+    13 00000000 <res 00000065>              text resb 101
+    14 00000065 4F5051525354555657-         alfabet db "OPQRSTUVWXYZABCDEFGHIJKLMN", 0
+    14 0000006E 58595A414243444546-
+    14 00000077 4748494A4B4C4D4E00 
+    15 00000080 496E74726F64756365-         mesaj_input db "Introduceti un sir: ", 0
+    15 00000089 746920756E20736972-
+    15 00000092 3A2000             
+    16 00000095 547261647563657265-         mesaj_output db "Traducerea dupa alfabetul %s este %s", 0
+    16 0000009E 61206475706120616C-
+    16 000000A7 6661626574756C2025-
+    16 000000B0 732065737465202573-
+    16 000000B9 00                 
+    17 000000BA 257300                      format_input db "%s", 0
+    18                                  
+    19                                  segment code use32 class=code
+    20                                  start:
+    21 00000000 68[80000000]                push mesaj_input
+    22 00000005 FF15[00000000]              call [printf]
+    23 0000000B 83C404                      add esp, 4
+    24                                      
+    25 0000000E 68[00000000]                push text
+    26 00000013 68[BA000000]                push format_input
+    27 00000018 FF15[00000000]              call [scanf]
+    28 0000001E 83C408                      add esp, 4*2
+    29                                              
+    30                                      ; translate(sir, alfabet) -> substituie sirul dat cu cel translatat
+    31 00000021 68[65000000]                push alfabet
+    32 00000026 68[00000000]                push text
+    33                                      call translate
+    33          ******************       error: symbol `translate' undefined
+    34 0000002B 83C408                      add esp, 4*2
+    35                                      
+    36 0000002E 68[00000000]                push text
+    37 00000033 68[65000000]                push alfabet
+    38 00000038 68[95000000]                push mesaj_output
+    39 0000003D FF15[00000000]              call [printf]
+    40 00000043 83C40C                      add esp, 4*3
+    41                                      
+    42 00000046 6A00                        push 0
+    43 00000048 E8(00000000)                call exit

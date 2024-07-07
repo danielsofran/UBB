@@ -1,0 +1,45 @@
+     1                                  bits 32
+     2                                  global start
+     3                                  extern exit
+     4                                  import exit msvcrt.dll
+     5                                  
+     6                                  segment data use32 class=data
+     7 00000000 11                          a db               11h
+     8 00000001 1111                        b dw             1111h
+     9 00000003 EFEEEEEE                    c dd        0EEEEEEEFh
+    10 00000007 1111111111111111            d dq 1111111111111111h
+    11                                  
+    12                                  ; c+d-a-b+(c-a) CU SEMN
+    13                                  segment code use32 class=code
+    14                                  start:
+    15 00000000 A1[03000000]                mov eax, [c]    ; eax = c
+    16 00000005 0105[07000000]              add [d], eax
+    17 0000000B 8315[0B000000]00            adc [d+4], dword 0 ; d = d + c = 1111 1112 0000 0000
+    18                                      
+    19 00000012 A0[00000000]                mov al, [a]
+    20 00000017 6698                        cbw
+    21 00000019 98                          cwde            ; eax = a
+    22 0000001A 2905[07000000]              sub dword [d], eax    
+    23 00000020 831D[0B000000]00            sbb dword [d+4], dword 0  ; d = d + c - a = 1111 1111 FFFF FFEF
+    24                                      
+    25 00000027 66A1[01000000]              mov ax, [b]
+    26 0000002D 98                          cwde            ; eax = b
+    27 0000002E 2905[07000000]              sub [d], eax
+    28 00000034 831D[0B000000]00            sbb [d+4], dword 0 ; d = d + c - a - b = 1111 1111 FFFF EEDE
+    29                                      
+    30 0000003B A0[00000000]                mov al, [a]
+    31 00000040 6698                        cbw
+    32 00000042 98                          cwde            ; eax = a
+    33 00000043 89C3                        mov ebx, eax    ; ebx = a
+    34 00000045 A1[03000000]                mov eax, [c]    ; eax = c
+    35 0000004A 29D8                        sub eax, ebx    ; eax = c - a = EEEE EEDE
+    36 0000004C 831D[0B000000]00            sbb [d+4], dword 0 ; in caz de underflow
+    37                                      
+    38 00000053 0105[07000000]              add [d], eax
+    39 00000059 8315[0B000000]00            adc [d+4], dword 0 ; d = d + c - a - b + (c-a) = 1111 1112 EEEE DDBC
+    40                                      
+    41 00000060 A1[07000000]                mov eax, dword [d]  ; eax = EEEE DDBC
+    42 00000065 8B15[0B000000]              mov edx, dword [d+4]; edx = 1111 1112
+    43                                      
+    44 0000006B 6A00                        push dword 0
+    45 0000006D FF15[00000000]              call [exit]

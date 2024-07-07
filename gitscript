@@ -1,0 +1,6 @@
+git checkout --orphan new-main
+git add -A
+GIT_AUTHOR_DATE='2023-05-28 13:15' GIT_COMMITTER_DATE='2023-05-28 13:15' git commit -am "init"
+git branch -D main
+git branch -m main
+git push -f origin main

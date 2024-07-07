@@ -1,0 +1,19 @@
+VAR {a,b,c,...z}+
+CONST R (mult nr reale) U {true, false}
+-------------
+<program> -> <lista declarari> <lista-instr>
+<lista-declr> -> <declarare>
+<lista-declr> -> <declarare> <lista-declr>
+<lista-instr> -> <instructiune>
+<lista-instr> -> <instructiune> <lista-instr>
+<declarare> -> VAR e N | VAR e Z | VAR e R
+<instructiune> -> <citire> | <afisare> | <atribuire> | <conditional> | <repetitiv>
+<citire> -> "citeste " VAR
+<afisare> -> "afiseaza " VAR
+<atribuire> -> VAR "=" <expresie>
+<expresie> -> VAR | CONST | VAR <operatie> <expresie>
++ b - c * 3
+<operatie> -> "+" | "-" | "*" | "/" | "%"
+<conditional> -> "daca" <conditie> "executa" <lista-instr> "sf daca"
+<conditie> VAR | VAR <operatie logica> VAR | VAR <op l> CONST
+<op logica> -> "si" | "sau" | "==" | "!=" | "<" | ">"

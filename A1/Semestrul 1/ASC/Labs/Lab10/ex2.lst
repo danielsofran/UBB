@@ -1,0 +1,118 @@
+     1                                  bits 32 
+     2                                  global start        
+     3                                  
+     4                                  extern exit, printf
+     5                                  import exit msvcrt.dll
+     6                                  import printf msvcrt.dll
+     7                                  
+     8                                  segment data use32 class=data
+     9 00000000 61626100                    sir db "aba", 0
+    10 00000004 46464600                    rast_sir db "FFF", 0
+    11 00000008 536972756C20657374-         ispal db "Sirul este palindrom", 0
+    11 00000011 652070616C696E6472-
+    11 0000001A 6F6D00             
+    12 0000001D 536972756C206E7520-         nopal db "Sirul nu este palindrom", 0
+    12 00000026 657374652070616C69-
+    12 0000002F 6E64726F6D00       
+    13                                      
+    14                                  
+    15                                  ; our code starts here
+    16                                  segment code use32 class=code
+    17                                      len: ; lungimea unui sir de caractere -> parcurgem sirul pana la caracterul 04
+    18                                           ; esp+4 - adresa sirului
+    19 00000000 56                              push esi ; esp + 12
+    20 00000001 53                              push ebx ; esp + 8
+    21 00000002 9C                              pushfd ; esp + 4
+    22                                          
+    23 00000003 8B742410                        mov esi, [esp+16]
+    24 00000007 BB00000000                      mov ebx, 0
+    25 0000000C FC                              cld
+    26                                          .caractere:
+    27 0000000D AC                                  lodsb
+    28 0000000E 3C00                                cmp al, 0
+    29 00000010 7403                                je .gata
+    30 00000012 43                                  inc ebx
+    31 00000013 EBF8                                jmp .caractere
+    32                                          
+    33                                          .gata:
+    34 00000015 89D8                            mov eax, ebx ; eax = nr de caractere
+    35 00000017 9D                              popfd
+    36 00000018 5B                              pop ebx
+    37 00000019 5E                              pop esi
+    38 0000001A C20400                          ret 4
+    39                                      
+    40                                      rast: ; sirul rasturnat
+    41                                            ; esp+4 - sirul care urmeaza sa fie rasturnat
+    42 0000001D 8B742404                        mov esi, [esp+4]
+    43 00000021 8B7C2408                        mov edi, [esp+8]
+    44                                          
+    45 00000025 56                              push esi
+    46 00000026 E8D5FFFFFF                      call len
+    47                                  
+    48 0000002B 01C7                            add edi, eax
+    49 0000002D FD                              std
+    50 0000002E B000                            mov al, 0
+    51 00000030 AA                              stosb
+    52                                          .caractere:
+    53 00000031 FC                                  cld
+    54 00000032 AC                                  lodsb
+    55 00000033 3C00                                cmp al, 0
+    56 00000035 7404                                je .gata
+    57 00000037 FD                                  std
+    58 00000038 AA                                  stosb
+    59 00000039 EBF6                                jmp .caractere
+    60                                          .gata:
+    61 0000003B FC                              cld
+    62                                          ; mutam rezultatul in argument
+    63 0000003C C20800                          ret 4*2
+    64                                      
+    65                                      
+    66                                      egale: ; sunt egale daca cf = 0 (scaderea lor fictiva e 0)
+    67 0000003F 8B742404                        mov esi, [esp+4]
+    68 00000043 8B7C2408                        mov edi, [esp+8]
+    69                                          
+    70 00000047 56                              push esi
+    71 00000048 E8B3FFFFFF                      call len
+    72 0000004D 89C1                            mov ecx, eax
+    73                                          .caractere:
+    74 0000004F A6                                  cmpsb
+    75 00000050 7506                                jne .set_0
+    76 00000052 E2FB                            loop .caractere
+    77                                          ; set 1
+    78 00000054 F9                              stc
+    79 00000055 C20800                          ret 8
+    80                                          .set_0:
+    81 00000058 F8                                  clc
+    82 00000059 C20800                              ret 4*2
+    83                                          
+    84                                      
+    85                                      start:
+    86 0000005C 68[04000000]                    push rast_sir
+    87 00000061 68[00000000]                    push sir
+    88 00000066 E8B2FFFFFF                      call rast
+    89                                          
+    90 0000006B 68[00000000]                    push sir
+    91 00000070 68[04000000]                    push rast_sir
+    92                                          
+    93 00000075 68[04000000]                    push rast_sir
+    94 0000007A 68[00000000]                    push sir
+    95 0000007F E8BBFFFFFF                      call egale
+    96                                          
+    97 00000084 7210                            jc print_pal
+    98                                          
+    99 00000086 68[1D000000]                    push nopal
+   100 0000008B FF15[00000000]                  call [printf]
+   101 00000091 83C404                          add esp, 4
+   102 00000094 EB0E                            jmp exitp
+   103                                          
+   104                                          print_pal:
+   105 00000096 68[08000000]                    push ispal
+   106 0000009B FF15[00000000]                  call [printf]
+   107 000000A1 83C404                          add esp, 4
+   108                                          
+   109                                          
+   110                                          exitp:
+   111 000000A4 6A00                            push dword 0
+   112 000000A6 E8(00000000)                    call exit
+   113                                          
+   114                                  

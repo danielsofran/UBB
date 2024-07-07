@@ -1,0 +1,102 @@
+Comenzi in asteptare: 2
+Comenzi in procesare: 4
+Comenzi finalizate: 0
+Comenzi in asteptare: 3
+Comenzi in procesare: 2
+Comenzi finalizate: 6
+Comenzi in asteptare: 1
+Comenzi in procesare: 1
+Comenzi finalizate: 9
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10
+Comenzi in asteptare: 1
+Comenzi in procesare: 0
+Comenzi finalizate: 10

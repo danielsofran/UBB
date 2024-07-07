@@ -1,0 +1,160 @@
+Comenzi Octave pentru testul practic
+
+Atenție la operațiile matriciale: * / ^ fără punct, respectiv cu punct: .* ./ .^ !
+
+function,
+
+perms([1 2 3]) => 1 2 3; 2 1 3; ... 3 2 1,
+randperm(n, m=n) => aranjamente de n luate cate m,
+randsample(n/v+
+, k, replacement=false) => k val rand din v/[1..n], cu sau fara returnare,
+nchoosek(n/v, k) => aranjamente de n luate cate k (val), sau vectorii daca e dat v
+
+rand(rows=1, cols=1) => valoare random intre 0 si 1,
+randi(imin:imax, rows=1, cols=1) => valori intregi in interval,
+
+[frecv, nr]=hist(vals, range/rs:re, ..., prop, val, ...), => creeaza o histograma cu bare, ret vectorul de frecv si elementele coresp
+histc(-||-) => returneaza vectorul frecventelor pt fiecare elem din range,
+bar(x, y) => creeaza histograma, pt fiecare x  -> valoarea y,
+
+length(v) => lg vectorului,
+size(A) => n, m, ... => dimensiunile tabloului multidim
+ceil(r) => apropximare prin adaos,
+floor(r) => aprox prin reducere,
+abs(r) => muodul,
+mod(a, b) => a%b,
+pdist([x1 y1; x2 y2]) => point distance
+
+linspace(a, b, nr) => ret un vec de nr elem echidist de la a la b,
+operatorul :(de ex. v=1:2:11),
+    a:b <=> [a .. b]
+    a:pas:b
+    pt eliminare de linii/col la matrice
+' - transpus
+
+find(pred(v)) => testeaza predicatul pe v si returneaza vectorul indicilor care corespund,
+unique(container) => vectorul elem unice din cont,
+intersect(A, B) => intersecteaza elem din A si B in ord cresc,
+ismember(v, s) => returneaza vector caracteristic, 1 daca apare sau 0 altfel
+union(A, B) => reuniune,
+repmat(A, i, j) => repeta val mat
+repelem,
+
+figure => grafic nou,
+hold on => toate graficele in aceeasi fereastra,
+clc => clear command screen window,
+clf => clear the current figure window,
+clear all => delete all from symbol table,
+close all => inchide toate ferestrele grafice,
+axis equal => Force x-axis unit distance to equal y-axis (and z-axis) unit distance,
+
+sort(x) => returneaza o copie sortata,
+min(container),
+max(container),
+zeros(n, m) => creeaza o mat plina de 0,
+ones(n, m) => 1,
+
+plot(x, y, prop, val, ...) => deseneaza punctul/punctele x y,
+fplot(fn, [x1 x2]) => plot function in range,
+legend => nu cont,
+xlabel(srt) => denumeste axa ox a graficului,
+ylabel(str) => denumeste axa oy a graficului,
+title(str) => denumeste graficul,
+text(x, y, str) => adauga string ul la poz x y in grafic,
+disp(elem_afisat) => afiseaza elem,
+input => citire, ca in python,
+fprintf(fd, template, ...) => ca in c,
+
+set(findobj('type','patch'),'facealpha',alfa); => seteaza transparenta la bare
+xlim([a b]) => limiteaza desenarea graficului axei ox pe int [a b]
+ylim([a b]) => limiteaza desenarea graficului axei oy pe int [a b]
+
+for,
+while,
+if (elseif...),
+do until,
+break,
+return,
+
+sum,
+cumsum,
+prod,
+sqrt,
+exp,
+log,
+sin,
+cos,
+pi,
+integral(f, a, b),
+
+DISTRIBUTII : p 38 / proba_stat
+DISCRETE
+...rnd => generare val aleatoare
+...cdf => fct de repartitie, FX(x) = P(X <= x), x poate fi vector in Octave
+...pdf => probabilitate, P(X = x)
+
+Distributia uniforma => aceeasi probab pt toate elem de la 1 la n
+unidrnd(n, rows=1, cols=1),
+unidpdf(x, n),
+unidcdf(x, n),
+
+Distributa binomiala => un ev are prob p, repet de n ori => cate succese am?
+binornd(n, p, rows=1, cols=1),
+binopdf(x, n, p) => probab teoretica, x poate fi elem(nr de succese) sau vector,
+binocdf(x, n, p),
+
+Distributia geometrica => numarul de insuccese pana la primul succes, P(X=k) - care e prob de a avea exack k insuccese
+geornd(p, rows=1, cols=1),
+geopdf(x, p),
+geocdf(x, p),
+
+Distrinutia hipergeometrica Hyge(n, n1, n2)
+dintr-o urma cu n1 bile ALBE si n2 bile NEGRE, se extrag FARA RETURNARE n bile => P(X = k) - care e prob de a extrage exact k bile ALBE (n1)
+hygernd(n1+n2, n1, n, rows=1, cols=1),
+hygecdf(x, n1+n2, n1, n),
+hygepdf(x, n1+n2, n1, n),
+
+bino <> hyge(loto)
+
+CONTINUE
+...rnd => generare val aleatoare
+...cdf => fct de repartitie, FX(x) = P(X <= x)
+...pdf => fct de densitate, fX(x)
+
+Distributia uniforma
+unifrnd(a, b, rows=1, cols=1),
+unifpdf(x, a, b),
+unifcdf(x, a, b),
+
+Distributia exponentiala, Exp(L)
+exprnd(1/L),
+exppdf(x, 1/L),
+expcdf(x, 1/L),
+
+Distributia normala, Norm(miu, sigma^2)
+normrnd(miu, sigma, rows=1, cols=1),
+normpdf(x, miu, sigma),
+normcdf(x, miu, sigma),
+
+mean(v) => media,
+var => varianta,
+var(...,1) => normalizeaza cu N, nu cu N-1,
+std => abaterea standard,
+std(..., 1) => normalizeaza cu N, nu cu N-1,
+empirical_cdf
+
+→ operaṭii cu vectori şi matrice
+→ function handle @
+→ operatori logici
+→ încadrarea unei probleme într-un model de distribuţie clasică discretă (distribuţii clasice discrete studiate:
+    Bernoulli,
+    uniformă discretă,
+    binomială,
+    hipergeometrică,
+    geometrică)
+→ desenarea unor histograme pentru date aleatoare discrete, respectiv date aleatoare continue (caz, în care datele sunt grupate în clase);
+desenarea unor grafice de funcţii (\
+    funcţii de densitate,
+    funcţii de repartiţie,
+    funcţii de repartiţie empirice) ??
+→ în pregătirea testului practic să se ia în considerare problemele date la laborator şi  exemplele date la curs

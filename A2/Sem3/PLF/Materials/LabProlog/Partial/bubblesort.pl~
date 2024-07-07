@@ -1,0 +1,9 @@
+% bubblesort(L, R)
+
+bubblesort([], []):-!.
+bubblesort([E], [E]):-!.
+bubblesort([H1,H2|T], [H1|R]):-
+    H1=<H2, !,
+    bubblesort([H2|T], R).
+bubblesort([H1,H2|T], [H2|R]):-
+    bubblesort([H1|T], R).

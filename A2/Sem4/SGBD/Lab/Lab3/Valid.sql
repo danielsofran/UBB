@@ -1,0 +1,24 @@
+CREATE OR ALTER FUNCTION ValidClub(@denumire VARCHAR(MAX), @descriere VARCHAR(MAX)) RETURNS BIT
+AS BEGIN
+	IF (LEN(@denumire) = 0 OR LEN(@descriere) = 0)
+		RETURN 0
+	RETURN 1
+END
+GO
+
+CREATE OR ALTER FUNCTION ValidPersoana(@nume VARCHAR(MAX), @email VARCHAR(MAX), @data DATETIME) RETURNS BIT
+AS
+BEGIN
+	IF(LEN(@nume) = 0 OR LEN(@email) = 0 OR @data < '1/1/1970')
+		RETURN 0
+	RETURN 1
+END
+GO
+
+CREATE OR ALTER FUNCTION ValidPersoanaClub(@dateBirth DATETIME, @dateJoined DATETIME) RETURNS BIT
+AS
+BEGIN
+	IF @dateJoined < @dateBirth
+		RETURN 0
+	RETURN 1
+END

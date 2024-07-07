@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Exemplu tabel sortabil</title>
+  <style>
+    th, td {
+      padding: 10px;
+      border: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+<table class="sortable-col-table">
+  <thead>
+  <tr>
+    <th>Pret</th>
+    <th>Cantitate</th>
+    <th>Fructe</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>3</td>
+    <td>8</td>
+    <td>Mere</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>6</td>
+    <td>Pere</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>12</td>
+    <td>Portocale</td>
+  </tr>
+  </tbody>
+</table>
+
+<table class="sortable-row-table">
+  <tbody>
+  <tr>
+    <th>Pret</th>
+    <td>3</td>
+    <td>4</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <th>Cantitate</th>
+    <td>8</td>
+    <td>6</td>
+    <td>12</td>
+  </tr>
+  <tr>
+    <th>Fructe</th>
+    <td>Mere</td>
+    <td>Pere</td>
+    <td>Portocale</td>
+  </tr>
+  </tbody>
+</table>
+
+<table class="sortable-col-table">
+  <thead>
+  <tr>
+    <th>Pret</th>
+    <th>Cantitate</th>
+    <th>Fructe</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr>
+    <td>3</td>
+    <td>8</td>
+    <td>Mere</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>6</td>
+    <td>Pere</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>12</td>
+    <td>Portocale</td>
+  </tr>
+  </tbody>
+</table>
+
+<table class="sortable-row-table">
+  <tbody>
+  <tr>
+    <th>Pret</th>
+    <td>3</td>
+    <td>4</td>
+    <td>2</td>
+  </tr>
+  <tr>
+    <th>Cantitate</th>
+    <td>8</td>
+    <td>6</td>
+    <td>12</td>
+  </tr>
+  <tr>
+    <th>Fructe</th>
+    <td>Mere</td>
+    <td>Pere</td>
+    <td>Portocale</td>
+  </tr>
+  </tbody>
+</table>
+
+<script>
+  function initializeSortableTables(){
+    // initialize sortable col tables
+    const col_tables = document.getElementsByClassName('sortable-col-table');
+    for(let i = 0; i < col_tables.length; i++) {
+      const table = col_tables[i];
+      const headers = table.getElementsByTagName('th');
+      for(let j = 0; j < headers.length; j++) {
+        const header = headers[j];
+        header.addEventListener('click', () => {
+          sortColTable(table, j);
+        });
+      }
+    }
+
+    // initialize sortable row tables
+    const row_tables = document.getElementsByClassName('sortable-row-table');
+    for(let i = 0; i < row_tables.length; i++) {
+      const table = row_tables[i];
+      const rows = table.getElementsByTagName('th');
+      for(let j = 0; j < rows.length; j++) {
+        const row = rows[j];
+        row.addEventListener('click', () => {
+          sortRowTable(table, j);
+        });
+      }
+    }
+  }
+
+  function compareValues(a, b) {
+    if(isNaN(a) || isNaN(b)) {
+      return a.localeCompare(b);
+    }
+    else {
+      return parseInt(a) - parseInt(b);
+    }
+  }
+
+  function checkDescendingOrder(items, sortedItems) {
+    for(let i = 0; i < items.length; i++) {
+      if(items[i] !== sortedItems[i]) {
+        return false;
+      }
+    }
+    return true;
+  }
+
+  function sortColTable(table, column) {
+    const tbody = table.getElementsByTagName('tbody')[0];
+    const rows = tbody.getElementsByTagName('tr');
+    const rowsArray = Array.from(rows);
+    const sortedRows = Array.from(rows);
+
+    sortedRows.sort((a, b) => {
+      const aCol = a.getElementsByTagName('td')[column].textContent.trim();
+      const bCol = b.getElementsByTagName('td')[column].textContent.trim();
+
+      return compareValues(aCol, bCol);
+    });
+
+    if(checkDescendingOrder(rowsArray, sortedRows)) {
+      sortedRows.reverse();
+    }
+
+    tbody.innerHTML = '';
+
+    sortedRows.forEach(row => {
+      tbody.appendChild(row);
+    });
+  }
+
+  function getRow(table, rowIndex) {
+    const rows = table.getElementsByTagName('tr')[rowIndex];
+    let rez = rows.getElementsByTagName('td');
+    rez.thElement = rows.getElementsByTagName('th')[0];
+    return rez;
+  }
+
+  function sortWithIndices(toSort) {
+    let v = [];
+    for (let i = 0; i < toSort.length; i++) {
+      v[i] = [toSort[i], i];
+    }
+    v.sort((a, b) => compareValues(a[0], b[0]));
+    toSort.sortIndices = [];
+    for (let j = 0; j < toSort.length; j++) {
+      toSort.sortIndices.push(v[j][1]);
+      toSort[j] = v[j][0];
+    }
+    return toSort;
+  }
+
+  function sortRowTable(table, rowIndex) {
+    const n = table.getElementsByTagName('tr').length;
+    const row = getRow(table, rowIndex);
+    const rowValues = Array.from(row).map(cell => cell.textContent.trim());
+    const sortedRowValues = sortWithIndices(rowValues);
+
+    const initialTableValues = Array.from(table.getElementsByTagName('tr')).map(row => {
+      return Array.from(row.getElementsByTagName('td')).map(cell => cell.textContent.trim());
+    });
+
+    let descendingOrder = true;
+    for(let colIndex=0; colIndex < row.length - 1; colIndex++) {
+      if(sortedRowValues.sortIndices[colIndex] > sortedRowValues.sortIndices[colIndex + 1]) {
+        descendingOrder = false;
+        break;
+      }
+    }
+
+    if(descendingOrder) {
+      for(let colIndex=0; colIndex < row.length; colIndex++)
+        sortedRowValues.sortIndices[colIndex] = row.length - 1 - sortedRowValues.sortIndices[colIndex];
+    }
+
+    for(let rowIndex=0; rowIndex < n; rowIndex++) {
+      const row = getRow(table, rowIndex);
+      for(let colIndex=0; colIndex < row.length; colIndex++) {
+        const cell = row[colIndex];
+        cell.textContent = initialTableValues[rowIndex][sortedRowValues.sortIndices[colIndex]];
+      }
+    }
+  }
+
+  initializeSortableTables();
+
+</script>
+</body>
+</html>

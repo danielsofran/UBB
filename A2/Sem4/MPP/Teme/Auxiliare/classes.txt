@@ -1,0 +1,22 @@
+Angajat
+-id
+-username
+-parola
+
+Artist
+-id
+-nume
+
+Spectacol
+-id
+-artist
+-data
+-ora inceperii
+-loc
+-nr loc disop
+-nr loc vandute
+
+Bilet
+-id
+-nume cumparator
+-nr locuri dorite

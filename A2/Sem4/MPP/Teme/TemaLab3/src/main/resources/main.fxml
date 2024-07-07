@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="566.0" prefWidth="832.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.temalab3.controller.MainController">
+   <children>
+      <VBox layoutX="269.0" layoutY="97.0" prefHeight="566.0" prefWidth="832.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox prefHeight="55.0" prefWidth="832.0">
+               <children>
+                  <DatePicker fx:id="datePicker" prefHeight="26.0" prefWidth="186.0">
+                     <HBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="15.0" />
+                     </HBox.margin>
+                  </DatePicker>
+                  <Button fx:id="btnCauta" mnemonicParsing="false" onAction="#cauta" text="Cauta">
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnCumpara" mnemonicParsing="false" onAction="#cumpara" text="Cumpara bilet la spectacolul selectat">
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="40.0" right="15.0" top="15.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="btnLogout" mnemonicParsing="false" onAction="#logout" text="Logout">
+                     <HBox.margin>
+                        <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+                     </HBox.margin>
+                  </Button>
+               </children>
+            </HBox>
+            <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="510.0" prefWidth="832.0">
+               <children>
+                  <TableView fx:id="tableSpectacole" accessibleHelp="Artistii si Spectacolele afisate de aplicatie" prefHeight="264.0" prefWidth="832.0">
+                     <columns>
+                        <TableColumn fx:id="colT1Nume" prefWidth="150.4000244140625" text="Nume Artist" />
+                        <TableColumn fx:id="colT1Data" minWidth="0.0" prefWidth="86.39996337890625" text="Data" />
+                        <TableColumn fx:id="colT1Loc" prefWidth="64.800048828125" text="Locul Spectacolului" />
+                        <TableColumn fx:id="colT1LocuriDisponibile" minWidth="0.0" prefWidth="85.5999755859375" text="Nr Locuri Libere" />
+                        <TableColumn fx:id="colT1LocuriVandute" prefWidth="346.39996337890625" text="Nr Locuri Ocupate" />
+                     </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <TableView fx:id="tableArtisti" accessibleHelp="Artistii cautati" prefHeight="244.0" prefWidth="832.0">
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                     <columns>
+                        <TableColumn fx:id="colT2Nume" prefWidth="75.0" text="Nume Artist" />
+                        <TableColumn fx:id="colT2Loc" prefWidth="75.0" text="Locatia" />
+                        <TableColumn fx:id="colT2Ora" prefWidth="75.0" text="Ora inceperii" />
+                        <TableColumn fx:id="colT2LocuriDisponibile" prefWidth="75.0" text="Nr Locuri Libere" />
+                     </columns>
+                  </TableView>
+               </children>
+            </VBox>
+         </children>
+      </VBox>
+   </children>
+</AnchorPane>

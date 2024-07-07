@@ -1,0 +1,81 @@
+     1                                  bits 32
+     2                                  
+     3                                  global start
+     4                                  extern exit, printf, scanf
+     5                                  import exit msvcrt.dll
+     6                                  import printf msvcrt.dll
+     7                                  import scanf msvcrt.dll
+     8                                  
+     9                                  segment data use32 class=data
+    10 00000000 00000000                    n1 dd 0
+    11 00000004 00000000                    n2 dd 0
+    12 00000008 256400                      format_b10 db "%d", 0 ; numarul in baza 10, CU SEMN     (nu se specifica)
+    13 0000000B 255800                      format_b16 db "%X", 0 ; numarul in baza 16, UPPERCASE   (nu se specifica)
+    14 0000000E 496E74726F64756365-         mesaj_b10 db "Introduceti un numar in baza 10: ", 0
+    14 00000017 746920756E206E756D-
+    14 00000020 617220696E2062617A-
+    14 00000029 612031303A2000     
+    15 00000030 496E74726F64756365-         mesaj_b16 db "Introduceti un numar in baza 16(folosind litere mari): ", 0
+    15 00000039 746920756E206E756D-
+    15 00000042 617220696E2062617A-
+    15 0000004B 6120313628666F6C6F-
+    15 00000054 73696E64206C697465-
+    15 0000005D 7265206D617269293A-
+    15 00000066 2000               
+    16 00000068 4E756D6172756C2064-         mesaj_rez db "Numarul de biti ai sumei dintre cele doua numere introduse este: %d", 0
+    16 00000071 652062697469206169-
+    16 0000007A 2073756D6569206469-
+    16 00000083 6E7472652063656C65-
+    16 0000008C 20646F7561206E756D-
+    16 00000095 65726520696E74726F-
+    16 0000009E 647573652065737465-
+    16 000000A7 3A20256400         
+    17                                      
+    18                                  
+    19                                  ; citim 2 nr si afisam nr de biti ai sumei
+    20                                  segment code use32 class=code
+    21                                  start:
+    22                                      ; afisam mesajul introductiv
+    23 00000000 68[0E000000]                push mesaj_b10
+    24 00000005 FF15[00000000]              call [printf]
+    25 0000000B 83C404                      add esp, 4
+    26                                      
+    27                                      ; citim primul numar
+    28 0000000E 68[00000000]                push n1
+    29 00000013 68[08000000]                push format_b10
+    30 00000018 FF15[00000000]              call [scanf]
+    31 0000001E 83C408                      add esp, 4*2
+    32                                      
+    33                                      ; afisam mesajul introductiv
+    34 00000021 68[30000000]                push mesaj_b16
+    35 00000026 FF15[00000000]              call [printf]
+    36 0000002C 83C404                      add esp, 4
+    37                                      
+    38                                      ; citim al doilea numar
+    39 0000002F 68[04000000]                push n2
+    40 00000034 68[0B000000]                push format_b16
+    41 00000039 FF15[00000000]              call [scanf]
+    42 0000003F 83C408                      add esp, 4*2
+    43                                      
+    44                                      ; calculam suma
+    45 00000042 A1[00000000]                mov eax, [n1]
+    46 00000047 0305[04000000]              add eax, [n2]
+    47                                      
+    48 0000004D BA00000000                  mov edx, 0 ; numarul de biti de 1
+    49 00000052 B920000000                  mov ecx, 32
+    50                                      biti:   ; parcurge bitii din eax
+    51 00000057 F8                              clc ; stergem CF, pentru a nu avea biti de 1 adaugati in fata nr
+    52 00000058 D1D8                            rcr eax, 1    ; mutam ultimul bit in cf
+    53 0000005A 7301                            jnc continue  ; daca CF = 0, continuam
+    54 0000005C 42                              inc edx       ; altfel, incrementam rezultatul
+    55                                          continue:
+    56 0000005D E2F8                        loop biti
+    57                                      
+    58                                      ; afisam rezultatul
+    59 0000005F 52                          push edx
+    60 00000060 68[68000000]                push mesaj_rez
+    61 00000065 FF15[00000000]              call [printf]
+    62 0000006B 83C408                      add esp, 4*2
+    63                                      
+    64                                      
+    65                                      

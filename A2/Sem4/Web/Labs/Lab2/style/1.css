@@ -1,0 +1,18 @@
+.ex1-parinte{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: 1px solid black;
+    padding: 10px;
+    width: 420px;
+}
+
+.ex1-parinte .ex1-copil{
+    text-align: center;
+    width: 200px;
+    height: 100%;
+}
+
+.ex1-parinte img{
+    width: 100%;
+}

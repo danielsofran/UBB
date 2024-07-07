@@ -1,0 +1,95 @@
+ce trebuie sa contina un user?
+-email
+-telefon
+imagine?
+
+panou de gard
+poarta
+portita
+scara
+balustrada
+stalpi
+mana curenta
+
+
+numar de comanda
+
+Informatii:
+    intrari
+    iesiri
+    task uri
+    mesaje
+
+    pauze?
+    defecte - la observatii
+
+Manager:
+    reset nr reloc
+
+Cont
+Editable:
+    username
+    nume
+    email
+    telefon
+    parola
+
+https://www.google.com/maps/dir/47.17727110,24.15983770//@47.17727110,24.1598377047.1796062,24.1704734,21z
+
+de schimbat status ul din activityUser in form
+vizualizare status daca e absent?
+
+modify status of user:
+form -> modal -> submit from js (https://stackoverflow.com/questions/3915917/make-a-link-use-post-instead-of-get)
+
+<form name="myform" action="handle-data.php" method="post">
+  <label for="query">Search:</label>
+  <input type="text" name="query" id="query"/>
+  <button>Search</button>
+</form>
+
+<script>
+var button = document.querySelector('form[name="myform"] > button');
+button.addEventListener(function() {
+  document.querySelector("form[name="myform"]").submit();
+});
+</script>
+
+47.1772711,24.1598377
+47.1772711,24.1598478
+
+nume, data, daca nu is in firma,
+
+/comenzi
+/comenzi/data/user
+
+<QueryDict: {
+'nrrecalcpoz': ['3'],
+'secafterrecalc': ['60'],
+'disterror': ['10.0'],
+'mintol': ['5'],
+'harta': ['1'],
+'progr': ['L', 'Ma', 'Mi', 'J', 'V']}>
+
+comanda cu user sters
+
+DATALISTS
+
+Panou de gard
+Poarta
+Portita
+Scara
+Balustrada
+Stalpi
+Mana curenta
+
+Taiere debiare laser/fiber
+Taiere/Perforare pe stanta
+Indoire
+Sudura
+Vopsire
+Slefuire
+Marcare
+Sertizare
+Ambalare
+

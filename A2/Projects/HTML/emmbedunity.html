@@ -1,0 +1,58 @@
+
+<html>
+<head>
+    <style>
+        body{
+            margin:0;
+        }
+        div{
+            margin: 0;
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+    <div id="bgContainer" style="height: 580px; background-color: #00ff00; overflow: hidden;">
+        <iframe
+            tag="IFRAME"
+            id='webgl_iframe'
+            frameborder="0"
+            allow="autoplay; fullscreen; vr"
+            allowfullscreen="true"
+            allowvr="true"
+            mozallowfullscreen="true"
+            src="https://play.unity.com/webgl/1846beff-afea-44cf-9a7f-b50b87b80e8a"
+            onmousewheel="" webkitallowfullscreen="true"
+            style="z-index: -1; width: 100%; height: 580px;"
+        ></iframe>
+        <div id="box" style="display: none; position: absolute; margin: 0; padding: 0; top: 0; left: 0; width: 100%; height: 100%; z-index: 1000" onclick="box_clicked()">
+            <article style="padding: 20px; background-color: white; border: 10px solid red; top:10px; left:10px; right:10px; height: 30px; opacity: 30%;"></article>
+        </div>
+    </div>
+    <script>
+        function box_clicked(){
+            var iframe=document.getElementById('webgl_iframe');
+            iframe.focus();
+            console.warn("focused")
+            //iframe.addEventListener('keydown', (e) => {alert("Pressed "+e.key)})
+            //for(let i=0;i<1000;++i)
+            //    iframe.dispatchEvent(new KeyboardEvent('keydown', {'key': 'a'}));
+        }
+
+        dp = document.getElementById('bgContainer')
+
+        iframe = document.getElementById('webgl_iframe')
+        box = document.getElementById('box')
+
+        window.addEventListener("blur", () => {
+            setTimeout(() => {
+                if (document.activeElement.id === "webgl_iframe") {
+                    console.warn("in blur")
+                    //setTimeout( ()=>{box.style.display = "block"}, 3000);
+                    box.style.display = "block"
+                }
+            });
+        }, { once: true });
+    </script>
+</body>
+</html>

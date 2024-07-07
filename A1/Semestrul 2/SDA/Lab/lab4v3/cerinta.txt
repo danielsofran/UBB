@@ -1,0 +1,7 @@
+TAD MultiDictionar ordonat-reprezentare sub forma unei LSI de chei
+distincte ordonate în raport cu o relație de ordine între chei.
+Fiecare cheie va memora o LSI cu valorile asociate cheii.
+
+TAD MultidicționarOrdonat
+// păstrează în multidicționar numai acele perechi ale căror valoare respectă condiția dată
+void filtreaza(Condiție cond);

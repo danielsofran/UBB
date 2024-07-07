@@ -1,0 +1,11 @@
+CREATE TABLE ApeluriProceduriSQL(
+	id INT PRIMARY KEY IDENTITY,
+	procname VARCHAR(20) NOT NULL,
+	params VARCHAR(100) NOT NULL, -- cu virgula
+)
+
+CREATE TABLE VersiuniDB(
+	id INT PRIMARY KEY IDENTITY,
+	do_id INT FOREIGN KEY REFERENCES ApeluriProceduriSQL(id),
+	undo_id INT FOREIGN KEY REFERENCES ApeluriProceduriSQL(id),
+)

@@ -1,0 +1,53 @@
+     1                                  bits 32
+     2                                  global start        
+     3                                  extern exit               
+     4                                  import exit msvcrt.dll    
+     5                                  
+     6                                  ; Se da un sir de octeti. Sa se obtina sirul oglindit al reprezentarii binare a acestui sir de octesi.
+     7                                  segment data use32 class=data
+     8 00000000 ABCDEF                      s DB 0ABh, 0CDh, 0EFh   ; 10101011 11001101 11101111b 
+     9                                      l equ $-s       
+    10 00000003 <res 00000003>              d resb l                ; 11110111 10110011 11010101b = F7 B3 D5h
+    11                                  
+    12                                  ; our code starts here
+    13                                  segment code use32 class=code
+    14                                      start:
+    15 00000000 B903000000                      mov ecx, l
+    16 00000005 BE[02000000]                    mov esi, s+l-1
+    17 0000000A BF[03000000]                    mov edi, d
+    18                                          
+    19                                          parcurge: ; parcurgem sirul de octeti in ordine inversa
+    20 0000000F 6651                            push cx   ; salvam valoarea contorului de octeti
+    21 00000011 FD                                  std   ; incarcam in ordine inversa
+    22 00000012 AC                                  lodsb ; incarcam in al ultimul octet al sirului
+    23 00000013 FC                                  cld   ; stocam in ordine normala
+    24                                              
+    25                                              ; inversam ordinea bitilor
+    26 00000014 B700                                mov bh, 0 ; octetul cu bitii inversati
+    27 00000016 B607                                mov dh, 7 ; ordinul bitului high - de unde luam biti
+    28 00000018 B200                                mov dl, 0 ; ordinul bitului low - unde punem biti
+    29                                              
+    30                                              biti:              ; parcurgem bitii octetului incarcat in al
+    31 0000001A 6650                                    push ax        ; salvam octetul - suntem interesati doar de al
+    32 0000001C B300                                        mov bl, 0  ; bitul pe care il punem in octetul cu bitii inversati
+    33 0000001E 88F1                                        mov cl, dh ; punem pozitia de la care luam bitul in cl pentru a-l puea izola
+    34 00000020 D2E8                                        shr al, cl ; obtinem bitul din reprezentarea inversa in al
+    35 00000022 08C3                                        or bl, al  ; mutam rezultatul in bl
+    36 00000024 80E301                                      and bl, 1  ; stergem bitii dinaintea bitului calculat
+    37 00000027 88D1                                        mov cl, dl ; transferam pozitia la care punem bitii in cl, pentru a putea efectua poeratia
+    38 00000029 D2E3                                        shl bl, cl ; punem bitul din reprezentare inversa la pozitia sa din reprezentarea normala
+    39 0000002B 08DF                                        or bh, bl  ; punem bitul in rezultat = BH
+    40 0000002D 6658                                    pop ax ; restauram valoarea octetului
+    41                                                  
+    42 0000002F FEC2                                    inc dl ; crestem pozitia la care punem bitii
+    43 00000031 FECE                                    dec dh ; descrestem pozitia de la care luam bitii 
+    44 00000033 80FE00                                  cmp dh, 0 ; pana ajunge 0 inclusiv
+    45 00000036 7DE2                                jge biti
+    46                                              
+    47 00000038 88F8                                mov al, bh ; punem rezultatul in al pentru a putea fi stocat
+    48 0000003A AA                                  stosb
+    49 0000003B 6659                            pop cx ; restauram valoarea contorului de octeti
+    50 0000003D E2D0                            loop parcurge
+    51                                          
+    52 0000003F 6A00                            push    dword 0      ; push the parameter for exit onto the stack
+    53 00000041 FF15[00000000]                  call    [exit]       ; call exit to terminate the program

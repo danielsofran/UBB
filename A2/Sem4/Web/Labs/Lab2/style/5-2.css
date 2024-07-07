@@ -1,0 +1,23 @@
+.container{
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    width: 360px;
+    padding: 10px;
+    gap: 10px;
+    background: yellow;
+}
+
+.card{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background: transparent;
+}
+
+img{
+    --factor: 3;
+    width: calc(var(--factor) * 40px);
+    height: calc(var(--factor) * 60px);
+    margin-right: 30px;
+}

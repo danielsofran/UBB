@@ -1,0 +1,587 @@
+2023-06-07T10:16:38.429+03:00  INFO 12432 --- [main] c.d.donatiiapi.DonatiiApiApplication     : Starting DonatiiApiApplication using Java 17.0.7 with PID 12432 (C:\Users\aerap\Desktop\Projects\mpppr\donatiiAPI\build\classes\java\main started by aerap in C:\Users\aerap\Desktop\Projects\mpppr\donatiiAPI)
+2023-06-07T10:16:38.431+03:00  INFO 12432 --- [main] c.d.donatiiapi.DonatiiApiApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-06-07T10:16:38.969+03:00  INFO 12432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-07T10:16:39.019+03:00  INFO 12432 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 43 ms. Found 5 JPA repository interfaces.
+2023-06-07T10:16:39.388+03:00  INFO 12432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-06-07T10:16:39.395+03:00  INFO 12432 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-07T10:16:39.395+03:00  INFO 12432 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-06-07T10:16:39.463+03:00  INFO 12432 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-07T10:16:39.463+03:00  INFO 12432 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 995 ms
+2023-06-07T10:16:39.557+03:00  INFO 12432 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-07T10:16:39.597+03:00  INFO 12432 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-06-07T10:16:39.837+03:00  INFO 12432 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-07T10:16:40.082+03:00  INFO 12432 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4aa3fc9a
+2023-06-07T10:16:40.083+03:00  INFO 12432 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-07T10:16:40.106+03:00  INFO 12432 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-06-07T10:16:40.897+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists cauza_adapost_tag_animal drop constraint if exists FKg6p3mafohbn582tl2dw4kqthl
+2023-06-07T10:16:40.900+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.900+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "cauza_adapost_tag_animal" does not exist, skipping
+2023-06-07T10:16:40.900+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists cauza_adapost_tag_animal drop constraint if exists FK6ctqg7fok82ujmohj0fjdepbp
+2023-06-07T10:16:40.901+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.901+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "cauza_adapost_tag_animal" does not exist, skipping
+2023-06-07T10:16:40.901+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists cauze drop constraint if exists FKhn65w7n44kuxcxefeulhbedf2
+2023-06-07T10:16:40.901+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.901+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "cauze" does not exist, skipping
+2023-06-07T10:16:40.901+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists cauze_poze drop constraint if exists FKfbhi7ndbx6ndi6mom66fofntk
+2023-06-07T10:16:40.901+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.902+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "cauze_poze" does not exist, skipping
+2023-06-07T10:16:40.902+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists cauze_poze drop constraint if exists FKm4cpaxv93fv6wyg5lenpvykv3
+2023-06-07T10:16:40.902+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.902+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "cauze_poze" does not exist, skipping
+2023-06-07T10:16:40.902+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists costumizabile_echipate drop constraint if exists FKqrcq9siu8uqldi4lr4qqnvxlm
+2023-06-07T10:16:40.903+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.903+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "costumizabile_echipate" does not exist, skipping
+2023-06-07T10:16:40.903+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists costumizabile_echipate drop constraint if exists FKmmt57ux1t31ggwyyry2q504lr
+2023-06-07T10:16:40.903+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.903+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "costumizabile_echipate" does not exist, skipping
+2023-06-07T10:16:40.903+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists sustinatori drop constraint if exists FKmok58qx1996sxlsrdqwr4i72a
+2023-06-07T10:16:40.903+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.903+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "sustinatori" does not exist, skipping
+2023-06-07T10:16:40.904+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists sustineri drop constraint if exists FKox1y2s7ekg81u5u3vqfa144h7
+2023-06-07T10:16:40.904+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.904+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "sustineri" does not exist, skipping
+2023-06-07T10:16:40.904+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists user_costumizabil drop constraint if exists FK76fjmvdvuy8xaiod4i577ijby
+2023-06-07T10:16:40.904+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.904+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_costumizabil" does not exist, skipping
+2023-06-07T10:16:40.904+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists user_costumizabil drop constraint if exists FKer7s6goo1lmfws69lyw6m6j7n
+2023-06-07T10:16:40.905+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.905+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_costumizabil" does not exist, skipping
+2023-06-07T10:16:40.905+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists user_tag_animal drop constraint if exists FKgyy7aa6vg2l6lri047bpw792t
+2023-06-07T10:16:40.905+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.905+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_tag_animal" does not exist, skipping
+2023-06-07T10:16:40.905+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists user_tag_animal drop constraint if exists FK46j0vu7n25qfr2vgrwngjfqek
+2023-06-07T10:16:40.905+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.906+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_tag_animal" does not exist, skipping
+2023-06-07T10:16:40.906+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists users_cauze drop constraint if exists FKl4nnk6syp0762i9wlh1a2opm
+2023-06-07T10:16:40.906+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.906+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_cauze" does not exist, skipping
+2023-06-07T10:16:40.906+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists users_cauze drop constraint if exists FK3eoud2hdtnwsv1ipn06n1wm
+2023-06-07T10:16:40.906+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.906+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_cauze" does not exist, skipping
+2023-06-07T10:16:40.906+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists users_donatii drop constraint if exists FKr87ci749nyhmpfxiey50j32ij
+2023-06-07T10:16:40.906+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.906+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_donatii" does not exist, skipping
+2023-06-07T10:16:40.906+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists users_donatii drop constraint if exists FKdpae0v57rqqf3asqeleb9w8av
+2023-06-07T10:16:40.907+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.907+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_donatii" does not exist, skipping
+2023-06-07T10:16:40.907+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : drop table if exists cauza_adapost_tag_animal cascade
+2023-06-07T10:16:40.907+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.907+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "cauza_adapost_tag_animal" does not exist, skipping
+2023-06-07T10:16:40.907+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : drop table if exists cauze cascade
+2023-06-07T10:16:40.907+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.907+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "cauze" does not exist, skipping
+2023-06-07T10:16:40.908+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : drop table if exists cauze_poze cascade
+2023-06-07T10:16:40.908+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.908+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "cauze_poze" does not exist, skipping
+2023-06-07T10:16:40.908+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : drop table if exists costumizabile cascade
+2023-06-07T10:16:40.908+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.908+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "costumizabile" does not exist, skipping
+2023-06-07T10:16:40.908+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : drop table if exists costumizabile_echipate cascade
+2023-06-07T10:16:40.908+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.908+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "costumizabile_echipate" does not exist, skipping
+2023-06-07T10:16:40.908+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : drop table if exists donatii cascade
+2023-06-07T10:16:40.909+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.909+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "donatii" does not exist, skipping
+2023-06-07T10:16:40.909+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : drop table if exists poze cascade
+2023-06-07T10:16:40.909+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.909+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "poze" does not exist, skipping
+2023-06-07T10:16:40.909+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : drop table if exists sustinatori cascade
+2023-06-07T10:16:40.909+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.909+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "sustinatori" does not exist, skipping
+2023-06-07T10:16:40.909+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : drop table if exists sustineri cascade
+2023-06-07T10:16:40.909+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.910+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "sustineri" does not exist, skipping
+2023-06-07T10:16:40.910+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : drop table if exists tags cascade
+2023-06-07T10:16:40.910+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.910+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "tags" does not exist, skipping
+2023-06-07T10:16:40.910+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : drop table if exists user_costumizabil cascade
+2023-06-07T10:16:40.910+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.910+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "user_costumizabil" does not exist, skipping
+2023-06-07T10:16:40.910+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : drop table if exists user_tag_animal cascade
+2023-06-07T10:16:40.910+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.910+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "user_tag_animal" does not exist, skipping
+2023-06-07T10:16:40.910+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : drop table if exists users cascade
+2023-06-07T10:16:40.911+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.911+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
+2023-06-07T10:16:40.911+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : drop table if exists users_cauze cascade
+2023-06-07T10:16:40.911+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.911+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users_cauze" does not exist, skipping
+2023-06-07T10:16:40.911+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : drop table if exists users_donatii cascade
+2023-06-07T10:16:40.911+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.911+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users_donatii" does not exist, skipping
+2023-06-07T10:16:40.911+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : drop sequence if exists cauza_sequence
+2023-06-07T10:16:40.912+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.912+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "cauza_sequence" does not exist, skipping
+2023-06-07T10:16:40.912+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : drop sequence if exists costumizabil_sequence
+2023-06-07T10:16:40.912+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.912+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "costumizabil_sequence" does not exist, skipping
+2023-06-07T10:16:40.912+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : drop sequence if exists donatie_sequence
+2023-06-07T10:16:40.912+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.912+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "donatie_sequence" does not exist, skipping
+2023-06-07T10:16:40.912+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : drop sequence if exists poza_sequence
+2023-06-07T10:16:40.912+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.913+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "poza_sequence" does not exist, skipping
+2023-06-07T10:16:40.913+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : drop sequence if exists tag_animal_sequence
+2023-06-07T10:16:40.913+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.913+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "tag_animal_sequence" does not exist, skipping
+2023-06-07T10:16:40.913+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : drop sequence if exists user_sequence
+2023-06-07T10:16:40.913+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:16:40.913+03:00  WARN 12432 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "user_sequence" does not exist, skipping
+2023-06-07T10:16:40.917+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : create sequence cauza_sequence start with 1 increment by 1
+2023-06-07T10:16:40.921+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : create sequence costumizabil_sequence start with 1 increment by 1
+2023-06-07T10:16:40.922+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : create sequence donatie_sequence start with 1 increment by 1
+2023-06-07T10:16:40.923+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : create sequence poza_sequence start with 1 increment by 1
+2023-06-07T10:16:40.925+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : create sequence tag_animal_sequence start with 1 increment by 1
+2023-06-07T10:16:40.928+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : create sequence user_sequence start with 1 increment by 1
+2023-06-07T10:16:40.931+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : create table cauza_adapost_tag_animal (cauza_adapost_id bigint not null, tag_animal_id bigint not null, primary key (cauza_adapost_id, tag_animal_id))
+2023-06-07T10:16:40.935+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : create table cauze (id bigint not null, descriere varchar(255), locatie varchar(255), moneda varchar(255), suma_minima integer, suma_stransa integer, titlu varchar(255), nume varchar(255), nume_animal varchar(255), rasa_animal varchar(255), varsta_animal integer, tag_animal_id bigint, primary key (id))
+2023-06-07T10:16:40.940+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : create table cauze_poze (cauza_id bigint not null, poze_id bigint not null, primary key (cauza_id, poze_id))
+2023-06-07T10:16:40.943+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : create table costumizabile (id bigint not null, cost_bani integer, level_min integer, tip smallint, url varchar(255), primary key (id))
+2023-06-07T10:16:40.945+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : create table costumizabile_echipate (user_id bigint not null, costumizabil_id bigint not null, primary key (user_id, costumizabil_id))
+2023-06-07T10:16:40.948+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : create table donatii (id bigint not null, cauza_id bigint, cauza_titlu varchar(255), data timestamp(6), moneda varchar(255), suma integer, primary key (id))
+2023-06-07T10:16:40.953+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : create table poze (id bigint not null, url varchar(255), primary key (id))
+2023-06-07T10:16:40.957+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : create table sustinatori (cauza_id bigint not null, user_id bigint)
+2023-06-07T10:16:40.958+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : create table sustineri (user_id bigint not null, cauza_id bigint)
+2023-06-07T10:16:40.959+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : create table tags (id bigint not null, nume varchar(255), primary key (id))
+2023-06-07T10:16:40.962+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : create table user_costumizabil (user_id bigint not null, costumizabil_id bigint not null, primary key (user_id, costumizabil_id))
+2023-06-07T10:16:40.964+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : create table user_tag_animal (user_id bigint not null, tag_animal_id bigint not null, primary key (user_id, tag_animal_id))
+2023-06-07T10:16:40.967+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : create table users (id bigint not null, coins bigint, email varchar(255), full_name varchar(255), gender smallint, level integer, parola varchar(255), username varchar(255), primary key (id))
+2023-06-07T10:16:40.972+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : create table users_cauze (user_id bigint not null, cauze_id bigint not null, primary key (user_id, cauze_id))
+2023-06-07T10:16:40.975+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : create table users_donatii (user_id bigint not null, donatii_id bigint not null, primary key (user_id, donatii_id))
+2023-06-07T10:16:40.978+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists cauze_poze add constraint UK_60g8eudhquqfjlx8s2a2x8d81 unique (poze_id)
+2023-06-07T10:16:40.980+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists users_cauze add constraint UK_coakn9j7vse6g5p9qytdvmos7 unique (cauze_id)
+2023-06-07T10:16:40.982+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists users_donatii add constraint UK_q0giq841m9yno1iba4gm9kn5a unique (donatii_id)
+2023-06-07T10:16:40.984+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists cauza_adapost_tag_animal add constraint FKg6p3mafohbn582tl2dw4kqthl foreign key (tag_animal_id) references tags
+2023-06-07T10:16:40.987+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists cauza_adapost_tag_animal add constraint FK6ctqg7fok82ujmohj0fjdepbp foreign key (cauza_adapost_id) references cauze
+2023-06-07T10:16:40.988+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists cauze add constraint FKhn65w7n44kuxcxefeulhbedf2 foreign key (tag_animal_id) references tags
+2023-06-07T10:16:40.989+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists cauze_poze add constraint FKfbhi7ndbx6ndi6mom66fofntk foreign key (poze_id) references poze
+2023-06-07T10:16:40.991+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists cauze_poze add constraint FKm4cpaxv93fv6wyg5lenpvykv3 foreign key (cauza_id) references cauze
+2023-06-07T10:16:40.991+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists costumizabile_echipate add constraint FKqrcq9siu8uqldi4lr4qqnvxlm foreign key (costumizabil_id) references costumizabile
+2023-06-07T10:16:40.993+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists costumizabile_echipate add constraint FKmmt57ux1t31ggwyyry2q504lr foreign key (user_id) references users
+2023-06-07T10:16:40.994+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists sustinatori add constraint FKmok58qx1996sxlsrdqwr4i72a foreign key (cauza_id) references cauze
+2023-06-07T10:16:40.995+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists sustineri add constraint FKox1y2s7ekg81u5u3vqfa144h7 foreign key (user_id) references users
+2023-06-07T10:16:40.996+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists user_costumizabil add constraint FK76fjmvdvuy8xaiod4i577ijby foreign key (costumizabil_id) references costumizabile
+2023-06-07T10:16:40.997+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists user_costumizabil add constraint FKer7s6goo1lmfws69lyw6m6j7n foreign key (user_id) references users
+2023-06-07T10:16:40.998+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists user_tag_animal add constraint FKgyy7aa6vg2l6lri047bpw792t foreign key (tag_animal_id) references tags
+2023-06-07T10:16:40.999+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists user_tag_animal add constraint FK46j0vu7n25qfr2vgrwngjfqek foreign key (user_id) references users
+2023-06-07T10:16:41.001+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists users_cauze add constraint FKl4nnk6syp0762i9wlh1a2opm foreign key (cauze_id) references cauze
+2023-06-07T10:16:41.002+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists users_cauze add constraint FK3eoud2hdtnwsv1ipn06n1wm foreign key (user_id) references users
+2023-06-07T10:16:41.003+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists users_donatii add constraint FKr87ci749nyhmpfxiey50j32ij foreign key (donatii_id) references donatii
+2023-06-07T10:16:41.005+03:00 DEBUG 12432 --- [main] org.hibernate.SQL                        : alter table if exists users_donatii add constraint FKdpae0v57rqqf3asqeleb9w8av foreign key (user_id) references users
+2023-06-07T10:16:41.009+03:00  INFO 12432 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-07T10:16:41.019+03:00  INFO 12432 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-07T10:16:41.574+03:00  WARN 12432 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-07T10:16:42.118+03:00  INFO 12432 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-07T10:16:42.124+03:00  INFO 12432 --- [main] c.d.donatiiapi.DonatiiApiApplication     : Started DonatiiApiApplication in 4.008 seconds (process running for 4.404)
+2023-06-07T10:16:47.903+03:00  INFO 12432 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-07T10:16:47.904+03:00  INFO 12432 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-06-07T10:16:47.904+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists cauza_adapost_tag_animal drop constraint if exists FKg6p3mafohbn582tl2dw4kqthl
+2023-06-07T10:16:47.905+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists cauza_adapost_tag_animal drop constraint if exists FK6ctqg7fok82ujmohj0fjdepbp
+2023-06-07T10:16:47.906+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists cauze drop constraint if exists FKhn65w7n44kuxcxefeulhbedf2
+2023-06-07T10:16:47.906+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists cauze_poze drop constraint if exists FKfbhi7ndbx6ndi6mom66fofntk
+2023-06-07T10:16:47.907+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists cauze_poze drop constraint if exists FKm4cpaxv93fv6wyg5lenpvykv3
+2023-06-07T10:16:47.907+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists costumizabile_echipate drop constraint if exists FKqrcq9siu8uqldi4lr4qqnvxlm
+2023-06-07T10:16:47.908+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists costumizabile_echipate drop constraint if exists FKmmt57ux1t31ggwyyry2q504lr
+2023-06-07T10:16:47.908+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists sustinatori drop constraint if exists FKmok58qx1996sxlsrdqwr4i72a
+2023-06-07T10:16:47.909+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists sustineri drop constraint if exists FKox1y2s7ekg81u5u3vqfa144h7
+2023-06-07T10:16:47.909+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists user_costumizabil drop constraint if exists FK76fjmvdvuy8xaiod4i577ijby
+2023-06-07T10:16:47.910+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists user_costumizabil drop constraint if exists FKer7s6goo1lmfws69lyw6m6j7n
+2023-06-07T10:16:47.910+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists user_tag_animal drop constraint if exists FKgyy7aa6vg2l6lri047bpw792t
+2023-06-07T10:16:47.910+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists user_tag_animal drop constraint if exists FK46j0vu7n25qfr2vgrwngjfqek
+2023-06-07T10:16:47.911+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists users_cauze drop constraint if exists FKl4nnk6syp0762i9wlh1a2opm
+2023-06-07T10:16:47.911+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists users_cauze drop constraint if exists FK3eoud2hdtnwsv1ipn06n1wm
+2023-06-07T10:16:47.912+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists users_donatii drop constraint if exists FKr87ci749nyhmpfxiey50j32ij
+2023-06-07T10:16:47.912+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists users_donatii drop constraint if exists FKdpae0v57rqqf3asqeleb9w8av
+2023-06-07T10:16:47.913+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists cauza_adapost_tag_animal cascade
+2023-06-07T10:16:47.915+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists cauze cascade
+2023-06-07T10:16:47.917+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists cauze_poze cascade
+2023-06-07T10:16:47.918+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists costumizabile cascade
+2023-06-07T10:16:47.920+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists costumizabile_echipate cascade
+2023-06-07T10:16:47.921+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists donatii cascade
+2023-06-07T10:16:47.922+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists poze cascade
+2023-06-07T10:16:47.923+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists sustinatori cascade
+2023-06-07T10:16:47.924+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists sustineri cascade
+2023-06-07T10:16:47.925+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists tags cascade
+2023-06-07T10:16:47.926+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists user_costumizabil cascade
+2023-06-07T10:16:47.927+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists user_tag_animal cascade
+2023-06-07T10:16:47.928+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists users cascade
+2023-06-07T10:16:47.930+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists users_cauze cascade
+2023-06-07T10:16:47.932+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists users_donatii cascade
+2023-06-07T10:16:47.933+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop sequence if exists cauza_sequence
+2023-06-07T10:16:47.934+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop sequence if exists costumizabil_sequence
+2023-06-07T10:16:47.935+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop sequence if exists donatie_sequence
+2023-06-07T10:16:47.936+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop sequence if exists poza_sequence
+2023-06-07T10:16:47.937+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop sequence if exists tag_animal_sequence
+2023-06-07T10:16:47.938+03:00 DEBUG 12432 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop sequence if exists user_sequence
+2023-06-07T10:16:47.940+03:00  INFO 12432 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-07T10:16:47.942+03:00  INFO 12432 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-07T10:30:14.925+03:00  INFO 26196 --- [main] c.d.donatiiapi.DonatiiApiApplication     : Starting DonatiiApiApplication using Java 17.0.7 with PID 26196 (C:\Users\aerap\Desktop\Projects\mpppr\donatiiAPI\build\classes\java\main started by aerap in C:\Users\aerap\Desktop\Projects\mpppr\donatiiAPI)
+2023-06-07T10:30:14.928+03:00  INFO 26196 --- [main] c.d.donatiiapi.DonatiiApiApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-06-07T10:30:15.553+03:00  INFO 26196 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-07T10:30:15.603+03:00  INFO 26196 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 5 JPA repository interfaces.
+2023-06-07T10:30:15.977+03:00  INFO 26196 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-06-07T10:30:15.984+03:00  INFO 26196 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-07T10:30:15.984+03:00  INFO 26196 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-06-07T10:30:16.059+03:00  INFO 26196 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-07T10:30:16.059+03:00  INFO 26196 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1095 ms
+2023-06-07T10:30:16.149+03:00  INFO 26196 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-07T10:30:16.189+03:00  INFO 26196 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-06-07T10:30:16.423+03:00  INFO 26196 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-07T10:30:16.546+03:00  INFO 26196 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4d0e1a9a
+2023-06-07T10:30:16.548+03:00  INFO 26196 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-07T10:30:16.571+03:00  INFO 26196 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-06-07T10:30:17.315+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists cauza_adapost_tag_animal drop constraint if exists FKg6p3mafohbn582tl2dw4kqthl
+2023-06-07T10:30:17.317+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.317+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "cauza_adapost_tag_animal" does not exist, skipping
+2023-06-07T10:30:17.318+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists cauza_adapost_tag_animal drop constraint if exists FK6ctqg7fok82ujmohj0fjdepbp
+2023-06-07T10:30:17.318+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.318+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "cauza_adapost_tag_animal" does not exist, skipping
+2023-06-07T10:30:17.318+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists cauze drop constraint if exists FKhn65w7n44kuxcxefeulhbedf2
+2023-06-07T10:30:17.318+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.318+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "cauze" does not exist, skipping
+2023-06-07T10:30:17.318+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists cauze_poze drop constraint if exists FKfbhi7ndbx6ndi6mom66fofntk
+2023-06-07T10:30:17.319+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.319+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "cauze_poze" does not exist, skipping
+2023-06-07T10:30:17.319+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists cauze_poze drop constraint if exists FKm4cpaxv93fv6wyg5lenpvykv3
+2023-06-07T10:30:17.319+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.319+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "cauze_poze" does not exist, skipping
+2023-06-07T10:30:17.319+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists costumizabile_echipate drop constraint if exists FKqrcq9siu8uqldi4lr4qqnvxlm
+2023-06-07T10:30:17.320+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.320+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "costumizabile_echipate" does not exist, skipping
+2023-06-07T10:30:17.320+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists costumizabile_echipate drop constraint if exists FKmmt57ux1t31ggwyyry2q504lr
+2023-06-07T10:30:17.320+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.320+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "costumizabile_echipate" does not exist, skipping
+2023-06-07T10:30:17.320+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists sustinatori drop constraint if exists FKmok58qx1996sxlsrdqwr4i72a
+2023-06-07T10:30:17.320+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.321+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "sustinatori" does not exist, skipping
+2023-06-07T10:30:17.321+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists sustineri drop constraint if exists FKox1y2s7ekg81u5u3vqfa144h7
+2023-06-07T10:30:17.321+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.321+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "sustineri" does not exist, skipping
+2023-06-07T10:30:17.321+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists user_costumizabil drop constraint if exists FK76fjmvdvuy8xaiod4i577ijby
+2023-06-07T10:30:17.321+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.321+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_costumizabil" does not exist, skipping
+2023-06-07T10:30:17.321+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists user_costumizabil drop constraint if exists FKer7s6goo1lmfws69lyw6m6j7n
+2023-06-07T10:30:17.322+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.322+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_costumizabil" does not exist, skipping
+2023-06-07T10:30:17.322+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists user_tag_animal drop constraint if exists FKgyy7aa6vg2l6lri047bpw792t
+2023-06-07T10:30:17.322+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.322+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_tag_animal" does not exist, skipping
+2023-06-07T10:30:17.322+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists user_tag_animal drop constraint if exists FK46j0vu7n25qfr2vgrwngjfqek
+2023-06-07T10:30:17.322+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.322+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "user_tag_animal" does not exist, skipping
+2023-06-07T10:30:17.322+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists users_cauze drop constraint if exists FKl4nnk6syp0762i9wlh1a2opm
+2023-06-07T10:30:17.323+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.323+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_cauze" does not exist, skipping
+2023-06-07T10:30:17.323+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists users_cauze drop constraint if exists FK3eoud2hdtnwsv1ipn06n1wm
+2023-06-07T10:30:17.323+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.323+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_cauze" does not exist, skipping
+2023-06-07T10:30:17.323+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists users_donatii drop constraint if exists FKr87ci749nyhmpfxiey50j32ij
+2023-06-07T10:30:17.323+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.323+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_donatii" does not exist, skipping
+2023-06-07T10:30:17.323+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists users_donatii drop constraint if exists FKdpae0v57rqqf3asqeleb9w8av
+2023-06-07T10:30:17.323+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.323+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : relation "users_donatii" does not exist, skipping
+2023-06-07T10:30:17.324+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : drop table if exists cauza_adapost_tag_animal cascade
+2023-06-07T10:30:17.324+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.324+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "cauza_adapost_tag_animal" does not exist, skipping
+2023-06-07T10:30:17.324+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : drop table if exists cauze cascade
+2023-06-07T10:30:17.324+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.324+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "cauze" does not exist, skipping
+2023-06-07T10:30:17.324+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : drop table if exists cauze_poze cascade
+2023-06-07T10:30:17.324+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.324+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "cauze_poze" does not exist, skipping
+2023-06-07T10:30:17.324+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : drop table if exists costumizabile cascade
+2023-06-07T10:30:17.325+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.325+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "costumizabile" does not exist, skipping
+2023-06-07T10:30:17.325+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : drop table if exists costumizabile_echipate cascade
+2023-06-07T10:30:17.325+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.325+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "costumizabile_echipate" does not exist, skipping
+2023-06-07T10:30:17.325+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : drop table if exists donatii cascade
+2023-06-07T10:30:17.325+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.325+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "donatii" does not exist, skipping
+2023-06-07T10:30:17.325+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : drop table if exists poze cascade
+2023-06-07T10:30:17.325+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.325+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "poze" does not exist, skipping
+2023-06-07T10:30:17.326+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : drop table if exists sustinatori cascade
+2023-06-07T10:30:17.326+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.326+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "sustinatori" does not exist, skipping
+2023-06-07T10:30:17.326+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : drop table if exists sustineri cascade
+2023-06-07T10:30:17.326+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.326+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "sustineri" does not exist, skipping
+2023-06-07T10:30:17.326+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : drop table if exists tags cascade
+2023-06-07T10:30:17.326+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.326+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "tags" does not exist, skipping
+2023-06-07T10:30:17.326+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : drop table if exists user_costumizabil cascade
+2023-06-07T10:30:17.327+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.327+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "user_costumizabil" does not exist, skipping
+2023-06-07T10:30:17.327+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : drop table if exists user_tag_animal cascade
+2023-06-07T10:30:17.327+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.327+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "user_tag_animal" does not exist, skipping
+2023-06-07T10:30:17.327+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : drop table if exists users cascade
+2023-06-07T10:30:17.327+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.327+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users" does not exist, skipping
+2023-06-07T10:30:17.327+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : drop table if exists users_cauze cascade
+2023-06-07T10:30:17.327+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.327+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users_cauze" does not exist, skipping
+2023-06-07T10:30:17.327+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : drop table if exists users_donatii cascade
+2023-06-07T10:30:17.327+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.328+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : table "users_donatii" does not exist, skipping
+2023-06-07T10:30:17.328+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : drop sequence if exists cauza_sequence
+2023-06-07T10:30:17.328+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.328+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "cauza_sequence" does not exist, skipping
+2023-06-07T10:30:17.328+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : drop sequence if exists costumizabil_sequence
+2023-06-07T10:30:17.328+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.328+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "costumizabil_sequence" does not exist, skipping
+2023-06-07T10:30:17.328+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : drop sequence if exists donatie_sequence
+2023-06-07T10:30:17.328+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.328+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "donatie_sequence" does not exist, skipping
+2023-06-07T10:30:17.329+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : drop sequence if exists poza_sequence
+2023-06-07T10:30:17.329+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.329+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "poza_sequence" does not exist, skipping
+2023-06-07T10:30:17.329+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : drop sequence if exists tag_animal_sequence
+2023-06-07T10:30:17.329+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.329+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "tag_animal_sequence" does not exist, skipping
+2023-06-07T10:30:17.329+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : drop sequence if exists user_sequence
+2023-06-07T10:30:17.329+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Warning Code: 0, SQLState: 00000
+2023-06-07T10:30:17.329+03:00  WARN 26196 --- [main] o.h.engine.jdbc.spi.SqlExceptionHelper   : sequence "user_sequence" does not exist, skipping
+2023-06-07T10:30:17.333+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : create sequence cauza_sequence start with 1 increment by 1
+2023-06-07T10:30:17.338+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : create sequence costumizabil_sequence start with 1 increment by 1
+2023-06-07T10:30:17.339+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : create sequence donatie_sequence start with 1 increment by 1
+2023-06-07T10:30:17.340+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : create sequence poza_sequence start with 1 increment by 1
+2023-06-07T10:30:17.341+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : create sequence tag_animal_sequence start with 1 increment by 1
+2023-06-07T10:30:17.342+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : create sequence user_sequence start with 1 increment by 1
+2023-06-07T10:30:17.345+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : create table cauza_adapost_tag_animal (cauza_adapost_id bigint not null, tag_animal_id bigint not null, primary key (cauza_adapost_id, tag_animal_id))
+2023-06-07T10:30:17.351+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : create table cauze (id bigint not null, descriere varchar(255), locatie varchar(255), moneda varchar(255), suma_minima integer, suma_stransa integer, titlu varchar(255), nume varchar(255), nume_animal varchar(255), rasa_animal varchar(255), varsta_animal integer, tag_animal_id bigint, primary key (id))
+2023-06-07T10:30:17.355+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : create table cauze_poze (cauza_id bigint not null, poze_id bigint not null, primary key (cauza_id, poze_id))
+2023-06-07T10:30:17.357+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : create table costumizabile (id bigint not null, cost_bani integer, level_min integer, tip smallint, url varchar(255), primary key (id))
+2023-06-07T10:30:17.360+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : create table costumizabile_echipate (user_id bigint not null, costumizabil_id bigint not null, primary key (user_id, costumizabil_id))
+2023-06-07T10:30:17.363+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : create table donatii (id bigint not null, cauza_id bigint, cauza_titlu varchar(255), data timestamp(6), moneda varchar(255), suma integer, primary key (id))
+2023-06-07T10:30:17.367+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : create table poze (id bigint not null, url varchar(255), primary key (id))
+2023-06-07T10:30:17.369+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : create table sustinatori (cauza_id bigint not null, user_id bigint)
+2023-06-07T10:30:17.370+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : create table sustineri (user_id bigint not null, cauza_id bigint)
+2023-06-07T10:30:17.371+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : create table tags (id bigint not null, nume varchar(255), primary key (id))
+2023-06-07T10:30:17.373+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : create table user_costumizabil (user_id bigint not null, costumizabil_id bigint not null, primary key (user_id, costumizabil_id))
+2023-06-07T10:30:17.375+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : create table user_tag_animal (user_id bigint not null, tag_animal_id bigint not null, primary key (user_id, tag_animal_id))
+2023-06-07T10:30:17.378+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : create table users (id bigint not null, coins bigint, email varchar(255), full_name varchar(255), gender smallint, level integer, parola varchar(255), username varchar(255), primary key (id))
+2023-06-07T10:30:17.382+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : create table users_cauze (user_id bigint not null, cauze_id bigint not null, primary key (user_id, cauze_id))
+2023-06-07T10:30:17.385+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : create table users_donatii (user_id bigint not null, donatii_id bigint not null, primary key (user_id, donatii_id))
+2023-06-07T10:30:17.388+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists cauze_poze add constraint UK_60g8eudhquqfjlx8s2a2x8d81 unique (poze_id)
+2023-06-07T10:30:17.391+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists users_cauze add constraint UK_coakn9j7vse6g5p9qytdvmos7 unique (cauze_id)
+2023-06-07T10:30:17.392+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists users_donatii add constraint UK_q0giq841m9yno1iba4gm9kn5a unique (donatii_id)
+2023-06-07T10:30:17.394+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists cauza_adapost_tag_animal add constraint FKg6p3mafohbn582tl2dw4kqthl foreign key (tag_animal_id) references tags
+2023-06-07T10:30:17.397+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists cauza_adapost_tag_animal add constraint FK6ctqg7fok82ujmohj0fjdepbp foreign key (cauza_adapost_id) references cauze
+2023-06-07T10:30:17.398+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists cauze add constraint FKhn65w7n44kuxcxefeulhbedf2 foreign key (tag_animal_id) references tags
+2023-06-07T10:30:17.399+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists cauze_poze add constraint FKfbhi7ndbx6ndi6mom66fofntk foreign key (poze_id) references poze
+2023-06-07T10:30:17.400+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists cauze_poze add constraint FKm4cpaxv93fv6wyg5lenpvykv3 foreign key (cauza_id) references cauze
+2023-06-07T10:30:17.400+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists costumizabile_echipate add constraint FKqrcq9siu8uqldi4lr4qqnvxlm foreign key (costumizabil_id) references costumizabile
+2023-06-07T10:30:17.402+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists costumizabile_echipate add constraint FKmmt57ux1t31ggwyyry2q504lr foreign key (user_id) references users
+2023-06-07T10:30:17.404+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists sustinatori add constraint FKmok58qx1996sxlsrdqwr4i72a foreign key (cauza_id) references cauze
+2023-06-07T10:30:17.404+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists sustineri add constraint FKox1y2s7ekg81u5u3vqfa144h7 foreign key (user_id) references users
+2023-06-07T10:30:17.405+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists user_costumizabil add constraint FK76fjmvdvuy8xaiod4i577ijby foreign key (costumizabil_id) references costumizabile
+2023-06-07T10:30:17.406+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists user_costumizabil add constraint FKer7s6goo1lmfws69lyw6m6j7n foreign key (user_id) references users
+2023-06-07T10:30:17.406+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists user_tag_animal add constraint FKgyy7aa6vg2l6lri047bpw792t foreign key (tag_animal_id) references tags
+2023-06-07T10:30:17.407+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists user_tag_animal add constraint FK46j0vu7n25qfr2vgrwngjfqek foreign key (user_id) references users
+2023-06-07T10:30:17.409+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists users_cauze add constraint FKl4nnk6syp0762i9wlh1a2opm foreign key (cauze_id) references cauze
+2023-06-07T10:30:17.410+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists users_cauze add constraint FK3eoud2hdtnwsv1ipn06n1wm foreign key (user_id) references users
+2023-06-07T10:30:17.411+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists users_donatii add constraint FKr87ci749nyhmpfxiey50j32ij foreign key (donatii_id) references donatii
+2023-06-07T10:30:17.413+03:00 DEBUG 26196 --- [main] org.hibernate.SQL                        : alter table if exists users_donatii add constraint FKdpae0v57rqqf3asqeleb9w8av foreign key (user_id) references users
+2023-06-07T10:30:17.416+03:00  INFO 26196 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-07T10:30:17.423+03:00  INFO 26196 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-07T10:30:17.950+03:00  WARN 26196 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-07T10:30:18.491+03:00  INFO 26196 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-07T10:30:18.498+03:00  INFO 26196 --- [main] c.d.donatiiapi.DonatiiApiApplication     : Started DonatiiApiApplication in 3.893 seconds (process running for 4.304)
+2023-06-07T10:30:31.923+03:00  INFO 26196 --- [http-nio-192.168.43.50-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-07T10:30:31.924+03:00  INFO 26196 --- [http-nio-192.168.43.50-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-07T10:30:31.925+03:00  INFO 26196 --- [http-nio-192.168.43.50-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 0 ms
+2023-06-07T10:30:32.098+03:00 DEBUG 26196 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select u1_0.id,u1_0.coins,u1_0.email,u1_0.full_name,u1_0.gender,u1_0.level,u1_0.parola,u1_0.username from users u1_0 where u1_0.email=?
+2023-06-07T10:30:38.286+03:00  INFO 26196 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-07T10:30:38.286+03:00  INFO 26196 --- [SpringApplicationShutdownHook] .SchemaDropperImpl$DelayedDropActionImpl : HHH000477: Starting delayed evictData of schema as part of SessionFactory shut-down'
+2023-06-07T10:30:38.286+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists cauza_adapost_tag_animal drop constraint if exists FKg6p3mafohbn582tl2dw4kqthl
+2023-06-07T10:30:38.290+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists cauza_adapost_tag_animal drop constraint if exists FK6ctqg7fok82ujmohj0fjdepbp
+2023-06-07T10:30:38.291+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists cauze drop constraint if exists FKhn65w7n44kuxcxefeulhbedf2
+2023-06-07T10:30:38.292+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists cauze_poze drop constraint if exists FKfbhi7ndbx6ndi6mom66fofntk
+2023-06-07T10:30:38.292+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists cauze_poze drop constraint if exists FKm4cpaxv93fv6wyg5lenpvykv3
+2023-06-07T10:30:38.293+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists costumizabile_echipate drop constraint if exists FKqrcq9siu8uqldi4lr4qqnvxlm
+2023-06-07T10:30:38.293+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists costumizabile_echipate drop constraint if exists FKmmt57ux1t31ggwyyry2q504lr
+2023-06-07T10:30:38.294+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists sustinatori drop constraint if exists FKmok58qx1996sxlsrdqwr4i72a
+2023-06-07T10:30:38.294+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists sustineri drop constraint if exists FKox1y2s7ekg81u5u3vqfa144h7
+2023-06-07T10:30:38.295+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists user_costumizabil drop constraint if exists FK76fjmvdvuy8xaiod4i577ijby
+2023-06-07T10:30:38.295+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists user_costumizabil drop constraint if exists FKer7s6goo1lmfws69lyw6m6j7n
+2023-06-07T10:30:38.295+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists user_tag_animal drop constraint if exists FKgyy7aa6vg2l6lri047bpw792t
+2023-06-07T10:30:38.296+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists user_tag_animal drop constraint if exists FK46j0vu7n25qfr2vgrwngjfqek
+2023-06-07T10:30:38.297+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists users_cauze drop constraint if exists FKl4nnk6syp0762i9wlh1a2opm
+2023-06-07T10:30:38.297+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists users_cauze drop constraint if exists FK3eoud2hdtnwsv1ipn06n1wm
+2023-06-07T10:30:38.298+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists users_donatii drop constraint if exists FKr87ci749nyhmpfxiey50j32ij
+2023-06-07T10:30:38.298+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : alter table if exists users_donatii drop constraint if exists FKdpae0v57rqqf3asqeleb9w8av
+2023-06-07T10:30:38.299+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists cauza_adapost_tag_animal cascade
+2023-06-07T10:30:38.302+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists cauze cascade
+2023-06-07T10:30:38.305+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists cauze_poze cascade
+2023-06-07T10:30:38.306+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists costumizabile cascade
+2023-06-07T10:30:38.308+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists costumizabile_echipate cascade
+2023-06-07T10:30:38.309+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists donatii cascade
+2023-06-07T10:30:38.311+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists poze cascade
+2023-06-07T10:30:38.312+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists sustinatori cascade
+2023-06-07T10:30:38.312+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists sustineri cascade
+2023-06-07T10:30:38.313+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists tags cascade
+2023-06-07T10:30:38.314+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists user_costumizabil cascade
+2023-06-07T10:30:38.316+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists user_tag_animal cascade
+2023-06-07T10:30:38.317+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists users cascade
+2023-06-07T10:30:38.318+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists users_cauze cascade
+2023-06-07T10:30:38.320+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop table if exists users_donatii cascade
+2023-06-07T10:30:38.322+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop sequence if exists cauza_sequence
+2023-06-07T10:30:38.322+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop sequence if exists costumizabil_sequence
+2023-06-07T10:30:38.323+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop sequence if exists donatie_sequence
+2023-06-07T10:30:38.324+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop sequence if exists poza_sequence
+2023-06-07T10:30:38.325+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop sequence if exists tag_animal_sequence
+2023-06-07T10:30:38.326+03:00 DEBUG 26196 --- [SpringApplicationShutdownHook] org.hibernate.SQL                        : drop sequence if exists user_sequence
+2023-06-07T10:30:38.328+03:00  INFO 26196 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-07T10:30:38.330+03:00  INFO 26196 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2023-06-07T10:30:59.216+03:00  INFO 5704 --- [main] c.d.donatiiapi.DonatiiApiApplication     : Starting DonatiiApiApplication using Java 17.0.7 with PID 5704 (C:\Users\aerap\Desktop\Projects\mpppr\donatiiAPI\build\classes\java\main started by aerap in C:\Users\aerap\Desktop\Projects\mpppr\donatiiAPI)
+2023-06-07T10:30:59.218+03:00  INFO 5704 --- [main] c.d.donatiiapi.DonatiiApiApplication     : No active profile set, falling back to 1 default profile: "default"
+2023-06-07T10:30:59.774+03:00  INFO 5704 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2023-06-07T10:30:59.825+03:00  INFO 5704 --- [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 44 ms. Found 5 JPA repository interfaces.
+2023-06-07T10:31:00.195+03:00  INFO 5704 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 8080 (http)
+2023-06-07T10:31:00.202+03:00  INFO 5704 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2023-06-07T10:31:00.202+03:00  INFO 5704 --- [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.8]
+2023-06-07T10:31:00.277+03:00  INFO 5704 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2023-06-07T10:31:00.278+03:00  INFO 5704 --- [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1023 ms
+2023-06-07T10:31:00.372+03:00  INFO 5704 --- [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2023-06-07T10:31:00.415+03:00  INFO 5704 --- [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.1.7.Final
+2023-06-07T10:31:00.647+03:00  INFO 5704 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2023-06-07T10:31:00.768+03:00  INFO 5704 --- [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection org.postgresql.jdbc.PgConnection@4eeb14e0
+2023-06-07T10:31:00.769+03:00  INFO 5704 --- [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2023-06-07T10:31:00.793+03:00  INFO 5704 --- [main] SQL dialect                              : HHH000400: Using dialect: org.hibernate.dialect.PostgreSQLDialect
+2023-06-07T10:31:01.586+03:00 DEBUG 5704 --- [main] org.hibernate.SQL                        : alter table if exists donatii add column cauza_titlu varchar(255)
+2023-06-07T10:31:01.744+03:00  INFO 5704 --- [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000490: Using JtaPlatform implementation: [org.hibernate.engine.transaction.jta.platform.internal.NoJtaPlatform]
+2023-06-07T10:31:01.752+03:00  INFO 5704 --- [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2023-06-07T10:31:02.260+03:00  WARN 5704 --- [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2023-06-07T10:31:02.776+03:00  INFO 5704 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 8080 (http) with context path ''
+2023-06-07T10:31:02.783+03:00  INFO 5704 --- [main] c.d.donatiiapi.DonatiiApiApplication     : Started DonatiiApiApplication in 3.875 seconds (process running for 4.289)
+2023-06-07T10:31:11.144+03:00  INFO 5704 --- [http-nio-192.168.43.50-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2023-06-07T10:31:11.145+03:00  INFO 5704 --- [http-nio-192.168.43.50-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2023-06-07T10:31:11.146+03:00  INFO 5704 --- [http-nio-192.168.43.50-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2023-06-07T10:31:11.300+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select u1_0.id,u1_0.coins,u1_0.email,u1_0.full_name,u1_0.gender,u1_0.level,u1_0.parola,u1_0.username from users u1_0 where u1_0.email=?
+2023-06-07T10:31:11.323+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select c1_0.user_id,c1_1.id,CASE WHEN c1_1.varsta_animal IS NOT NULL THEN 'PERSONALA' ELSE 'ADAPOST' END,c1_1.descriere,c1_1.locatie,c1_1.moneda,p1_0.cauza_id,p1_1.id,p1_1.url,c1_1.suma_minima,c1_1.suma_stransa,c1_1.titlu,c1_1.nume,c1_1.nume_animal,c1_1.rasa_animal,t1_0.id,t1_0.nume,c1_1.varsta_animal from users_cauze c1_0 join cauze c1_1 on c1_1.id=c1_0.cauze_id left join (cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id) on c1_1.id=p1_0.cauza_id left join tags t1_0 on t1_0.id=c1_1.tag_animal_id where c1_0.user_id=?
+2023-06-07T10:31:11.333+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:11.334+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:31:11.335+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:11.337+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:11.337+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:11.338+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:11.338+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:11.339+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:11.339+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:11.340+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:11.340+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:11.341+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:11.341+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:31:11.342+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:11.342+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:11.343+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:31:11.343+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:11.343+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:11.344+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:31:11.344+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-1] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:11.346+03:00  WARN 5704 --- [http-nio-192.168.43.50-8080-exec-1] o.s.s.c.bcrypt.BCryptPasswordEncoder     : Encoded password does not look like BCrypt
+2023-06-07T10:31:33.827+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select u1_0.id,u1_0.coins,u1_0.email,u1_0.full_name,u1_0.gender,u1_0.level,u1_0.parola,u1_0.username from users u1_0 where u1_0.email=?
+2023-06-07T10:31:33.829+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select c1_0.user_id,c1_1.id,CASE WHEN c1_1.varsta_animal IS NOT NULL THEN 'PERSONALA' ELSE 'ADAPOST' END,c1_1.descriere,c1_1.locatie,c1_1.moneda,p1_0.cauza_id,p1_1.id,p1_1.url,c1_1.suma_minima,c1_1.suma_stransa,c1_1.titlu,c1_1.nume,c1_1.nume_animal,c1_1.rasa_animal,t1_0.id,t1_0.nume,c1_1.varsta_animal from users_cauze c1_0 join cauze c1_1 on c1_1.id=c1_0.cauze_id left join (cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id) on c1_1.id=p1_0.cauza_id left join tags t1_0 on t1_0.id=c1_1.tag_animal_id where c1_0.user_id=?
+2023-06-07T10:31:33.832+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:33.833+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:31:33.834+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:33.834+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:33.834+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:33.835+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:33.835+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:33.836+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:33.836+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:33.836+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:33.837+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:33.837+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:33.837+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:31:33.838+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:33.838+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:33.838+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:31:33.839+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:33.839+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:33.839+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:31:33.840+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-2] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:33.840+03:00  WARN 5704 --- [http-nio-192.168.43.50-8080-exec-2] o.s.s.c.bcrypt.BCryptPasswordEncoder     : Encoded password does not look like BCrypt
+2023-06-07T10:31:36.693+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select u1_0.id,u1_0.coins,u1_0.email,u1_0.full_name,u1_0.gender,u1_0.level,u1_0.parola,u1_0.username from users u1_0 where u1_0.email=?
+2023-06-07T10:31:36.695+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select c1_0.user_id,c1_1.id,CASE WHEN c1_1.varsta_animal IS NOT NULL THEN 'PERSONALA' ELSE 'ADAPOST' END,c1_1.descriere,c1_1.locatie,c1_1.moneda,p1_0.cauza_id,p1_1.id,p1_1.url,c1_1.suma_minima,c1_1.suma_stransa,c1_1.titlu,c1_1.nume,c1_1.nume_animal,c1_1.rasa_animal,t1_0.id,t1_0.nume,c1_1.varsta_animal from users_cauze c1_0 join cauze c1_1 on c1_1.id=c1_0.cauze_id left join (cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id) on c1_1.id=p1_0.cauza_id left join tags t1_0 on t1_0.id=c1_1.tag_animal_id where c1_0.user_id=?
+2023-06-07T10:31:36.698+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:36.699+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:31:36.700+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:36.701+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:36.701+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:36.702+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:36.702+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:36.703+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:36.703+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:36.703+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:36.704+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:36.704+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:36.704+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:31:36.704+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:36.705+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:36.705+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:31:36.705+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:36.706+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:31:36.706+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:31:36.706+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-3] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:31:36.707+03:00  WARN 5704 --- [http-nio-192.168.43.50-8080-exec-3] o.s.s.c.bcrypt.BCryptPasswordEncoder     : Encoded password does not look like BCrypt
+2023-06-07T10:32:16.547+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-5] org.hibernate.SQL                        : select u1_0.id,u1_0.coins,u1_0.email,u1_0.full_name,u1_0.gender,u1_0.level,u1_0.parola,u1_0.username from users u1_0 where u1_0.email=?
+2023-06-07T10:32:16.639+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-5] org.hibernate.SQL                        : select u1_0.id,c1_0.user_id,c1_1.id,CASE WHEN c1_1.varsta_animal IS NOT NULL THEN 'PERSONALA' ELSE 'ADAPOST' END,c1_1.descriere,c1_1.locatie,c1_1.moneda,p1_0.cauza_id,p1_1.id,p1_1.url,c1_1.suma_minima,c1_1.suma_stransa,c1_1.titlu,c1_1.nume,c1_1.nume_animal,c1_1.rasa_animal,t1_0.id,t1_0.nume,c1_1.varsta_animal,u1_0.coins,u1_0.email,u1_0.full_name,u1_0.gender,u1_0.level,u1_0.parola,u1_0.username from users u1_0 left join (users_cauze c1_0 join cauze c1_1 on c1_1.id=c1_0.cauze_id) on u1_0.id=c1_0.user_id left join (cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id) on c1_1.id=p1_0.cauza_id left join tags t1_0 on t1_0.id=c1_1.tag_animal_id where u1_0.id=?
+2023-06-07T10:32:16.644+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-5] org.hibernate.SQL                        : select nextval('user_sequence')
+2023-06-07T10:32:16.664+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-5] org.hibernate.SQL                        : insert into users (coins, email, full_name, gender, level, parola, username, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+2023-06-07T10:32:16.673+03:00  WARN 5704 --- [http-nio-192.168.43.50-8080-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : SQL Error: 0, SQLState: 23505
+2023-06-07T10:32:16.673+03:00 ERROR 5704 --- [http-nio-192.168.43.50-8080-exec-5] o.h.engine.jdbc.spi.SqlExceptionHelper   : ERROR: duplicate key value violates unique constraint "users_pkey"
+  Detail: Key (id)=(1) already exists.
+2023-06-07T10:32:16.674+03:00  INFO 5704 --- [http-nio-192.168.43.50-8080-exec-5] o.h.e.j.b.internal.AbstractBatchImpl     : HHH000010: On release of batch it still contained JDBC statements
+2023-06-07T10:32:28.944+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-6] org.hibernate.SQL                        : select u1_0.id,u1_0.coins,u1_0.email,u1_0.full_name,u1_0.gender,u1_0.level,u1_0.parola,u1_0.username from users u1_0 where u1_0.email=?
+2023-06-07T10:32:29.012+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-6] org.hibernate.SQL                        : select u1_0.id,c1_0.user_id,c1_1.id,CASE WHEN c1_1.varsta_animal IS NOT NULL THEN 'PERSONALA' ELSE 'ADAPOST' END,c1_1.descriere,c1_1.locatie,c1_1.moneda,p1_0.cauza_id,p1_1.id,p1_1.url,c1_1.suma_minima,c1_1.suma_stransa,c1_1.titlu,c1_1.nume,c1_1.nume_animal,c1_1.rasa_animal,t1_0.id,t1_0.nume,c1_1.varsta_animal,u1_0.coins,u1_0.email,u1_0.full_name,u1_0.gender,u1_0.level,u1_0.parola,u1_0.username from users u1_0 left join (users_cauze c1_0 join cauze c1_1 on c1_1.id=c1_0.cauze_id) on u1_0.id=c1_0.user_id left join (cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id) on c1_1.id=p1_0.cauza_id left join tags t1_0 on t1_0.id=c1_1.tag_animal_id where u1_0.id=?
+2023-06-07T10:32:29.013+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-6] org.hibernate.SQL                        : select nextval('user_sequence')
+2023-06-07T10:32:29.014+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-6] org.hibernate.SQL                        : insert into users (coins, email, full_name, gender, level, parola, username, id) values (?, ?, ?, ?, ?, ?, ?, ?)
+2023-06-07T10:32:29.098+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-7] org.hibernate.SQL                        : select t1_0.id,t1_0.nume from tags t1_0
+2023-06-07T10:32:29.099+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select c1_0.id,CASE WHEN c1_0.varsta_animal IS NOT NULL THEN 'PERSONALA' ELSE 'ADAPOST' END,c1_0.descriere,c1_0.locatie,c1_0.moneda,c1_0.suma_minima,c1_0.suma_stransa,c1_0.titlu,c1_0.nume,c1_0.nume_animal,c1_0.rasa_animal,c1_0.tag_animal_id,c1_0.varsta_animal from cauze c1_0
+2023-06-07T10:32:29.100+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select t1_0.id,t1_0.nume from tags t1_0 where t1_0.id=?
+2023-06-07T10:32:29.101+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:32:29.103+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:32:29.103+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:32:29.104+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:32:29.104+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:32:29.104+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:32:29.105+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:32:29.105+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:32:29.105+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:32:29.106+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:32:29.106+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:32:29.106+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:32:29.107+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select p1_0.cauza_id,p1_1.id,p1_1.url from cauze_poze p1_0 join poze p1_1 on p1_1.id=p1_0.poze_id where p1_0.cauza_id=?
+2023-06-07T10:32:29.109+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:32:29.111+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:32:29.111+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:32:29.112+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:32:29.112+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:32:29.113+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:32:29.113+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:32:29.114+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:32:29.114+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:32:29.114+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:32:29.115+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:32:29.115+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:32:29.116+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:32:29.116+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:32:29.117+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:32:29.117+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:32:29.117+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:32:29.118+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:32:29.118+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:32:29.118+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:32:29.119+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:32:29.119+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:32:29.119+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T10:32:29.120+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select s1_0.cauza_id,s1_0.user_id from sustinatori s1_0 where s1_0.cauza_id=?
+2023-06-07T10:32:29.120+03:00 DEBUG 5704 --- [http-nio-192.168.43.50-8080-exec-8] org.hibernate.SQL                        : select t1_0.cauza_adapost_id,t1_1.id,t1_1.nume from cauza_adapost_tag_animal t1_0 join tags t1_1 on t1_1.id=t1_0.tag_animal_id where t1_0.cauza_adapost_id=?
+2023-06-07T11:05:45.408+03:00  INFO 5704 --- [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2023-06-07T11:05:45.409+03:00  INFO 5704 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2023-06-07T11:05:45.411+03:00  INFO 5704 --- [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

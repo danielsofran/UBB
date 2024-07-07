@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        div{
+            display: flex;
+            justify-content: space-around;
+            width: 30%;
+        }
+    </style>
+</head>
+<body>
+    <table id="table">
+    </table>
+    <div>
+        <button id="prev" onclick="load_content(-1)">Prev</button>
+        <p id="page"></p>
+        <button id="next" onclick="load_content(+1)">Next</button>
+    </div>
+
+    <script> var WITH_JQUERY = true; </script>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script>
+        var page = 0;
+        var table = document.getElementById("table");
+
+        function load_content(increment) {
+
+            if(WITH_JQUERY){
+                page += increment;
+                $('#prev').attr('disabled', page === 0);
+
+                $.getJSON("content.php?page=" + page + "&size=3", function(data){
+                    table.innerHTML = "<tr><th>Nume</th><th>Prenume</th><th>Telefon</th><th>Email</th></tr>";
+                    data.data.forEach(row => {
+                        table.innerHTML += "<tr><td>" + row.nume + "</td><td>" + row.prenume + "</td><td>" + row.telefon + "</td><td>" + row.email + "</td></tr>";
+                    });
+                    $('#next').attr('disabled', data.next === 0);
+                });
+            }
+            else {
+
+                page += increment;
+                document.getElementById("prev").disabled = page === 0;
+
+
+                fetch("content.php?page=" + page + "&size=3").then(response => response.json()).then(data => {
+                    table.innerHTML = "<tr><th>Nume</th><th>Prenume</th><th>Telefon</th><th>Email</th></tr>";
+                    data.data.forEach(row => {
+                        table.innerHTML += "<tr><td>" + row.nume + "</td><td>" + row.prenume + "</td><td>" + row.telefon + "</td><td>" + row.email + "</td></tr>";
+                    });
+                    document.getElementById("next").disabled = data.next === 0;
+                });
+            }
+        }
+
+        load_content(0);
+    </script>
+</body>
+</html>

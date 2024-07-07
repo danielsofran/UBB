@@ -1,0 +1,7 @@
+ab,bc,300,m
+Artist1,Titlu1,60,Concert
+Artist2,Titlu2,45,Balet
+Artist3,Titlu3,55,Altele
+Artist,Titlu,60,Concert
+tarobo meha,nuboc uqidu,1020,Altele
+ajum ivoqo,najuh obite,960,Comedie
